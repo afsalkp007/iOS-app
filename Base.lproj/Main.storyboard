@@ -17,27 +17,25 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="--Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VYB-Ok-63X">
-                                <rect key="frame" x="37.5" y="255.5" width="300" height="30"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="--Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VYB-Ok-63X">
+                                <rect key="frame" x="37.5" y="251.5" width="300" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" textContentType="nickname"/>
+                                <textInputTraits key="textInputTraits" textContentType="email"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="--Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QdU-97-TVJ">
-                                <rect key="frame" x="37.5" y="301.5" width="300" height="30"/>
+                                <rect key="frame" x="37.5" y="297.5" width="300" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" secureTextEntry="YES" textContentType="password"/>
-                                <connections>
-                                    <action selector="didEnterPassword:" destination="TkE-lv-74d" eventType="editingDidEnd" id="MWy-JO-h6C"/>
-                                </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yom-4V-ZgY">
-                                <rect key="frame" x="94" y="347.5" width="187.5" height="36"/>
+                                <rect key="frame" x="94" y="343.5" width="187.5" height="44"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137254901957" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="36" id="TMK-GA-pNs"/>
+                                    <constraint firstAttribute="height" constant="44" id="TMK-GA-pNs"/>
                                 </constraints>
+                                <inset key="contentEdgeInsets" minX="2" minY="2" maxX="2" maxY="2"/>
                                 <state key="normal" title="--Login">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -46,7 +44,7 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UXp-Dj-6ex" customClass="GIDSignInButton">
-                                <rect key="frame" x="94" y="399.5" width="187.5" height="44"/>
+                                <rect key="frame" x="94" y="403.5" width="187.5" height="44"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="KYd-sg-86A"/>
@@ -55,6 +53,19 @@
                                     <action selector="didPressGoogleLoginButton:" destination="TkE-lv-74d" eventType="touchUpInside" id="B0n-UN-5VN"/>
                                 </connections>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--or" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="41t-CG-QgQ">
+                                <rect key="frame" x="174.5" y="455.5" width="26.5" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3dv-YC-f9a">
+                                <rect key="frame" x="152" y="476.5" width="71" height="30"/>
+                                <state key="normal" title="--Register"/>
+                                <connections>
+                                    <action selector="didPressRegisterButton:" destination="TkE-lv-74d" eventType="touchUpInside" id="XQr-Mm-5cR"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -62,13 +73,17 @@
                             <constraint firstItem="Yom-4V-ZgY" firstAttribute="centerX" secondItem="QdU-97-TVJ" secondAttribute="centerX" id="IPH-Oa-tai"/>
                             <constraint firstItem="UXp-Dj-6ex" firstAttribute="width" secondItem="Yom-4V-ZgY" secondAttribute="width" id="Ixi-iG-2Z5"/>
                             <constraint firstItem="VYB-Ok-63X" firstAttribute="centerX" secondItem="iCV-ae-X9N" secondAttribute="centerX" id="M9w-gD-pnP"/>
+                            <constraint firstItem="3dv-YC-f9a" firstAttribute="centerX" secondItem="41t-CG-QgQ" secondAttribute="centerX" id="NHN-lp-ITC"/>
                             <constraint firstItem="UXp-Dj-6ex" firstAttribute="top" secondItem="Yom-4V-ZgY" secondAttribute="bottom" constant="16" id="PKV-7p-ZOM"/>
                             <constraint firstItem="Yom-4V-ZgY" firstAttribute="width" secondItem="iCV-ae-X9N" secondAttribute="width" multiplier="0.5" id="QSZ-OF-0pj"/>
+                            <constraint firstItem="41t-CG-QgQ" firstAttribute="top" secondItem="UXp-Dj-6ex" secondAttribute="bottom" constant="8" id="fZ9-U7-4hY"/>
                             <constraint firstItem="QdU-97-TVJ" firstAttribute="top" secondItem="VYB-Ok-63X" secondAttribute="bottom" constant="16" id="jGy-YK-z51"/>
                             <constraint firstItem="QdU-97-TVJ" firstAttribute="centerX" secondItem="VYB-Ok-63X" secondAttribute="centerX" id="mpA-RI-cVZ"/>
                             <constraint firstItem="QdU-97-TVJ" firstAttribute="width" secondItem="VYB-Ok-63X" secondAttribute="width" id="p9n-h5-jE9"/>
                             <constraint firstItem="VYB-Ok-63X" firstAttribute="width" secondItem="iCV-ae-X9N" secondAttribute="width" multiplier="0.8" id="rin-83-Pck"/>
                             <constraint firstItem="Yom-4V-ZgY" firstAttribute="centerY" secondItem="iCV-ae-X9N" secondAttribute="centerY" id="usD-ov-lBR"/>
+                            <constraint firstItem="3dv-YC-f9a" firstAttribute="top" secondItem="41t-CG-QgQ" secondAttribute="bottom" constant="4" id="xqw-JR-2fz"/>
+                            <constraint firstItem="41t-CG-QgQ" firstAttribute="centerX" secondItem="UXp-Dj-6ex" secondAttribute="centerX" id="xvG-yq-qNP"/>
                             <constraint firstItem="Yom-4V-ZgY" firstAttribute="top" secondItem="QdU-97-TVJ" secondAttribute="bottom" constant="16" id="yOd-2E-Iou"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="iCV-ae-X9N"/>
@@ -77,6 +92,7 @@
                     <connections>
                         <outlet property="loginButton" destination="Yom-4V-ZgY" id="vea-CP-4fF"/>
                         <outlet property="passwordTextField" destination="QdU-97-TVJ" id="6WY-kO-1F4"/>
+                        <outlet property="registerButton" destination="3dv-YC-f9a" id="x27-Wf-q0v"/>
                         <outlet property="userNameTextField" destination="VYB-Ok-63X" id="PKi-nV-X3s"/>
                         <segue destination="h7B-e9-sTa" kind="showDetail" identifier="LoginToMainScreen" id="BNj-8C-c0u"/>
                     </connections>
