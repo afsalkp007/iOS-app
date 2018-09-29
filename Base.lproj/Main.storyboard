@@ -18,30 +18,43 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="--Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VYB-Ok-63X">
-                                <rect key="frame" x="94" y="242.5" width="187.5" height="30"/>
+                                <rect key="frame" x="37.5" y="239.5" width="300" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" textContentType="nickname"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="--Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QdU-97-TVJ">
-                                <rect key="frame" x="94" y="288.5" width="187.5" height="30"/>
+                                <rect key="frame" x="37.5" y="285.5" width="300" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" secureTextEntry="YES" textContentType="password"/>
+                                <connections>
+                                    <action selector="didEnterPassword:" destination="TkE-lv-74d" eventType="editingDidEnd" id="MWy-JO-h6C"/>
+                                </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yom-4V-ZgY">
-                                <rect key="frame" x="161.5" y="350.5" width="52" height="30"/>
-                                <state key="normal" title="--Login"/>
+                                <rect key="frame" x="94" y="347.5" width="187.5" height="36"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137254901957" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="TMK-GA-pNs"/>
+                                </constraints>
+                                <state key="normal" title="--Login">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="didPressLoginButton:" destination="TkE-lv-74d" eventType="touchUpInside" id="Tnr-ma-RKT"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Yom-4V-ZgY" firstAttribute="centerX" secondItem="QdU-97-TVJ" secondAttribute="centerX" id="IPH-Oa-tai"/>
                             <constraint firstItem="VYB-Ok-63X" firstAttribute="centerX" secondItem="iCV-ae-X9N" secondAttribute="centerX" id="M9w-gD-pnP"/>
+                            <constraint firstItem="Yom-4V-ZgY" firstAttribute="width" secondItem="iCV-ae-X9N" secondAttribute="width" multiplier="0.5" id="QSZ-OF-0pj"/>
                             <constraint firstItem="QdU-97-TVJ" firstAttribute="top" secondItem="VYB-Ok-63X" secondAttribute="bottom" constant="16" id="jGy-YK-z51"/>
                             <constraint firstItem="QdU-97-TVJ" firstAttribute="centerX" secondItem="VYB-Ok-63X" secondAttribute="centerX" id="mpA-RI-cVZ"/>
                             <constraint firstItem="QdU-97-TVJ" firstAttribute="width" secondItem="VYB-Ok-63X" secondAttribute="width" id="p9n-h5-jE9"/>
-                            <constraint firstItem="VYB-Ok-63X" firstAttribute="width" secondItem="iCV-ae-X9N" secondAttribute="width" multiplier="0.5" id="rin-83-Pck"/>
+                            <constraint firstItem="VYB-Ok-63X" firstAttribute="width" secondItem="iCV-ae-X9N" secondAttribute="width" multiplier="0.8" id="rin-83-Pck"/>
                             <constraint firstItem="Yom-4V-ZgY" firstAttribute="centerY" secondItem="iCV-ae-X9N" secondAttribute="centerY" id="usD-ov-lBR"/>
                             <constraint firstItem="Yom-4V-ZgY" firstAttribute="top" secondItem="QdU-97-TVJ" secondAttribute="bottom" constant="32" id="yOd-2E-Iou"/>
                         </constraints>
@@ -52,7 +65,7 @@
                         <outlet property="loginButton" destination="Yom-4V-ZgY" id="vea-CP-4fF"/>
                         <outlet property="passwordTextField" destination="QdU-97-TVJ" id="6WY-kO-1F4"/>
                         <outlet property="userNameTextField" destination="VYB-Ok-63X" id="PKi-nV-X3s"/>
-                        <segue destination="h7B-e9-sTa" kind="showDetail" id="BNj-8C-c0u"/>
+                        <segue destination="h7B-e9-sTa" kind="showDetail" identifier="LoginToMainScreen" id="BNj-8C-c0u"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WIt-YW-WSF" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -99,6 +112,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="h7B-e9-sTa" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Y1v-r2-fMy">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
