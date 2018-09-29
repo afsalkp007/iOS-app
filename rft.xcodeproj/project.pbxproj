@@ -19,6 +19,7 @@
 		1B7E84E4215FA7D600574C33 /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7E84E3215FA7D600574C33 /* MainMenuViewController.swift */; };
 		1B7E84E6215FAB3400574C33 /* TopListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7E84E5215FAB3400574C33 /* TopListViewController.swift */; };
 		1B7E84EB215FB23700574C33 /* RestClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7E84EA215FB23700574C33 /* RestClient.swift */; };
+		1BF2A6692160054900406BA9 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BF2A6682160054900406BA9 /* RegistrationViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		1B7E84E3215FA7D600574C33 /* MainMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuViewController.swift; sourceTree = "<group>"; };
 		1B7E84E5215FAB3400574C33 /* TopListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopListViewController.swift; sourceTree = "<group>"; };
 		1B7E84EA215FB23700574C33 /* RestClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestClient.swift; sourceTree = "<group>"; };
+		1BF2A6682160054900406BA9 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		5540A905528698F397D3E7F4 /* Pods_rft.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_rft.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		833837132B2C7D56AAFABF49 /* Pods-rftTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rftTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-rftTests/Pods-rftTests.debug.xcconfig"; sourceTree = "<group>"; };
 		9DA357C7F463441884998F3F /* Pods-rft.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rft.release.xcconfig"; path = "Pods/Target Support Files/Pods-rft/Pods-rft.release.xcconfig"; sourceTree = "<group>"; };
@@ -126,6 +128,7 @@
 				1B7E84E1215FA4C700574C33 /* LoginViewController.swift */,
 				1B7E84E3215FA7D600574C33 /* MainMenuViewController.swift */,
 				1B7E84E5215FAB3400574C33 /* TopListViewController.swift */,
+				1BF2A6682160054900406BA9 /* RegistrationViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -384,6 +387,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1BF2A6692160054900406BA9 /* RegistrationViewController.swift in Sources */,
 				1B7E84E6215FAB3400574C33 /* TopListViewController.swift in Sources */,
 				1B7E84E4215FA7D600574C33 /* MainMenuViewController.swift in Sources */,
 				1B7E84E2215FA4C700574C33 /* LoginViewController.swift in Sources */,

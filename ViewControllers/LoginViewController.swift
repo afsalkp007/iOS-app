@@ -15,7 +15,9 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate {
     @IBOutlet var userNameTextField: UITextField!
     @IBOutlet var passwordTextField: UITextField!
     @IBOutlet var loginButton: UIButton!
-    @IBOutlet weak var registerButton: UIButton!
+    @IBOutlet var registerButton: UIButton!
+    @IBOutlet var googleLoginButton: GIDSignInButton!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,11 +36,13 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate {
     @objc
     private func login() {
         hideKeybard()
-        Auth.auth().signIn(withEmail: userNameTextField.text ?? "", password: passwordTextField.text ?? "") { (result, error) in
+        Auth.auth().signIn(withEmail: userNameTextField.text ?? "", password: passwordTextField.text ?? "") { [weak self] (result, error) in
             if let error = error {
                 NSLog("😢 \(error)")
+            } else {
+                NSLog("👌 \(String(describing: result?.user.email)) successfully logged in.")
+                self?.performSegue(withIdentifier: "LoginToMainScreen", sender: self)
             }
-            NSLog("👌 \(String(describing: result?.user.email)) successfully logged in.")
             return
         }
     }
@@ -50,9 +54,4 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate {
     @IBAction func didPressGoogleLoginButton(_ sender: Any) {
         GIDSignIn.sharedInstance()?.signIn()
     }
-    
-    @IBAction func didPressRegisterButton(_ sender: Any) {
-        NSLog("☺️ register pressed")
-    }
-    
 }
