@@ -18,13 +18,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="--Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VYB-Ok-63X">
-                                <rect key="frame" x="37.5" y="239.5" width="300" height="30"/>
+                                <rect key="frame" x="37.5" y="255.5" width="300" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" textContentType="nickname"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="--Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QdU-97-TVJ">
-                                <rect key="frame" x="37.5" y="285.5" width="300" height="30"/>
+                                <rect key="frame" x="37.5" y="301.5" width="300" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" secureTextEntry="YES" textContentType="password"/>
@@ -45,18 +45,31 @@
                                     <action selector="didPressLoginButton:" destination="TkE-lv-74d" eventType="touchUpInside" id="Tnr-ma-RKT"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UXp-Dj-6ex" customClass="GIDSignInButton">
+                                <rect key="frame" x="94" y="399.5" width="187.5" height="44"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="KYd-sg-86A"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="didPressGoogleLoginButton:" destination="TkE-lv-74d" eventType="touchUpInside" id="B0n-UN-5VN"/>
+                                </connections>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="UXp-Dj-6ex" firstAttribute="centerX" secondItem="Yom-4V-ZgY" secondAttribute="centerX" id="CZL-mj-sOZ"/>
                             <constraint firstItem="Yom-4V-ZgY" firstAttribute="centerX" secondItem="QdU-97-TVJ" secondAttribute="centerX" id="IPH-Oa-tai"/>
+                            <constraint firstItem="UXp-Dj-6ex" firstAttribute="width" secondItem="Yom-4V-ZgY" secondAttribute="width" id="Ixi-iG-2Z5"/>
                             <constraint firstItem="VYB-Ok-63X" firstAttribute="centerX" secondItem="iCV-ae-X9N" secondAttribute="centerX" id="M9w-gD-pnP"/>
+                            <constraint firstItem="UXp-Dj-6ex" firstAttribute="top" secondItem="Yom-4V-ZgY" secondAttribute="bottom" constant="16" id="PKV-7p-ZOM"/>
                             <constraint firstItem="Yom-4V-ZgY" firstAttribute="width" secondItem="iCV-ae-X9N" secondAttribute="width" multiplier="0.5" id="QSZ-OF-0pj"/>
                             <constraint firstItem="QdU-97-TVJ" firstAttribute="top" secondItem="VYB-Ok-63X" secondAttribute="bottom" constant="16" id="jGy-YK-z51"/>
                             <constraint firstItem="QdU-97-TVJ" firstAttribute="centerX" secondItem="VYB-Ok-63X" secondAttribute="centerX" id="mpA-RI-cVZ"/>
                             <constraint firstItem="QdU-97-TVJ" firstAttribute="width" secondItem="VYB-Ok-63X" secondAttribute="width" id="p9n-h5-jE9"/>
                             <constraint firstItem="VYB-Ok-63X" firstAttribute="width" secondItem="iCV-ae-X9N" secondAttribute="width" multiplier="0.8" id="rin-83-Pck"/>
                             <constraint firstItem="Yom-4V-ZgY" firstAttribute="centerY" secondItem="iCV-ae-X9N" secondAttribute="centerY" id="usD-ov-lBR"/>
-                            <constraint firstItem="Yom-4V-ZgY" firstAttribute="top" secondItem="QdU-97-TVJ" secondAttribute="bottom" constant="32" id="yOd-2E-Iou"/>
+                            <constraint firstItem="Yom-4V-ZgY" firstAttribute="top" secondItem="QdU-97-TVJ" secondAttribute="bottom" constant="16" id="yOd-2E-Iou"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="iCV-ae-X9N"/>
                     </view>

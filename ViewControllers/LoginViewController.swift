@@ -7,8 +7,10 @@
 //
 
 import UIKit
+import Firebase
+import GoogleSignIn
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, GIDSignInUIDelegate {
     
     @IBOutlet var userNameTextField: UITextField!
     @IBOutlet var passwordTextField: UITextField!
@@ -16,6 +18,8 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        GIDSignIn.sharedInstance().uiDelegate = self
     }
     
     override func viewDidLayoutSubviews() {
@@ -34,5 +38,8 @@ class LoginViewController: UIViewController {
         self.view.endEditing(true)
     }
     
+    @IBAction func didPressGoogleLoginButton(_ sender: Any) {
+        GIDSignIn.sharedInstance()?.signIn()
+    }
     
 }

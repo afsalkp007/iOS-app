@@ -10,6 +10,7 @@ target 'rft' do
   pod 'SwiftyJSON', '~> 4.0'
   pod 'Firebase/Core'
   pod 'Firebase/Auth'
+  pod 'GoogleSignIn'
 
   target 'rftTests' do
     inherit! :search_paths
