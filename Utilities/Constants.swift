@@ -1,0 +1,22 @@
+//
+//  Constants.swift
+//  rft
+//
+//  Created by Levente Vig on 2018. 09. 29..
+//  Copyright © 2018. Levente Vig. All rights reserved.
+//
+
+import Foundation
+
+struct Constants {
+    struct userDefaultsKeys {
+        static let loggedInUser = "loggedInUser"
+    }
+    
+    struct segues {
+        static let RegisterToMainScreen = "RegisterToMainScreen"
+        static let LoginToMainScreen = "LoginToMainScreen"
+        static let ShowLogin = "ShowLogin"
+        static let ShowMainScreen = "ShowMainScreen"
+    }
+}

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="2AG-9y-jCJ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="9Qn-8F-kfQ">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -203,10 +203,13 @@
                         <viewLayoutGuide key="safeArea" id="hov-2r-Fgc"/>
                     </view>
                     <navigationItem key="navigationItem" id="qeD-lm-6Yf"/>
+                    <connections>
+                        <outlet property="userNameLabel" destination="8Ag-Xw-YH9" id="7Xr-cT-ccu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cVX-0I-QO9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3054" y="898"/>
+            <point key="canvasLocation" x="3374" y="948"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="zn0-UZ-kVy">
@@ -225,7 +228,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Fc-Xo-iJe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1426" y="1236"/>
+            <point key="canvasLocation" x="1745" y="1286"/>
         </scene>
         <!--Item-->
         <scene sceneID="KG1-EG-9VZ">
@@ -244,7 +247,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="amh-xQ-imE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2206" y="898"/>
+            <point key="canvasLocation" x="2526" y="948"/>
         </scene>
         <!--Item-->
         <scene sceneID="sFa-US-baN">
@@ -260,10 +263,29 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nxR-fl-Qje" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2206" y="1594"/>
+            <point key="canvasLocation" x="2526" y="1643"/>
+        </scene>
+        <!--Start View Controller-->
+        <scene sceneID="DuB-4W-Jkr">
+            <objects>
+                <viewController id="9Qn-8F-kfQ" customClass="StartViewController" customModule="rft" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="XWH-qq-UKS">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="Zpl-NQ-NAe"/>
+                    </view>
+                    <connections>
+                        <segue destination="2AG-9y-jCJ" kind="showDetail" identifier="ShowLogin" animates="NO" id="Vjf-xM-VPQ"/>
+                        <segue destination="h7B-e9-sTa" kind="showDetail" identifier="ShowMainScreen" animates="NO" id="NQu-4U-KQ6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qYQ-ki-1v3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-753" y="1286"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="BNj-8C-c0u"/>
+        <segue reference="NQu-4U-KQ6"/>
     </inferredMetricsTieBreakers>
 </document>

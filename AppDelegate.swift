@@ -14,13 +14,35 @@ import GoogleSignIn
 class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
 
     var window: UIWindow?
-    var loggedInUser: User?
+    var loggedInUser: User? {
+        didSet {
+            do {
+                let encodedData = try NSKeyedArchiver.archivedData(withRootObject: loggedInUser!, requiringSecureCoding: true)
+                defaults.set(encodedData, forKey: Constants.userDefaultsKeys.loggedInUser)
+            } catch {
+                NSLog("Failed to set defaults key \(Constants.userDefaultsKeys.loggedInUser)")
+            }
+        }
+    }
+    
+    let defaults = UserDefaults.standard
+    
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         FirebaseApp.configure()
         GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
         GIDSignIn.sharedInstance().delegate = self
+        
+        if isKeyPresentInUserDefaults(key: Constants.userDefaultsKeys.loggedInUser) {
+            let decoded = defaults.object(forKey: Constants.userDefaultsKeys.loggedInUser) as! Data
+            do {
+                try loggedInUser = NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(decoded) as? User
+            } catch {
+                NSLog("Failed to decode user.")
+            }
+        }
+        
         return true
     }
     

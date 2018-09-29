@@ -44,7 +44,9 @@ class RegistrationViewController: UIViewController {
             }
             
             NSLog("👌 \(String(describing: user.email)) created")
-            self?.performSegue(withIdentifier: "RegisterToMainScreen", sender: nil)
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+            appDelegate.loggedInUser = user
+            self?.performSegue(withIdentifier: Constants.segues.RegisterToMainScreen, sender: nil)
             
         }
     }
