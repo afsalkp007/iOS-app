@@ -87,7 +87,7 @@
 				1B7E84C2215F74D900574C33 /* LaunchScreen.storyboard */,
 				1B7E84C5215F74D900574C33 /* Info.plist */,
 			);
-			path = rft;
+			name = rft;
 			sourceTree = "<group>";
 		};
 		1B7E84CD215F74D900574C33 /* rftTests */ = {
