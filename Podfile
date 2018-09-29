@@ -11,6 +11,8 @@ target 'rft' do
   pod 'Firebase/Core'
   pod 'Firebase/Auth'
   pod 'GoogleSignIn'
+  pod 'Fabric', '~> 1.7.11'
+  pod 'Crashlytics', '~> 3.10.7'
 
   target 'rftTests' do
     inherit! :search_paths
