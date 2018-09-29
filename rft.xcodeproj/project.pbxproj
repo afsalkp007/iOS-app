@@ -14,6 +14,9 @@
 		1B7E84C1215F74D900574C33 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B7E84C0215F74D900574C33 /* Assets.xcassets */; };
 		1B7E84C4215F74D900574C33 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B7E84C2215F74D900574C33 /* LaunchScreen.storyboard */; };
 		1B7E84CF215F74D900574C33 /* rftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7E84CE215F74D900574C33 /* rftTests.swift */; };
+		1B7E84E2215FA4C700574C33 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7E84E1215FA4C700574C33 /* LoginViewController.swift */; };
+		1B7E84E4215FA7D600574C33 /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7E84E3215FA7D600574C33 /* MainMenuViewController.swift */; };
+		1B7E84E6215FAB3400574C33 /* TopListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7E84E5215FAB3400574C33 /* TopListViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +40,9 @@
 		1B7E84CA215F74D900574C33 /* rftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = rftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B7E84CE215F74D900574C33 /* rftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rftTests.swift; sourceTree = "<group>"; };
 		1B7E84D0215F74D900574C33 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1B7E84E1215FA4C700574C33 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		1B7E84E3215FA7D600574C33 /* MainMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuViewController.swift; sourceTree = "<group>"; };
+		1B7E84E5215FAB3400574C33 /* TopListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopListViewController.swift; sourceTree = "<group>"; };
 		5540A905528698F397D3E7F4 /* Pods_rft.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_rft.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		833837132B2C7D56AAFABF49 /* Pods-rftTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rftTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-rftTests/Pods-rftTests.debug.xcconfig"; sourceTree = "<group>"; };
 		9DA357C7F463441884998F3F /* Pods-rft.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rft.release.xcconfig"; path = "Pods/Target Support Files/Pods-rft/Pods-rft.release.xcconfig"; sourceTree = "<group>"; };
@@ -87,6 +93,8 @@
 		1B7E84B6215F74D600574C33 /* rft */ = {
 			isa = PBXGroup;
 			children = (
+				1B7E84DC215FA20800574C33 /* Models */,
+				1B7E84DB215FA19400574C33 /* ViewControllers */,
 				1B7E84B7215F74D600574C33 /* AppDelegate.swift */,
 				1B7E84BD215F74D600574C33 /* Main.storyboard */,
 				1B7E84C0215F74D900574C33 /* Assets.xcassets */,
@@ -103,6 +111,23 @@
 				1B7E84D0215F74D900574C33 /* Info.plist */,
 			);
 			path = rftTests;
+			sourceTree = "<group>";
+		};
+		1B7E84DB215FA19400574C33 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				1B7E84E1215FA4C700574C33 /* LoginViewController.swift */,
+				1B7E84E3215FA7D600574C33 /* MainMenuViewController.swift */,
+				1B7E84E5215FAB3400574C33 /* TopListViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		1B7E84DC215FA20800574C33 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		CE7ED577EE5937835AD1249B /* Pods */ = {
@@ -288,6 +313,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1B7E84E6215FAB3400574C33 /* TopListViewController.swift in Sources */,
+				1B7E84E4215FA7D600574C33 /* MainMenuViewController.swift in Sources */,
+				1B7E84E2215FA4C700574C33 /* LoginViewController.swift in Sources */,
 				1B7E84B8215F74D600574C33 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
