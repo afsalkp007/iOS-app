@@ -7,8 +7,12 @@
 //
 
 import Foundation
+import UIKit
 
 struct Constants {
+    
+    static let kAppDelegate = UIApplication.shared.delegate as! AppDelegate
+    
     struct userDefaultsKeys {
         static let loggedInUser = "loggedInUser"
     }
@@ -18,5 +22,6 @@ struct Constants {
         static let LoginToMainScreen = "LoginToMainScreen"
         static let ShowLogin = "ShowLogin"
         static let ShowMainScreen = "ShowMainScreen"
+        static let Logout = "Logout"
     }
 }

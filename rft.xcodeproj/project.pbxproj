@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		033B8AAAAE0EC89D40278C37 /* Pods_rft.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5540A905528698F397D3E7F4 /* Pods_rft.framework */; };
 		078406149EB593CBBF17D89C /* Pods_rftTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2A6C985B0515ABA57AB773C /* Pods_rftTests.framework */; };
+		1B00851C2160B36C00610507 /* UIView+ShakeAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B00851B2160B36C00610507 /* UIView+ShakeAnimation.swift */; };
 		1B1766A1215FBEDF002BCC8F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1B1766A0215FBEDF002BCC8F /* GoogleService-Info.plist */; };
 		1B7E84B8215F74D600574C33 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7E84B7215F74D600574C33 /* AppDelegate.swift */; };
 		1B7E84BF215F74D600574C33 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B7E84BD215F74D600574C33 /* Main.storyboard */; };
@@ -37,12 +38,13 @@
 
 /* Begin PBXFileReference section */
 		0E5171FDC5B6148C8E050118 /* Pods-rft.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rft.debug.xcconfig"; path = "Pods/Target Support Files/Pods-rft/Pods-rft.debug.xcconfig"; sourceTree = "<group>"; };
+		1B00851B2160B36C00610507 /* UIView+ShakeAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+ShakeAnimation.swift"; sourceTree = "<group>"; };
+		1B0085232160C4B500610507 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		1B0085242160C4B500610507 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1B1766A0215FBEDF002BCC8F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1B7E84B4215F74D600574C33 /* rft.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = rft.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B7E84B7215F74D600574C33 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		1B7E84BE215F74D600574C33 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1B7E84C0215F74D900574C33 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		1B7E84C3215F74D900574C33 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1B7E84C5215F74D900574C33 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1B7E84CA215F74D900574C33 /* rftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = rftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B7E84CE215F74D900574C33 /* rftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rftTests.swift; sourceTree = "<group>"; };
@@ -153,6 +155,7 @@
 				1B7E84EA215FB23700574C33 /* RestClient.swift */,
 				1BF2A66A21600CBD00406BA9 /* Constants.swift */,
 				1BF2A66E21600DFE00406BA9 /* UserDefaults+KeyExists.swift */,
+				1B00851B2160B36C00610507 /* UIView+ShakeAnimation.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -404,6 +407,7 @@
 				1B7E84E2215FA4C700574C33 /* LoginViewController.swift in Sources */,
 				1BF2A66B21600CBD00406BA9 /* Constants.swift in Sources */,
 				1B7E84EB215FB23700574C33 /* RestClient.swift in Sources */,
+				1B00851C2160B36C00610507 /* UIView+ShakeAnimation.swift in Sources */,
 				1B7E84B8215F74D600574C33 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -430,7 +434,7 @@
 		1B7E84BD215F74D600574C33 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				1B7E84BE215F74D600574C33 /* Base */,
+				1B0085232160C4B500610507 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -438,7 +442,7 @@
 		1B7E84C2215F74D900574C33 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				1B7E84C3215F74D900574C33 /* Base */,
+				1B0085242160C4B500610507 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -450,6 +454,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -511,6 +516,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

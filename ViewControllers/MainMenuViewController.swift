@@ -7,10 +7,12 @@
 //
 
 import UIKit
+import Firebase
 
 class MainMenuViewController: UIViewController {
 
     @IBOutlet var userNameLabel: UILabel!
+    @IBOutlet var logoutButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +23,16 @@ class MainMenuViewController: UIViewController {
             userNameLabel.text = "Welcome \(username)"
         } else if let userEmail = user?.email {
             userNameLabel.text = "Welcome \(userEmail)"
+        }
+    }
+    
+    @IBAction func logoutButtonPressed(_ sender: Any) {
+        do {
+            try Auth.auth().signOut()
+            Constants.kAppDelegate.defaults.removeObject(forKey: Constants.userDefaultsKeys.loggedInUser)
+            performSegue(withIdentifier: Constants.segues.Logout, sender: self)
+        } catch {
+            NSLog("😢 logout failed")
         }
     }
 }
