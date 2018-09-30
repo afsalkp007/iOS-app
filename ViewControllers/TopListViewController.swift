@@ -7,9 +7,14 @@
 //
 
 import UIKit
+import Crashlytics
 
 class TopListViewController: UIViewController {
 
+    @IBAction func crashButton(_ sender: Any) {
+        Crashlytics.sharedInstance().crash()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }

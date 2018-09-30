@@ -17,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="--Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VYB-Ok-63X">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VYB-Ok-63X">
                                 <rect key="frame" x="37.5" y="277.5" width="300" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -26,7 +26,7 @@
                                     <action selector="userNameTextFieldEditingDidBegin:" destination="TkE-lv-74d" eventType="editingDidBegin" id="bco-E5-BBP"/>
                                 </connections>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="--Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QdU-97-TVJ">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QdU-97-TVJ">
                                 <rect key="frame" x="37.5" y="323.5" width="300" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -279,7 +279,20 @@
                     <view key="view" contentMode="scaleToFill" id="C9z-6J-6U5">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ctp-Ix-NDQ">
+                                <rect key="frame" x="164" y="318" width="46" height="30"/>
+                                <state key="normal" title="Crash!"/>
+                                <connections>
+                                    <action selector="crashButton:" destination="spH-IX-gL7" eventType="touchUpInside" id="ChX-Y1-bZD"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ctp-Ix-NDQ" firstAttribute="centerY" secondItem="Fbi-rO-T1i" secondAttribute="centerY" id="4G9-g8-7ZL"/>
+                            <constraint firstItem="ctp-Ix-NDQ" firstAttribute="centerX" secondItem="Fbi-rO-T1i" secondAttribute="centerX" id="zcl-om-8mO"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Fbi-rO-T1i"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="--Top list" id="U92-gb-cLi"/>
@@ -309,6 +322,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="K9a-2z-fkC"/>
+        <segue reference="BNj-8C-c0u"/>
     </inferredMetricsTieBreakers>
 </document>
