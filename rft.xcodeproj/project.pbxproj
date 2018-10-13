@@ -122,6 +122,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1B3D7A6F2172A1E600B13D91 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				1B3D7A6D2172A1B300B13D91 /* TopListDelegate.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		1B3D7A702172A1F300B13D91 /* Cell Binding */ = {
+			isa = PBXGroup;
+			children = (
+				1BE1E1872171EF2F003AC1DB /* DifficultyCellBinding.swift */,
+				1BE1E19921723E81003AC1DB /* SettingsCellBinding.swift */,
+				1B787A9E2172727900A04E6E /* TopListCellBinding.swift */,
+			);
+			path = "Cell Binding";
+			sourceTree = "<group>";
+		};
 		1B7E84AB215F74D600574C33 = {
 			isa = PBXGroup;
 			children = (
@@ -209,10 +227,8 @@
 		1B7E84EC215FB33F00574C33 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				1BE1E1872171EF2F003AC1DB /* DifficultyCellBinding.swift */,
-				1BE1E19921723E81003AC1DB /* SettingsCellBinding.swift */,
-				1B787A9E2172727900A04E6E /* TopListCellBinding.swift */,
-				1B3D7A6D2172A1B300B13D91 /* TopListDelegate.swift */,
+				1B3D7A702172A1F300B13D91 /* Cell Binding */,
+				1B3D7A6F2172A1E600B13D91 /* Network */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
