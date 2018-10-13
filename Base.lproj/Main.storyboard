@@ -355,7 +355,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rjj-m7-NGT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5743.1999999999998" y="947.67616191904051"/>
+            <point key="canvasLocation" x="5642" y="948"/>
         </scene>
         <!--Settings-->
         <scene sceneID="K2V-0Z-Hbw">
@@ -571,11 +571,11 @@
             </objects>
             <point key="canvasLocation" x="-753" y="1286"/>
         </scene>
-        <!-- -Top list-->
+        <!--Navigation Controller-->
         <scene sceneID="9Qz-oR-OiW">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="M0K-4r-5v5" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="--Top list" image="second" id="U92-gb-cLi"/>
+                    <tabBarItem key="tabBarItem" title="" image="second" id="U92-gb-cLi"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="feg-tE-9RU">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -606,7 +606,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I8U-yI-naW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4804" y="947.67616191904051"/>
+            <point key="canvasLocation" x="4804" y="948"/>
         </scene>
     </scenes>
     <resources>
