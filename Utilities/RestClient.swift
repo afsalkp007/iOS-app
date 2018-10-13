@@ -8,9 +8,11 @@
 
 import Foundation
 import Alamofire
+import SwiftyJSON
 
 protocol Networking {
-    
+    func getTopList(for difficulty: DifficultyLevel,  with delegate: TopListDelegate)
+    func getExercises(for difficulty: DifficultyLevel)
 }
 
 class RestClient: NSObject, Networking {
@@ -23,11 +25,53 @@ class RestClient: NSObject, Networking {
     }
     
     class func sharedInstance() -> RestClient {
-        return RestClient.shared
+        return self.shared
     }
     
-    // MARK: Login methods
+    // MARK: - Login methods
     
     
+    // MARK: - TopList methods
+    func getTopList(for difficulty: DifficultyLevel, with delegate: TopListDelegate) {
+        //TODO: Incorporate
+        Alamofire.request("https://www.mocky.io/v2/5bc244243100004e001fca81").responseJSON { response in
+            print("Request: \(String(describing: response.request))")   // original url request
+            print("Response: \(String(describing: response.response))") // http url response
+            print("Result: \(response.result)")                         // response serialization result
+            
+            if let error = response.error {
+                delegate.getTopListDidFail(error: error)
+            }
+            
+            
+            if let json = response.result.value {
+                print("JSON: \(json)") // serialized json response
+                let jsonData = JSON(json)
+                
+                var users: [MyUser] = []
+                for user in jsonData["users"] {
+                    var myUser = MyUser()
+                    myUser.name = user.1["name"].rawString()
+                    myUser.topScore = user.1["topScore"].rawString()
+                    myUser.position = user.1["position"].intValue
+                    users.append(myUser)
+                }
+                delegate.getTopListDidSuccess(users: users)
+            }
+            
+            if let data = response.data, let utf8Text = String(data: data, encoding: .utf8) {
+                print("Data: \(utf8Text)") // original server data as UTF8 string
+            }
+        }
+    }
     
+    // MARK: - Exercises
+    func getExercises(for difficulty: DifficultyLevel) {
+        
+    }
+}
+
+protocol TopListDelegate: NSObjectProtocol {
+    func getTopListDidSuccess(users: [MyUser])
+    func getTopListDidFail(error: Error?)
 }

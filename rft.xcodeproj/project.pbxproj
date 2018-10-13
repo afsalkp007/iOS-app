@@ -21,6 +21,7 @@
 		1B7E84E4215FA7D600574C33 /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7E84E3215FA7D600574C33 /* MainMenuViewController.swift */; };
 		1B7E84E6215FAB3400574C33 /* TopListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7E84E5215FAB3400574C33 /* TopListViewController.swift */; };
 		1B7E84EB215FB23700574C33 /* RestClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7E84EA215FB23700574C33 /* RestClient.swift */; };
+		1BD3FACA2172816E004D335D /* TopListProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD3FAC92172816E004D335D /* TopListProvider.swift */; };
 		1BE1E1842171E55A003AC1DB /* DifficultyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BE1E1832171E55A003AC1DB /* DifficultyCell.swift */; };
 		1BE1E1862171E9F0003AC1DB /* Difficulty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BE1E1852171E9F0003AC1DB /* Difficulty.swift */; };
 		1BE1E1882171EF2F003AC1DB /* DifficultyCellBinding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BE1E1872171EF2F003AC1DB /* DifficultyCellBinding.swift */; };
@@ -69,6 +70,7 @@
 		1B7E84E3215FA7D600574C33 /* MainMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuViewController.swift; sourceTree = "<group>"; };
 		1B7E84E5215FAB3400574C33 /* TopListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopListViewController.swift; sourceTree = "<group>"; };
 		1B7E84EA215FB23700574C33 /* RestClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestClient.swift; sourceTree = "<group>"; };
+		1BD3FAC92172816E004D335D /* TopListProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopListProvider.swift; sourceTree = "<group>"; };
 		1BE1E1832171E55A003AC1DB /* DifficultyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DifficultyCell.swift; sourceTree = "<group>"; };
 		1BE1E1852171E9F0003AC1DB /* Difficulty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Difficulty.swift; sourceTree = "<group>"; };
 		1BE1E1872171EF2F003AC1DB /* DifficultyCellBinding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DifficultyCellBinding.swift; sourceTree = "<group>"; };
@@ -248,6 +250,7 @@
 			children = (
 				1BE1E18E21722CFF003AC1DB /* DifficultyProvider.swift */,
 				1BE1E19F21724395003AC1DB /* SettingsItemProvider.swift */,
+				1BD3FAC92172816E004D335D /* TopListProvider.swift */,
 			);
 			path = "Data providers";
 			sourceTree = "<group>";
@@ -504,6 +507,7 @@
 				1BE1E1A221724BF2003AC1DB /* MyUser.swift in Sources */,
 				1BE1E1882171EF2F003AC1DB /* DifficultyCellBinding.swift in Sources */,
 				1B7E84E2215FA4C700574C33 /* LoginViewController.swift in Sources */,
+				1BD3FACA2172816E004D335D /* TopListProvider.swift in Sources */,
 				1BF2A66B21600CBD00406BA9 /* Constants.swift in Sources */,
 				1B7E84EB215FB23700574C33 /* RestClient.swift in Sources */,
 				1B00851C2160B36C00610507 /* UIView+ShakeAnimation.swift in Sources */,

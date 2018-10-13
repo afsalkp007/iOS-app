@@ -7,9 +7,8 @@
 //
 
 import Foundation
-import Firebase
 
-class MyUser: User {
+struct MyUser {
     var position: Int?
     var name: String?
     var topScore: String?

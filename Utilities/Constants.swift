@@ -29,9 +29,16 @@ struct Constants {
     struct Cells {
         static let DifficultyCell = "DifficultyCell"
         static let SettingsCell = "SettingsCell"
+        static let TopListCell = "TopListCell"
     }
     
     struct Notifications {
         static let StartButtonDidTouchUpInside = NSNotification.Name(rawValue: "StartButtonDidTouchUpInside")
     }
+}
+
+enum DifficultyLevel: Int {
+    case beginner = 0
+    case intermediate = 1
+    case advanced = 2
 }

@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 struct Difficulty {
-    var level: Int?
+    var level: DifficultyLevel?
     var name: String?
     var image: UIImage?
 }
