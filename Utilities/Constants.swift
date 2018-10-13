@@ -24,4 +24,8 @@ struct Constants {
         static let ShowMainScreen = "ShowMainScreen"
         static let Logout = "Logout"
     }
+    
+    struct Cells {
+        static let DifficultyCell = "DifficultyCell"
+    }
 }
