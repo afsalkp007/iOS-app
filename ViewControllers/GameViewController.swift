@@ -16,7 +16,16 @@ class GameViewController: UIViewController {
     
     
     @IBAction func dismissGame(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
+        let popup = UIAlertController(title: "Stop Game", message: "Are you sure you want to quit?", preferredStyle: .alert)
+        popup.addAction(UIAlertAction(title: "Yes", style: .default, handler: { [weak self] (action) in
+            self?.dismiss(animated: true, completion: nil)
+        }))
+        
+        popup.addAction(UIAlertAction(title: "No", style: .cancel, handler: { (action) in
+            popup.removeFromParent()
+        }))
+        
+        self.present(popup, animated: true, completion: nil)
     }
     
     override func viewDidLoad() {
