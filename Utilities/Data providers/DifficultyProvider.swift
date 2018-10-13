@@ -25,15 +25,15 @@ class DifficultyProvider: NSObject {
     
     func getDifficulties() -> [Difficulty] {
         var beginner = Difficulty()
-        beginner.name = "beginner".uppercased()
+        beginner.name = "Beginner"
         beginner.image = UIImage(named: "beginner")
         
         var intermediate = Difficulty()
-        intermediate.name = "intermediate".uppercased()
+        intermediate.name = "Intermediate"
         intermediate.image = UIImage(named: "intermediate")
         
         var advanced = Difficulty()
-        advanced.name = "advanced".uppercased()
+        advanced.name = "Advanced"
         advanced.image = UIImage(named: "advanced")
         
         return [beginner, intermediate, advanced]

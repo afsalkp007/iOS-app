@@ -32,6 +32,8 @@
 		1BE1E19A21723E81003AC1DB /* SettingsCellBinding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BE1E19921723E81003AC1DB /* SettingsCellBinding.swift */; };
 		1BE1E19C21723EA9003AC1DB /* SettingsItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BE1E19B21723EA9003AC1DB /* SettingsItem.swift */; };
 		1BE1E1A021724395003AC1DB /* SettingsItemProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BE1E19F21724395003AC1DB /* SettingsItemProvider.swift */; };
+		1BE1E1A221724BF2003AC1DB /* MyUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BE1E1A121724BF2003AC1DB /* MyUser.swift */; };
+		1BE1E1A421724CD5003AC1DB /* TopListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BE1E1A321724CD5003AC1DB /* TopListCell.swift */; };
 		1BF2A6692160054900406BA9 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BF2A6682160054900406BA9 /* RegistrationViewController.swift */; };
 		1BF2A66B21600CBD00406BA9 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BF2A66A21600CBD00406BA9 /* Constants.swift */; };
 		1BF2A66D21600DB900406BA9 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BF2A66C21600DB900406BA9 /* StartViewController.swift */; };
@@ -77,6 +79,8 @@
 		1BE1E19921723E81003AC1DB /* SettingsCellBinding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCellBinding.swift; sourceTree = "<group>"; };
 		1BE1E19B21723EA9003AC1DB /* SettingsItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsItem.swift; sourceTree = "<group>"; };
 		1BE1E19F21724395003AC1DB /* SettingsItemProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsItemProvider.swift; sourceTree = "<group>"; };
+		1BE1E1A121724BF2003AC1DB /* MyUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyUser.swift; sourceTree = "<group>"; };
+		1BE1E1A321724CD5003AC1DB /* TopListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopListCell.swift; sourceTree = "<group>"; };
 		1BF2A6682160054900406BA9 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		1BF2A66A21600CBD00406BA9 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		1BF2A66C21600DB900406BA9 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
@@ -172,6 +176,7 @@
 			children = (
 				1BE1E1852171E9F0003AC1DB /* Difficulty.swift */,
 				1BE1E19B21723EA9003AC1DB /* SettingsItem.swift */,
+				1BE1E1A121724BF2003AC1DB /* MyUser.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -212,6 +217,7 @@
 			children = (
 				1BE1E1832171E55A003AC1DB /* DifficultyCell.swift */,
 				1BE1E19521723CBB003AC1DB /* SettingsCell.swift */,
+				1BE1E1A321724CD5003AC1DB /* TopListCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -392,6 +398,9 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-rft/Pods-rft-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
@@ -404,6 +413,9 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
@@ -482,6 +494,7 @@
 				1BE1E19A21723E81003AC1DB /* SettingsCellBinding.swift in Sources */,
 				1BF2A6692160054900406BA9 /* RegistrationViewController.swift in Sources */,
 				1BE1E19C21723EA9003AC1DB /* SettingsItem.swift in Sources */,
+				1BE1E1A421724CD5003AC1DB /* TopListCell.swift in Sources */,
 				1BE1E18F21722CFF003AC1DB /* DifficultyProvider.swift in Sources */,
 				1BF2A66D21600DB900406BA9 /* StartViewController.swift in Sources */,
 				1BE1E1862171E9F0003AC1DB /* Difficulty.swift in Sources */,
@@ -491,6 +504,7 @@
 				1BE1E19221723777003AC1DB /* GameViewController.swift in Sources */,
 				1BE1E18B217222B5003AC1DB /* ShadowButton.swift in Sources */,
 				1B7E84E4215FA7D600574C33 /* MainMenuViewController.swift in Sources */,
+				1BE1E1A221724BF2003AC1DB /* MyUser.swift in Sources */,
 				1BE1E1882171EF2F003AC1DB /* DifficultyCellBinding.swift in Sources */,
 				1B7E84E2215FA4C700574C33 /* LoginViewController.swift in Sources */,
 				1BF2A66B21600CBD00406BA9 /* Constants.swift in Sources */,

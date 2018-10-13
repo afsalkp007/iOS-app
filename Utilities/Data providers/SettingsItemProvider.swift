@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import FBSDKLoginKit
 
 class SettingsItemProvider: NSObject {
     
@@ -29,6 +30,8 @@ class SettingsItemProvider: NSObject {
             userInfo.title = name
         } else if let email = Constants.kAppDelegate.loggedInUser?.email {
             userInfo.title = email
+        } else if let uName = FBSDKProfile.current()?.name {
+            userInfo.title = uName
         } else {
             userInfo.title = "You are not logged in."
         }
