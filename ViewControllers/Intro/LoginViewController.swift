@@ -9,7 +9,6 @@
 import UIKit
 import Firebase
 import GoogleSignIn
-import FBSDKLoginKit
 
 class LoginViewController: UIViewController, GIDSignInUIDelegate {
     
@@ -18,14 +17,11 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate {
     @IBOutlet var loginButton: ShadowButton!
     @IBOutlet var registerButton: UIButton!
     @IBOutlet var googleLoginButton: GIDSignInButton!
-    @IBOutlet var fbLoginButton: FBSDKLoginButton!
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
         GIDSignIn.sharedInstance().uiDelegate = self
-        fbLoginButton.delegate = self
-        fbLoginButton.readPermissions = ["public_profile", "email"]
         addGestureRecognizers()
         passwordTextField.addTarget(self, action: #selector(login), for: UIControl.Event.editingDidEndOnExit)
     }
@@ -86,31 +82,5 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate {
     
     @IBAction func didPressGoogleLoginButton(_ sender: Any) {
         GIDSignIn.sharedInstance()?.signIn()
-    }
-    
-    
-    
-}
-
-extension LoginViewController: FBSDKLoginButtonDelegate {
-    func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
-        //TODO: Implement Logout
-        
-    }
-    
-    func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {
-        if let error = error {
-            print(error.localizedDescription)
-            return
-        }
-        
-        let userName = FBSDKProfile.current()?.name
-        NSLog("\(userName) successfully logged in.")
-        
-        
-//        self.performSegue(withIdentifier: Constants.segues.LoginToMainScreen, sender: self)
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let controller = storyboard.instantiateViewController(withIdentifier: "MainTabbarController")
-        self.present(controller, animated: true, completion: nil)
     }
 }

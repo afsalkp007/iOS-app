@@ -9,7 +9,6 @@
 import UIKit
 import Firebase
 import GoogleSignIn
-import FBSDKCoreKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
@@ -34,8 +33,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         FirebaseApp.configure()
         GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
         GIDSignIn.sharedInstance().delegate = self
-        
-        FBSDKApplicationDelegate.sharedInstance()?.application(application, didFinishLaunchingWithOptions: launchOptions)
         
         if isKeyPresentInUserDefaults(key: Constants.userDefaultsKeys.loggedInUser) {
             let decoded = defaults.object(forKey: Constants.userDefaultsKeys.loggedInUser) as! Data

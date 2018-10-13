@@ -50,13 +50,6 @@
                                     <action selector="didPressLoginButton:" destination="TkE-lv-74d" eventType="touchUpInside" id="Tnr-ma-RKT"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AdT-Hu-XpJ" customClass="FBSDKLoginButton">
-                                <rect key="frame" x="94" y="429.5" width="187.5" height="44"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="2my-Zz-1sY"/>
-                                </constraints>
-                            </view>
                             <view userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UXp-Dj-6ex" customClass="GIDSignInButton">
                                 <rect key="frame" x="94" y="429.5" width="187.5" height="0.0"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -67,14 +60,14 @@
                                     <action selector="didPressGoogleLoginButton:" destination="TkE-lv-74d" eventType="touchUpInside" id="B0n-UN-5VN"/>
                                 </connections>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="or" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="41t-CG-QgQ">
-                                <rect key="frame" x="181" y="481.5" width="13.5" height="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="or" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="41t-CG-QgQ">
+                                <rect key="frame" x="181" y="437.5" width="13.5" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3dv-YC-f9a">
-                                <rect key="frame" x="159" y="502.5" width="57" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3dv-YC-f9a">
+                                <rect key="frame" x="159" y="458.5" width="57" height="30"/>
                                 <state key="normal" title="Register"/>
                                 <connections>
                                     <segue destination="OgE-PY-gZA" kind="show" id="Zar-35-IRI"/>
@@ -83,18 +76,14 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="41t-CG-QgQ" firstAttribute="top" secondItem="AdT-Hu-XpJ" secondAttribute="bottom" constant="8" id="4kU-GG-lec"/>
                             <constraint firstItem="UXp-Dj-6ex" firstAttribute="centerX" secondItem="Yom-4V-ZgY" secondAttribute="centerX" id="CZL-mj-sOZ"/>
                             <constraint firstItem="Yom-4V-ZgY" firstAttribute="centerX" secondItem="QdU-97-TVJ" secondAttribute="centerX" id="IPH-Oa-tai"/>
                             <constraint firstItem="UXp-Dj-6ex" firstAttribute="width" secondItem="Yom-4V-ZgY" secondAttribute="width" id="Ixi-iG-2Z5"/>
-                            <constraint firstItem="AdT-Hu-XpJ" firstAttribute="top" secondItem="UXp-Dj-6ex" secondAttribute="top" id="KdS-dQ-7bQ"/>
                             <constraint firstItem="VYB-Ok-63X" firstAttribute="centerX" secondItem="iCV-ae-X9N" secondAttribute="centerX" id="M9w-gD-pnP"/>
                             <constraint firstItem="3dv-YC-f9a" firstAttribute="centerX" secondItem="41t-CG-QgQ" secondAttribute="centerX" id="NHN-lp-ITC"/>
                             <constraint firstItem="UXp-Dj-6ex" firstAttribute="top" secondItem="Yom-4V-ZgY" secondAttribute="bottom" constant="16" id="PKV-7p-ZOM"/>
                             <constraint firstItem="Yom-4V-ZgY" firstAttribute="width" secondItem="iCV-ae-X9N" secondAttribute="width" multiplier="0.5" id="QSZ-OF-0pj"/>
                             <constraint firstItem="QdU-97-TVJ" firstAttribute="top" secondItem="VYB-Ok-63X" secondAttribute="bottom" constant="16" id="jGy-YK-z51"/>
-                            <constraint firstItem="AdT-Hu-XpJ" firstAttribute="centerX" secondItem="Yom-4V-ZgY" secondAttribute="centerX" id="jTK-Re-nJh"/>
-                            <constraint firstItem="AdT-Hu-XpJ" firstAttribute="width" secondItem="Yom-4V-ZgY" secondAttribute="width" id="kb8-1f-brv"/>
                             <constraint firstItem="QdU-97-TVJ" firstAttribute="centerX" secondItem="VYB-Ok-63X" secondAttribute="centerX" id="mpA-RI-cVZ"/>
                             <constraint firstItem="QdU-97-TVJ" firstAttribute="width" secondItem="VYB-Ok-63X" secondAttribute="width" id="p9n-h5-jE9"/>
                             <constraint firstItem="VYB-Ok-63X" firstAttribute="width" secondItem="iCV-ae-X9N" secondAttribute="width" multiplier="0.8" id="rin-83-Pck"/>
@@ -107,7 +96,6 @@
                     </view>
                     <navigationItem key="navigationItem" title="Login" largeTitleDisplayMode="always" id="7cj-bW-IOv"/>
                     <connections>
-                        <outlet property="fbLoginButton" destination="AdT-Hu-XpJ" id="bZ3-ez-xck"/>
                         <outlet property="googleLoginButton" destination="UXp-Dj-6ex" id="mfV-ZD-eAG"/>
                         <outlet property="loginButton" destination="Yom-4V-ZgY" id="vea-CP-4fF"/>
                         <outlet property="passwordTextField" destination="QdU-97-TVJ" id="6WY-kO-1F4"/>
@@ -472,15 +460,28 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10.23 s" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YmE-RI-R4M">
+                                                    <rect key="frame" x="304" y="11.5" width="55" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="D75-U4-W83" firstAttribute="leading" secondItem="MU9-pb-zTU" secondAttribute="trailing" constant="8" id="6Na-fH-NgC"/>
                                                 <constraint firstItem="MU9-pb-zTU" firstAttribute="leading" secondItem="aha-rW-oR9" secondAttribute="leading" constant="16" id="6tv-4E-OYJ"/>
-                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="D75-U4-W83" secondAttribute="trailing" constant="16" id="Fx1-xc-r2V"/>
+                                                <constraint firstItem="YmE-RI-R4M" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="D75-U4-W83" secondAttribute="trailing" constant="16" id="Fx1-xc-r2V"/>
                                                 <constraint firstItem="MU9-pb-zTU" firstAttribute="centerY" secondItem="aha-rW-oR9" secondAttribute="centerY" id="ZZx-yB-WrT"/>
                                                 <constraint firstItem="D75-U4-W83" firstAttribute="centerY" secondItem="MU9-pb-zTU" secondAttribute="centerY" id="ltK-qy-LaR"/>
+                                                <constraint firstItem="YmE-RI-R4M" firstAttribute="centerY" secondItem="aha-rW-oR9" secondAttribute="centerY" id="oQO-dC-tfg"/>
+                                                <constraint firstAttribute="trailing" secondItem="YmE-RI-R4M" secondAttribute="trailing" constant="16" id="v5M-tV-xbu"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="nameLabel" destination="D75-U4-W83" id="m33-IA-9c0"/>
+                                            <outlet property="positionLabel" destination="MU9-pb-zTU" id="2q5-L0-gR1"/>
+                                            <outlet property="timeLabel" destination="YmE-RI-R4M" id="gjy-7y-lQe"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>

@@ -1,5 +1,5 @@
 //
-//  MyUser.swift
+//  TopListCellBinding.swift
 //  rft
 //
 //  Created by Levente Vig on 2018. 10. 13..
@@ -7,10 +7,7 @@
 //
 
 import Foundation
-import Firebase
 
-class MyUser: User {
-    var position: Int?
-    var name: String?
-    var topScore: String?
+protocol TopListCellBinding {
+    func bind(to cell: TopListCell, with model: MyUser)
 }

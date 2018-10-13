@@ -11,6 +11,7 @@
 		078406149EB593CBBF17D89C /* Pods_rftTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2A6C985B0515ABA57AB773C /* Pods_rftTests.framework */; };
 		1B00851C2160B36C00610507 /* UIView+ShakeAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B00851B2160B36C00610507 /* UIView+ShakeAnimation.swift */; };
 		1B1766A1215FBEDF002BCC8F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1B1766A0215FBEDF002BCC8F /* GoogleService-Info.plist */; };
+		1B787A9F2172727900A04E6E /* TopListCellBinding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B787A9E2172727900A04E6E /* TopListCellBinding.swift */; };
 		1B7E84B8215F74D600574C33 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7E84B7215F74D600574C33 /* AppDelegate.swift */; };
 		1B7E84BF215F74D600574C33 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B7E84BD215F74D600574C33 /* Main.storyboard */; };
 		1B7E84C1215F74D900574C33 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B7E84C0215F74D900574C33 /* Assets.xcassets */; };
@@ -56,6 +57,7 @@
 		1B0085232160C4B500610507 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1B0085242160C4B500610507 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1B1766A0215FBEDF002BCC8F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		1B787A9E2172727900A04E6E /* TopListCellBinding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopListCellBinding.swift; sourceTree = "<group>"; };
 		1B7E84B4215F74D600574C33 /* rft.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = rft.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B7E84B7215F74D600574C33 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1B7E84C0215F74D900574C33 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -199,6 +201,7 @@
 			children = (
 				1BE1E1872171EF2F003AC1DB /* DifficultyCellBinding.swift */,
 				1BE1E19921723E81003AC1DB /* SettingsCellBinding.swift */,
+				1B787A9E2172727900A04E6E /* TopListCellBinding.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -398,9 +401,6 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-rft/Pods-rft-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
-				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
-				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
@@ -413,9 +413,6 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
@@ -511,6 +508,7 @@
 				1B7E84EB215FB23700574C33 /* RestClient.swift in Sources */,
 				1B00851C2160B36C00610507 /* UIView+ShakeAnimation.swift in Sources */,
 				1BE1E1842171E55A003AC1DB /* DifficultyCell.swift in Sources */,
+				1B787A9F2172727900A04E6E /* TopListCellBinding.swift in Sources */,
 				1B7E84B8215F74D600574C33 /* AppDelegate.swift in Sources */,
 				1BE1E19621723CBB003AC1DB /* SettingsCell.swift in Sources */,
 				1BE1E18D21722377003AC1DB /* UIView+ShadowAnimation.swift in Sources */,

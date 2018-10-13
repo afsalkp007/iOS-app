@@ -8,7 +8,6 @@
 
 import UIKit
 import Firebase
-import FBSDKLoginKit
 import RxSwift
 import RxCocoa
 
@@ -52,7 +51,6 @@ class SettingsViewController: UIViewController {
             try Auth.auth().signOut()
             Constants.kAppDelegate.defaults.removeObject(forKey: Constants.userDefaultsKeys.loggedInUser)
             performSegue(withIdentifier: Constants.segues.Logout, sender: self)
-            FBSDKLoginManager.init().logOut()
             NSLog("✅ logout complete")
         } catch {
             NSLog("😢 logout failed")
