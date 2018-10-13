@@ -32,7 +32,7 @@ class SettingsViewController: UIViewController {
             if row == 1 {
                 self?.logout()
             }
-            
+            self?.tableView.deselectRow(at: indexPath, animated: true)
             
         }).disposed(by: disposeBag)
         

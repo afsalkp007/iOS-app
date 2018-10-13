@@ -307,7 +307,11 @@
                         <viewLayoutGuide key="safeArea" id="ZGE-Ho-mkX"/>
                     </view>
                     <navigationItem key="navigationItem" title="Game" id="FZQ-AP-Jw0">
-                        <barButtonItem key="leftBarButtonItem" systemItem="stop" id="teO-ta-8Vw"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="stop" id="teO-ta-8Vw">
+                            <connections>
+                                <action selector="dismissGame:" destination="rfM-CS-Shp" id="AP0-CA-DvG"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rjj-m7-NGT" userLabel="First Responder" sceneMemberID="firstResponder"/>
