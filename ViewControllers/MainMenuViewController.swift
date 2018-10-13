@@ -8,11 +8,13 @@
 
 import UIKit
 import Firebase
+import RxSwift
 
 class MainMenuViewController: UIViewController {
 
     @IBOutlet var userNameLabel: UILabel!
     @IBOutlet var logoutButton: UIButton!
+    let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
