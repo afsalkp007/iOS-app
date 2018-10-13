@@ -303,7 +303,41 @@
                     <view key="view" contentMode="scaleToFill" id="Wba-jF-aT1">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00,00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2w9-SZ-GRx">
+                                <rect key="frame" x="152.5" y="96" width="70" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2+2-1=" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Evt-iP-AuD">
+                                <rect key="frame" x="16" y="133" width="343" height="38.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your answer!" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tmS-DD-UnD">
+                                <rect key="frame" x="37.5" y="275" width="300" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="GYV-Rc-agi"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad" enablesReturnKeyAutomatically="YES"/>
+                            </textField>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="2w9-SZ-GRx" firstAttribute="top" secondItem="ZGE-Ho-mkX" secondAttribute="top" constant="32" id="5WH-Q4-rfd"/>
+                            <constraint firstItem="tmS-DD-UnD" firstAttribute="centerY" secondItem="ZGE-Ho-mkX" secondAttribute="centerY" constant="-44" id="6Vo-7B-vE5"/>
+                            <constraint firstItem="tmS-DD-UnD" firstAttribute="centerX" secondItem="ZGE-Ho-mkX" secondAttribute="centerX" id="BD7-Yp-LSi"/>
+                            <constraint firstItem="tmS-DD-UnD" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Evt-iP-AuD" secondAttribute="bottom" constant="16" id="Nwz-Wy-Q54"/>
+                            <constraint firstItem="ZGE-Ho-mkX" firstAttribute="trailing" secondItem="Evt-iP-AuD" secondAttribute="trailing" constant="16" id="VwE-gc-M9S"/>
+                            <constraint firstItem="Evt-iP-AuD" firstAttribute="leading" secondItem="ZGE-Ho-mkX" secondAttribute="leading" constant="16" id="We2-i9-zi3"/>
+                            <constraint firstItem="2w9-SZ-GRx" firstAttribute="centerX" secondItem="ZGE-Ho-mkX" secondAttribute="centerX" id="bbd-o7-ZOo"/>
+                            <constraint firstItem="tmS-DD-UnD" firstAttribute="width" secondItem="Wba-jF-aT1" secondAttribute="width" multiplier="0.8" id="coC-XF-zwF"/>
+                            <constraint firstItem="Evt-iP-AuD" firstAttribute="top" secondItem="2w9-SZ-GRx" secondAttribute="bottom" constant="16" id="mkg-01-bM3"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="ZGE-Ho-mkX"/>
                     </view>
                     <navigationItem key="navigationItem" title="Game" id="FZQ-AP-Jw0">
@@ -313,6 +347,11 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="answerTextField" destination="tmS-DD-UnD" id="Nf7-EY-xqI"/>
+                        <outlet property="questionLabel" destination="Evt-iP-AuD" id="UnI-sf-P65"/>
+                        <outlet property="timerLabel" destination="2w9-SZ-GRx" id="9WP-wM-786"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rjj-m7-NGT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

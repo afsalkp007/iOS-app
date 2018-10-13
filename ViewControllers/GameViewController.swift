@@ -10,6 +10,10 @@ import UIKit
 
 class GameViewController: UIViewController {
     
+    @IBOutlet var timerLabel: UILabel!
+    @IBOutlet var questionLabel: UILabel!
+    @IBOutlet var answerTextField: UITextField!
+    
     
     @IBAction func dismissGame(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
@@ -17,5 +21,6 @@ class GameViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        answerTextField.addDoneButtonToKeyboard(myAction:  #selector(self.answerTextField.resignFirstResponder))
     }
 }
