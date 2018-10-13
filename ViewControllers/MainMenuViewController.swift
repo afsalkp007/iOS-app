@@ -12,20 +12,12 @@ import RxSwift
 
 class MainMenuViewController: UIViewController {
 
-    @IBOutlet var userNameLabel: UILabel!
-    @IBOutlet var logoutButton: UIButton!
+    @IBOutlet var tableView: UITableView!
     let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        let user = appDelegate.loggedInUser
-        if let username = user?.displayName {
-            userNameLabel.text = "Welcome \(username)"
-        } else if let userEmail = user?.email {
-            userNameLabel.text = "Welcome \(userEmail)"
-        }
+        tableView.tableFooterView = UIView()
     }
     
     @IBAction func logoutButtonPressed(_ sender: Any) {
