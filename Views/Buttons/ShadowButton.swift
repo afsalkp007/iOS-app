@@ -10,9 +10,25 @@ import Foundation
 import UIKit
 
 class ShadowButton: UIButton {
-    override func draw(_ rect: CGRect) {
-        super.draw(rect)
-        self.layer.cornerRadius = 8.0
+    var shadowLayer: CAShapeLayer!
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        if shadowLayer == nil {
+            shadowLayer = CAShapeLayer()
+            shadowLayer.path = UIBezierPath(roundedRect: bounds, cornerRadius: 8).cgPath
+            shadowLayer.fillColor = UIColor.clear.cgColor
+            
+            shadowLayer.shadowColor = UIColor.darkGray.cgColor
+            shadowLayer.shadowPath = shadowLayer.path
+            shadowLayer.shadowOffset = CGSize(width: 0.0, height: -2.0)
+            shadowLayer.shadowOpacity = 0.2
+            shadowLayer.shadowRadius = 2
+            
+//            layer.insertSublayer(shadowLayer, at: 0)
+            layer.insertSublayer(shadowLayer, below: nil) // also works
+        }
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -21,6 +37,7 @@ class ShadowButton: UIButton {
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.addShadowOnTouch(from: self.layer.shadowOpacity, to: 0.2)
+        NotificationCenter.default.post(name: Constants.Notifications.StartButtonDidTouchUpInside, object: nil)
     }
     
     override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {

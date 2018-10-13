@@ -13,7 +13,7 @@ class RegistrationViewController: UIViewController {
     
     @IBOutlet var emailTextField: UITextField!
     @IBOutlet var passwordTextField: UITextField!
-    @IBOutlet var signUpButton: UIButton!
+    @IBOutlet var signUpButton: ShadowButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -23,9 +23,14 @@ struct Constants {
         static let ShowLogin = "ShowLogin"
         static let ShowMainScreen = "ShowMainScreen"
         static let Logout = "Logout"
+        static let StartGame = "StartGame"
     }
     
     struct Cells {
         static let DifficultyCell = "DifficultyCell"
+    }
+    
+    struct Notifications {
+        static let StartButtonDidTouchUpInside = NSNotification.Name(rawValue: "StartButtonDidTouchUpInside")
     }
 }

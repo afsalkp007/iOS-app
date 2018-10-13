@@ -14,7 +14,7 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate {
     
     @IBOutlet var userNameTextField: UITextField!
     @IBOutlet var passwordTextField: UITextField!
-    @IBOutlet var loginButton: UIButton!
+    @IBOutlet var loginButton: ShadowButton!
     @IBOutlet var registerButton: UIButton!
     @IBOutlet var googleLoginButton: GIDSignInButton!
     

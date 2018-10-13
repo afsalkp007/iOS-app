@@ -24,11 +24,7 @@ class MainMenuViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        var diff1 = Difficulty()
-        diff1.name = "easy"
-        var diff2 = Difficulty()
-        diff2.name = "intermediate"
-        difficulties.accept([diff1, diff2])
+        difficulties.accept(DifficultyProvider.sharedInstance().getDifficulties())
         
         difficulties.asObservable().bind(to: self.tableView.rx.items(cellIdentifier: Constants.Cells.DifficultyCell)) { [weak self] (index, model, cell: DifficultyCell) in
             self?.bind(to: cell, with: model)
@@ -44,10 +40,12 @@ class MainMenuViewController: UIViewController {
         
         setupTableView()
         setupStartButton()
+        setupNotifications()
     }
     
     func setupTableView() {
         tableView.rx.setDelegate(self).disposed(by: disposeBag)
+        tableView.selectRow(at: IndexPath(row: 0, section: 0), animated: false, scrollPosition: .none)
         tableView.contentInset = UIEdgeInsets(top: 8, left: 0, bottom: 0, right: 0)
         tableView.separatorStyle = .none
         tableView.tableFooterView = UIView()
@@ -61,15 +59,19 @@ class MainMenuViewController: UIViewController {
         startButton.layer.shadowOffset = CGSize(width: 0, height: 2)
     }
     
-    
+    func setupNotifications() {
+        NotificationCenter.default.addObserver(self, selector: #selector(startButtonTapped), name: Constants.Notifications.StartButtonDidTouchUpInside, object: nil)
+    }
     
     //MARK: - Navigation
-    @IBAction func startButtonTapped(_ sender: Any) {
+    @objc private func startButtonTapped() {
         if let selectedLevel = tableView.indexPathForSelectedRow?.row {
             NSLog("💥 Start button tapped for level \(String(describing: selectedLevel))")
+            performSegue(withIdentifier: Constants.segues.StartGame, sender: nil)
             //TODO: [RestClient loadExercisesForLevel: selectedLevel]
         } else {
             //TODO: error please select a level
+            NSLog("😢 No level selected.")
         }
     }
     
