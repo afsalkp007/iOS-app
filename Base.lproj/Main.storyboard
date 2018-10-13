@@ -204,13 +204,39 @@
                                 <rect key="frame" x="0.0" y="116" width="375" height="502"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="AJm-Ea-xpp">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="DifficultyCell" id="AJm-Ea-xpp" customClass="DifficultyCell" customModule="rft" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="AJm-Ea-xpp" id="bfg-bV-9ON">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="R1m-ie-peG">
+                                                    <rect key="frame" x="8" y="2" width="39" height="39.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="R1m-ie-peG" secondAttribute="height" multiplier="1:1" id="Cvd-JM-woO"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oki-Iv-3mw">
+                                                    <rect key="frame" x="55" y="11.5" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Oki-Iv-3mw" firstAttribute="centerY" secondItem="R1m-ie-peG" secondAttribute="centerY" id="Job-W3-bnr"/>
+                                                <constraint firstItem="R1m-ie-peG" firstAttribute="height" secondItem="bfg-bV-9ON" secondAttribute="height" multiplier="0.9" id="KNB-eS-BEg"/>
+                                                <constraint firstItem="R1m-ie-peG" firstAttribute="leading" secondItem="bfg-bV-9ON" secondAttribute="leading" constant="8" id="o8k-rF-4Y9"/>
+                                                <constraint firstItem="Oki-Iv-3mw" firstAttribute="leading" secondItem="R1m-ie-peG" secondAttribute="trailing" constant="8" id="sbZ-Bp-nuN"/>
+                                                <constraint firstItem="R1m-ie-peG" firstAttribute="centerY" secondItem="bfg-bV-9ON" secondAttribute="centerY" id="wUW-6F-rQt"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Oki-Iv-3mw" secondAttribute="trailing" constant="8" id="x2q-kf-8bC"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="levelImageView" destination="R1m-ie-peG" id="ThP-Ly-p6k"/>
+                                            <outlet property="titleLabel" destination="Oki-Iv-3mw" id="Em6-c2-FH4"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>

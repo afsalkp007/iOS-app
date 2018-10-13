@@ -19,14 +19,4 @@ class MainMenuViewController: UIViewController {
         super.viewDidLoad()
         tableView.tableFooterView = UIView()
     }
-    
-    @IBAction func logoutButtonPressed(_ sender: Any) {
-        do {
-            try Auth.auth().signOut()
-            Constants.kAppDelegate.defaults.removeObject(forKey: Constants.userDefaultsKeys.loggedInUser)
-            performSegue(withIdentifier: Constants.segues.Logout, sender: self)
-        } catch {
-            NSLog("😢 logout failed")
-        }
-    }
 }
