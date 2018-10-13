@@ -41,7 +41,7 @@ class TopListViewController: UIViewController {
         tableView.tableFooterView = UIView()
     }
     
-    //MARK: -
+    // MARK: - Level chooser
     
     @IBAction func levelSelected(_ sender: UISegmentedControl) {
         let index = sender.selectedSegmentIndex
@@ -50,6 +50,8 @@ class TopListViewController: UIViewController {
         RestClient.sharedInstance().getTopList(for: level, with: self)
     }
 }
+
+// MARK: - Protocol implementations
 
 extension TopListViewController: TopListCellBinding {
     func bind(to cell: TopListCell, with model: MyUser) {

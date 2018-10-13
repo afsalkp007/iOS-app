@@ -9,6 +9,10 @@
 import Foundation
 import UIKit
 
+
+/**
+ Cell representing a difficulty level.
+ */
 class DifficultyCell: UITableViewCell {
     
     @IBOutlet var wrapperView: UIView!
@@ -20,6 +24,9 @@ class DifficultyCell: UITableViewCell {
         wrapperView.layer.cornerRadius = 8
     }
     
+    /**
+     Selecting the cell increases it's shadow opacity.
+     */
     override func setSelected(_ selected: Bool, animated: Bool) {
         self.selectionStyle = .none
         if selected {

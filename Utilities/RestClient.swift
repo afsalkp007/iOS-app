@@ -32,8 +32,14 @@ class RestClient: NSObject, Networking {
     
     
     // MARK: - TopList methods
+    
+    /**
+     Fetches the users' data for a selected level from the backend service.
+     - Parameter difficulty : The difficulty level for loading results
+     - Parameter delegate : The delegate which implements the `TopListDelegate` protocol
+     */
     func getTopList(for difficulty: DifficultyLevel, with delegate: TopListDelegate) {
-        //TODO: Incorporate
+        //TODO: Incorporate difficulty into request.
         Alamofire.request("https://www.mocky.io/v2/5bc244243100004e001fca81").responseJSON { response in
             print("Request: \(String(describing: response.request))")   // original url request
             print("Response: \(String(describing: response.response))") // http url response
@@ -71,6 +77,10 @@ class RestClient: NSObject, Networking {
     }
 }
 
+
+/**
+ A delegate for interatcing with the toplist.
+ */
 protocol TopListDelegate: NSObjectProtocol {
     func getTopListDidSuccess(users: [MyUser])
     func getTopListDidFail(error: Error?)

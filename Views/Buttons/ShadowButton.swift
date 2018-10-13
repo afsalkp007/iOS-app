@@ -9,6 +9,11 @@
 import Foundation
 import UIKit
 
+
+/**
+ A button with nice rounded shadows.
+ The shadow opacity increases when you touch the button.
+ */
 class ShadowButton: UIButton {
     var shadowLayer: CAShapeLayer!
     
