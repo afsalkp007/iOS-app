@@ -31,6 +31,7 @@
 		1BE1E19621723CBB003AC1DB /* SettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BE1E19521723CBB003AC1DB /* SettingsCell.swift */; };
 		1BE1E19A21723E81003AC1DB /* SettingsCellBinding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BE1E19921723E81003AC1DB /* SettingsCellBinding.swift */; };
 		1BE1E19C21723EA9003AC1DB /* SettingsItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BE1E19B21723EA9003AC1DB /* SettingsItem.swift */; };
+		1BE1E1A021724395003AC1DB /* SettingsItemProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BE1E19F21724395003AC1DB /* SettingsItemProvider.swift */; };
 		1BF2A6692160054900406BA9 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BF2A6682160054900406BA9 /* RegistrationViewController.swift */; };
 		1BF2A66B21600CBD00406BA9 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BF2A66A21600CBD00406BA9 /* Constants.swift */; };
 		1BF2A66D21600DB900406BA9 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BF2A66C21600DB900406BA9 /* StartViewController.swift */; };
@@ -75,6 +76,7 @@
 		1BE1E19521723CBB003AC1DB /* SettingsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCell.swift; sourceTree = "<group>"; };
 		1BE1E19921723E81003AC1DB /* SettingsCellBinding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCellBinding.swift; sourceTree = "<group>"; };
 		1BE1E19B21723EA9003AC1DB /* SettingsItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsItem.swift; sourceTree = "<group>"; };
+		1BE1E19F21724395003AC1DB /* SettingsItemProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsItemProvider.swift; sourceTree = "<group>"; };
 		1BF2A6682160054900406BA9 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		1BF2A66A21600CBD00406BA9 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		1BF2A66C21600DB900406BA9 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
@@ -177,12 +179,12 @@
 		1B7E84E7215FB21000574C33 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				1BE1E19D2172437B003AC1DB /* Data providers */,
 				1B7E84EA215FB23700574C33 /* RestClient.swift */,
 				1BF2A66A21600CBD00406BA9 /* Constants.swift */,
 				1BF2A66E21600DFE00406BA9 /* UserDefaults+KeyExists.swift */,
 				1B00851B2160B36C00610507 /* UIView+ShakeAnimation.swift */,
 				1BE1E18C21722377003AC1DB /* UIView+ShadowAnimation.swift */,
-				1BE1E18E21722CFF003AC1DB /* DifficultyProvider.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -230,6 +232,15 @@
 				1BF2A6682160054900406BA9 /* RegistrationViewController.swift */,
 			);
 			path = Intro;
+			sourceTree = "<group>";
+		};
+		1BE1E19D2172437B003AC1DB /* Data providers */ = {
+			isa = PBXGroup;
+			children = (
+				1BE1E18E21722CFF003AC1DB /* DifficultyProvider.swift */,
+				1BE1E19F21724395003AC1DB /* SettingsItemProvider.swift */,
+			);
+			path = "Data providers";
 			sourceTree = "<group>";
 		};
 		CE7ED577EE5937835AD1249B /* Pods */ = {
@@ -474,6 +485,7 @@
 				1BE1E18F21722CFF003AC1DB /* DifficultyProvider.swift in Sources */,
 				1BF2A66D21600DB900406BA9 /* StartViewController.swift in Sources */,
 				1BE1E1862171E9F0003AC1DB /* Difficulty.swift in Sources */,
+				1BE1E1A021724395003AC1DB /* SettingsItemProvider.swift in Sources */,
 				1BF2A66F21600DFE00406BA9 /* UserDefaults+KeyExists.swift in Sources */,
 				1B7E84E6215FAB3400574C33 /* TopListViewController.swift in Sources */,
 				1BE1E19221723777003AC1DB /* GameViewController.swift in Sources */,

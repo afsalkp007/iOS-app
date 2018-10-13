@@ -28,6 +28,7 @@ struct Constants {
     
     struct Cells {
         static let DifficultyCell = "DifficultyCell"
+        static let SettingsCell = "SettingsCell"
     }
     
     struct Notifications {
