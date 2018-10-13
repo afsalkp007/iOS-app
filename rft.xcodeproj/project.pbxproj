@@ -183,10 +183,10 @@
 		1B7E84B6215F74D600574C33 /* rft */ = {
 			isa = PBXGroup;
 			children = (
-				1BE1E1812171E537003AC1DB /* Views */,
 				1B7E84DC215FA20800574C33 /* Models */,
 				1B7E84EC215FB33F00574C33 /* Protocols */,
 				1B7E84E7215FB21000574C33 /* Utilities */,
+				1BE1E1812171E537003AC1DB /* Views */,
 				1B7E84DB215FA19400574C33 /* ViewControllers */,
 				1B3D7A722172A24800B13D91 /* Supporting Files */,
 				1B7E84B7215F74D600574C33 /* AppDelegate.swift */,
