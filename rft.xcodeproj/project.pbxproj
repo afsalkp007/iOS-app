@@ -140,6 +140,26 @@
 			path = "Cell Binding";
 			sourceTree = "<group>";
 		};
+		1B3D7A712172A21E00B13D91 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				1BF2A66E21600DFE00406BA9 /* UserDefaults+KeyExists.swift */,
+				1B00851B2160B36C00610507 /* UIView+ShakeAnimation.swift */,
+				1BE1E18C21722377003AC1DB /* UIView+ShadowAnimation.swift */,
+				1B3D7A68217293FF00B13D91 /* UITextField+DoneButton.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		1B3D7A722172A24800B13D91 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1B7E84C5215F74D900574C33 /* Info.plist */,
+				1B1766A0215FBEDF002BCC8F /* GoogleService-Info.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		1B7E84AB215F74D600574C33 = {
 			isa = PBXGroup;
 			children = (
@@ -168,12 +188,11 @@
 				1B7E84EC215FB33F00574C33 /* Protocols */,
 				1B7E84E7215FB21000574C33 /* Utilities */,
 				1B7E84DB215FA19400574C33 /* ViewControllers */,
+				1B3D7A722172A24800B13D91 /* Supporting Files */,
 				1B7E84B7215F74D600574C33 /* AppDelegate.swift */,
 				1B7E84BD215F74D600574C33 /* Main.storyboard */,
 				1B7E84C0215F74D900574C33 /* Assets.xcassets */,
 				1B7E84C2215F74D900574C33 /* LaunchScreen.storyboard */,
-				1B7E84C5215F74D900574C33 /* Info.plist */,
-				1B1766A0215FBEDF002BCC8F /* GoogleService-Info.plist */,
 			);
 			name = rft;
 			sourceTree = "<group>";
@@ -213,13 +232,10 @@
 		1B7E84E7215FB21000574C33 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				1B3D7A712172A21E00B13D91 /* Extensions */,
 				1BE1E19D2172437B003AC1DB /* Data providers */,
 				1B7E84EA215FB23700574C33 /* RestClient.swift */,
 				1BF2A66A21600CBD00406BA9 /* Constants.swift */,
-				1BF2A66E21600DFE00406BA9 /* UserDefaults+KeyExists.swift */,
-				1B00851B2160B36C00610507 /* UIView+ShakeAnimation.swift */,
-				1BE1E18C21722377003AC1DB /* UIView+ShadowAnimation.swift */,
-				1B3D7A68217293FF00B13D91 /* UITextField+DoneButton.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -712,7 +728,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 48KF4TL849;
-				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -732,7 +748,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 48KF4TL849;
-				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
