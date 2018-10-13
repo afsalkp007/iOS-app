@@ -227,7 +227,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
-                                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstItem="Oki-Iv-3mw" firstAttribute="centerY" secondItem="R1m-ie-peG" secondAttribute="centerY" id="0Pf-DL-itz"/>
                                                         <constraint firstItem="R1m-ie-peG" firstAttribute="centerY" secondItem="n7K-kI-YWm" secondAttribute="centerY" id="2rL-9y-6Eh"/>
@@ -248,11 +248,12 @@
                                         <connections>
                                             <outlet property="levelImageView" destination="R1m-ie-peG" id="ThP-Ly-p6k"/>
                                             <outlet property="titleLabel" destination="Oki-Iv-3mw" id="Em6-c2-FH4"/>
+                                            <outlet property="wrapperView" destination="n7K-kI-YWm" id="Dds-MK-nhO"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vYn-pN-zg3">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vYn-pN-zg3" customClass="ShadowButton" customModule="rft" customModuleProvider="target">
                                 <rect key="frame" x="105" y="542" width="165" height="44"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>

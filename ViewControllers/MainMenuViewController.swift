@@ -14,39 +14,36 @@ import RxCocoa
 class MainMenuViewController: UIViewController {
 
     @IBOutlet var tableView: UITableView!
-    @IBOutlet var startButton: UIButton!
+    @IBOutlet var startButton: ShadowButton!
     
     let difficulties: BehaviorRelay<[Difficulty]> = BehaviorRelay(value: [])
     let disposeBag = DisposeBag()
+    
+    //MARK: - Init
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         var diff1 = Difficulty()
         diff1.name = "easy"
-        
         var diff2 = Difficulty()
         diff2.name = "intermediate"
-        
-        
         difficulties.accept([diff1, diff2])
         
         difficulties.asObservable().bind(to: self.tableView.rx.items(cellIdentifier: Constants.Cells.DifficultyCell)) { [weak self] (index, model, cell: DifficultyCell) in
             self?.bind(to: cell, with: model)
+            cell.wrapperView.clipsToBounds = false
+            cell.wrapperView.layer.shadowColor = UIColor(displayP3Red: 0, green: 0, blue: 0, alpha: 1.0).cgColor
+            cell.wrapperView.layer.shadowOpacity = 0.3
+            cell.wrapperView.layer.shadowOffset = CGSize(width: 0, height: 2)
         }.disposed(by: disposeBag)
         
-//        tableView.rx.itemSelected.subscribe(onNext: { indexPath in
-//            let row = indexPath.row
-//            NSLog("✅ \(row) row selected")
-//        }).disposed(by: disposeBag)
-        
         tableView.rx.itemSelected.subscribe(onNext: { indexPath in
-            let row = indexPath.row
-            NSLog("✅ Row \(row) selected")
-            self.tableView.deselectRow(at: indexPath, animated: false)
+            NSLog("✅ Row \(indexPath.row) selected")
         }).disposed(by: disposeBag)
         
         setupTableView()
+        setupStartButton()
     }
     
     func setupTableView() {
@@ -56,9 +53,30 @@ class MainMenuViewController: UIViewController {
         tableView.tableFooterView = UIView()
     }
     
-    @IBAction func startButtonTapped(_ sender: Any) {
-        NSLog("💥 Start button tapped")
+    func setupStartButton() {
+        startButton.clipsToBounds = false
+        startButton.layer.cornerRadius = 8
+        startButton.layer.shadowColor = UIColor(displayP3Red: 0, green: 0, blue: 0, alpha: 1.0).cgColor
+        startButton.layer.shadowOpacity = 0.3
+        startButton.layer.shadowOffset = CGSize(width: 0, height: 2)
     }
+    
+    
+    
+    //MARK: - Navigation
+    @IBAction func startButtonTapped(_ sender: Any) {
+        if let selectedLevel = tableView.indexPathForSelectedRow?.row {
+            NSLog("💥 Start button tapped for level \(String(describing: selectedLevel))")
+            //TODO: [RestClient loadExercisesForLevel: selectedLevel]
+        } else {
+            //TODO: error please select a level
+        }
+    }
+    
+    
+    //MARK: - RestClient
+    
+    
 }
 
 extension MainMenuViewController: DifficultyCellBinding {

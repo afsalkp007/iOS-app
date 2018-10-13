@@ -23,6 +23,8 @@
 		1BE1E1842171E55A003AC1DB /* DifficultyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BE1E1832171E55A003AC1DB /* DifficultyCell.swift */; };
 		1BE1E1862171E9F0003AC1DB /* Difficulty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BE1E1852171E9F0003AC1DB /* Difficulty.swift */; };
 		1BE1E1882171EF2F003AC1DB /* DifficultyCellBinding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BE1E1872171EF2F003AC1DB /* DifficultyCellBinding.swift */; };
+		1BE1E18B217222B5003AC1DB /* ShadowButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BE1E18A217222B5003AC1DB /* ShadowButton.swift */; };
+		1BE1E18D21722377003AC1DB /* UIView+ShadowAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BE1E18C21722377003AC1DB /* UIView+ShadowAnimation.swift */; };
 		1BF2A6692160054900406BA9 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BF2A6682160054900406BA9 /* RegistrationViewController.swift */; };
 		1BF2A66B21600CBD00406BA9 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BF2A66A21600CBD00406BA9 /* Constants.swift */; };
 		1BF2A66D21600DB900406BA9 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BF2A66C21600DB900406BA9 /* StartViewController.swift */; };
@@ -59,6 +61,8 @@
 		1BE1E1832171E55A003AC1DB /* DifficultyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DifficultyCell.swift; sourceTree = "<group>"; };
 		1BE1E1852171E9F0003AC1DB /* Difficulty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Difficulty.swift; sourceTree = "<group>"; };
 		1BE1E1872171EF2F003AC1DB /* DifficultyCellBinding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DifficultyCellBinding.swift; sourceTree = "<group>"; };
+		1BE1E18A217222B5003AC1DB /* ShadowButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowButton.swift; sourceTree = "<group>"; };
+		1BE1E18C21722377003AC1DB /* UIView+ShadowAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+ShadowAnimation.swift"; sourceTree = "<group>"; };
 		1BF2A6682160054900406BA9 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		1BF2A66A21600CBD00406BA9 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		1BF2A66C21600DB900406BA9 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
@@ -164,6 +168,7 @@
 				1BF2A66A21600CBD00406BA9 /* Constants.swift */,
 				1BF2A66E21600DFE00406BA9 /* UserDefaults+KeyExists.swift */,
 				1B00851B2160B36C00610507 /* UIView+ShakeAnimation.swift */,
+				1BE1E18C21722377003AC1DB /* UIView+ShadowAnimation.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -179,6 +184,7 @@
 		1BE1E1812171E537003AC1DB /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				1BE1E189217222A4003AC1DB /* Buttons */,
 				1BE1E1822171E541003AC1DB /* Cells */,
 			);
 			path = Views;
@@ -190,6 +196,14 @@
 				1BE1E1832171E55A003AC1DB /* DifficultyCell.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		1BE1E189217222A4003AC1DB /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				1BE1E18A217222B5003AC1DB /* ShadowButton.swift */,
+			);
+			path = Buttons;
 			sourceTree = "<group>";
 		};
 		CE7ED577EE5937835AD1249B /* Pods */ = {
@@ -433,6 +447,7 @@
 				1BE1E1862171E9F0003AC1DB /* Difficulty.swift in Sources */,
 				1BF2A66F21600DFE00406BA9 /* UserDefaults+KeyExists.swift in Sources */,
 				1B7E84E6215FAB3400574C33 /* TopListViewController.swift in Sources */,
+				1BE1E18B217222B5003AC1DB /* ShadowButton.swift in Sources */,
 				1B7E84E4215FA7D600574C33 /* MainMenuViewController.swift in Sources */,
 				1BE1E1882171EF2F003AC1DB /* DifficultyCellBinding.swift in Sources */,
 				1B7E84E2215FA4C700574C33 /* LoginViewController.swift in Sources */,
@@ -441,6 +456,7 @@
 				1B00851C2160B36C00610507 /* UIView+ShakeAnimation.swift in Sources */,
 				1BE1E1842171E55A003AC1DB /* DifficultyCell.swift in Sources */,
 				1B7E84B8215F74D600574C33 /* AppDelegate.swift in Sources */,
+				1BE1E18D21722377003AC1DB /* UIView+ShadowAnimation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
