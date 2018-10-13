@@ -82,7 +82,6 @@ PODS:
     - RxSwift (~> 4.0)
   - RxSwift (4.3.1)
   - SwiftyJSON (4.1.0)
-  - XLPagerTabStrip (8.0.1)
 
 DEPENDENCIES:
   - Alamofire (~> 4.7)
@@ -94,7 +93,6 @@ DEPENDENCIES:
   - RxCocoa (~> 4.0)
   - RxSwift (~> 4.0)
   - SwiftyJSON (~> 4.0)
-  - XLPagerTabStrip (~> 8.0)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -117,7 +115,6 @@ SPEC REPOS:
     - RxCocoa
     - RxSwift
     - SwiftyJSON
-    - XLPagerTabStrip
 
 SPEC CHECKSUMS:
   Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
@@ -139,8 +136,7 @@ SPEC CHECKSUMS:
   RxCocoa: 78763c7b07d02455598d9fc3c1ad091a28b73635
   RxSwift: fe0fd770a43acdb7d0a53da411c9b892e69bb6e4
   SwiftyJSON: c29297daf073d2aa016295d5809cdd68045c39b3
-  XLPagerTabStrip: c908b17cbf42fcd2598ee1adfc49bae25444d88a
 
-PODFILE CHECKSUM: 785f2b9d4e934b40671618893e33da50fca85563
+PODFILE CHECKSUM: 657a858ce40f67e7dde4855315418903da4213ee
 
 COCOAPODS: 1.5.3

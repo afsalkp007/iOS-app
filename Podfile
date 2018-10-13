@@ -15,7 +15,6 @@ target 'rft' do
     pod 'Crashlytics', '~> 3.10.7'
     pod 'RxSwift',    '~> 4.0'
     pod 'RxCocoa',    '~> 4.0'
-    pod 'XLPagerTabStrip', '~> 8.0'
     
     target 'rftTests' do
         inherit! :search_paths
