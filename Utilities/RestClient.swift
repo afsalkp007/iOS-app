@@ -40,6 +40,7 @@ class RestClient: NSObject, Networking {
      */
     func getTopList(for difficulty: DifficultyLevel, with delegate: TopListDelegate) {
         //TODO: Incorporate difficulty into request.
+//        let url = "\(Constants.kBaseURL)/topList?level=\(difficulty.rawValue)"
         Alamofire.request("https://www.mocky.io/v2/5bc244243100004e001fca81").responseJSON { response in
             print("Request: \(String(describing: response.request))")   // original url request
             print("Response: \(String(describing: response.response))") // http url response
@@ -73,15 +74,7 @@ class RestClient: NSObject, Networking {
     
     // MARK: - Exercises
     func getExercises(for difficulty: DifficultyLevel) {
-        
+        //TODO: Get exercises for appropiate level
+//        let url = "\(Constants.kBaseURL)/exercuises?level=\(difficulty.rawValue)"
     }
-}
-
-
-/**
- A delegate for interatcing with the toplist.
- */
-protocol TopListDelegate: NSObjectProtocol {
-    func getTopListDidSuccess(users: [MyUser])
-    func getTopListDidFail(error: Error?)
 }

@@ -7,3 +7,11 @@
 //
 
 import Foundation
+
+/**
+ A delegate for interatcing with the toplist.
+ */
+protocol TopListDelegate: NSObjectProtocol {
+    func getTopListDidSuccess(users: [MyUser])
+    func getTopListDidFail(error: Error?)
+}

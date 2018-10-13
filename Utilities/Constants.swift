@@ -12,6 +12,7 @@ import UIKit
 struct Constants {
     
     static let kAppDelegate = UIApplication.shared.delegate as! AppDelegate
+    static let kBaseURL = "https://rft.com/api/v1"
     
     struct userDefaultsKeys {
         static let loggedInUser = "loggedInUser"
