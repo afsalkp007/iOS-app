@@ -69,7 +69,7 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate {
                 NSLog("👌 \(String(describing: result?.user.email)) successfully logged in.")
                 let appDelegate = UIApplication.shared.delegate as! AppDelegate
                 appDelegate.loggedInUser = result?.user
-                self?.performSegue(withIdentifier: Constants.segues.LoginToMainScreen, sender: self)
+                self?.performSegue(withIdentifier: Constants.Segues.LoginToMainScreen, sender: self)
             }
             return
         }

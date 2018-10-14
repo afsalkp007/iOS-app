@@ -67,7 +67,7 @@ class MainMenuViewController: UIViewController {
     @objc private func startButtonTapped() {
         if let selectedLevel = tableView.indexPathForSelectedRow?.row {
             NSLog("💥 Start button tapped for level \(String(describing: selectedLevel))")
-            performSegue(withIdentifier: Constants.segues.StartGame, sender: nil)
+            performSegue(withIdentifier: Constants.Segues.StartGame, sender: nil)
             //TODO: [RestClient loadExercisesForLevel: selectedLevel]
         } else {
             //TODO: error please select a level

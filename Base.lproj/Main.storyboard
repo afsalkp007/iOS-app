@@ -179,7 +179,7 @@
         <!--Navigation Controller-->
         <scene sceneID="6df-VS-u7x">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="2AG-9y-jCJ" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="LoginNavigationController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="2AG-9y-jCJ" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="zF2-YT-dDl">
                         <rect key="frame" x="0.0" y="20" width="375" height="96"/>
@@ -446,7 +446,7 @@
         <!--Navigation Controller-->
         <scene sceneID="KG1-EG-9VZ">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="68D-e5-87F" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="MainScreenNavigationController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="68D-e5-87F" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" image="first" id="b0e-WD-P0g"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="hiL-ck-Hc3">
@@ -574,7 +574,7 @@
         <!--Navigation Controller-->
         <scene sceneID="9Qz-oR-OiW">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="M0K-4r-5v5" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="TopListNavigationController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="M0K-4r-5v5" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" image="second" id="U92-gb-cLi"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="feg-tE-9RU">
@@ -593,7 +593,7 @@
         <!--Navigation Controller-->
         <scene sceneID="d0J-L4-jft">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="jyp-M6-6Mh" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="GameNavigationController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="jyp-M6-6Mh" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="JkS-2h-8cY">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -614,6 +614,6 @@
         <image name="second" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="n9a-0j-pzs"/>
+        <segue reference="K9a-2z-fkC"/>
     </inferredMetricsTieBreakers>
 </document>

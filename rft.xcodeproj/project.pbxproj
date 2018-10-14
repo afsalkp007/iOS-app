@@ -10,6 +10,7 @@
 		033B8AAAAE0EC89D40278C37 /* Pods_rft.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5540A905528698F397D3E7F4 /* Pods_rft.framework */; };
 		078406149EB593CBBF17D89C /* Pods_rftTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2A6C985B0515ABA57AB773C /* Pods_rftTests.framework */; };
 		1B00851C2160B36C00610507 /* UIView+ShakeAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B00851B2160B36C00610507 /* UIView+ShakeAnimation.swift */; };
+		1B0407462173655000E879C2 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0407452173655000E879C2 /* Enums.swift */; };
 		1B1766A1215FBEDF002BCC8F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1B1766A0215FBEDF002BCC8F /* GoogleService-Info.plist */; };
 		1B3D7A69217293FF00B13D91 /* UITextField+DoneButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3D7A68217293FF00B13D91 /* UITextField+DoneButton.swift */; };
 		1B3D7A6B217297B100B13D91 /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3D7A6A217297B100B13D91 /* Exercise.swift */; };
@@ -60,6 +61,7 @@
 		1B00851B2160B36C00610507 /* UIView+ShakeAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+ShakeAnimation.swift"; sourceTree = "<group>"; };
 		1B0085232160C4B500610507 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1B0085242160C4B500610507 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		1B0407452173655000E879C2 /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
 		1B1766A0215FBEDF002BCC8F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1B3D7A68217293FF00B13D91 /* UITextField+DoneButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+DoneButton.swift"; sourceTree = "<group>"; };
 		1B3D7A6A217297B100B13D91 /* Exercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
@@ -236,6 +238,7 @@
 				1BE1E19D2172437B003AC1DB /* Data providers */,
 				1B7E84EA215FB23700574C33 /* RestClient.swift */,
 				1BF2A66A21600CBD00406BA9 /* Constants.swift */,
+				1B0407452173655000E879C2 /* Enums.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -554,6 +557,7 @@
 				1BF2A66B21600CBD00406BA9 /* Constants.swift in Sources */,
 				1B7E84EB215FB23700574C33 /* RestClient.swift in Sources */,
 				1B00851C2160B36C00610507 /* UIView+ShakeAnimation.swift in Sources */,
+				1B0407462173655000E879C2 /* Enums.swift in Sources */,
 				1BE1E1842171E55A003AC1DB /* DifficultyCell.swift in Sources */,
 				1B787A9F2172727900A04E6E /* TopListCellBinding.swift in Sources */,
 				1B7E84B8215F74D600574C33 /* AppDelegate.swift in Sources */,

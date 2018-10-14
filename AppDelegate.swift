@@ -18,9 +18,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         didSet {
             do {
                 let encodedData = try NSKeyedArchiver.archivedData(withRootObject: loggedInUser!, requiringSecureCoding: true)
-                defaults.set(encodedData, forKey: Constants.userDefaultsKeys.loggedInUser)
+                defaults.set(encodedData, forKey: Constants.UserDefaultsKeys.loggedInUser)
             } catch {
-                NSLog("Failed to set defaults key \(Constants.userDefaultsKeys.loggedInUser)")
+                NSLog("Failed to set defaults key \(Constants.UserDefaultsKeys.loggedInUser)")
             }
         }
     }
@@ -34,8 +34,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
         GIDSignIn.sharedInstance().delegate = self
         
-        if isKeyPresentInUserDefaults(key: Constants.userDefaultsKeys.loggedInUser) {
-            let decoded = defaults.object(forKey: Constants.userDefaultsKeys.loggedInUser) as! Data
+        if isKeyPresentInUserDefaults(key: Constants.UserDefaultsKeys.loggedInUser) {
+            let decoded = defaults.object(forKey: Constants.UserDefaultsKeys.loggedInUser) as! Data
             do {
                 try loggedInUser = NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(decoded) as? User
             } catch {

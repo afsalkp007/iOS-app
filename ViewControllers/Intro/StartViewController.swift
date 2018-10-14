@@ -16,10 +16,10 @@ class StartViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        if isKeyPresentInUserDefaults(key: Constants.userDefaultsKeys.loggedInUser) {
-            performSegue(withIdentifier: Constants.segues.ShowMainScreen, sender: nil)
+        if isKeyPresentInUserDefaults(key: Constants.UserDefaultsKeys.loggedInUser) {
+            performSegue(withIdentifier: Constants.Segues.ShowMainScreen, sender: nil)
         } else {
-            performSegue(withIdentifier: Constants.segues.ShowLogin, sender: nil)
+            performSegue(withIdentifier: Constants.Segues.ShowLogin, sender: nil)
         }
     }
 }
