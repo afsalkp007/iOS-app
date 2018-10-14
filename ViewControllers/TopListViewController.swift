@@ -41,7 +41,7 @@ class TopListViewController: UIViewController {
     func setupTableView() {
         tableView.tableFooterView = UIView()
         tableView.configRefreshHeader(container: self) { [weak self] in
-            RestClient.sharedInstance().getTopList(for: self!.level ?? .beginner, with: self!)
+            RestClient.sharedInstance().getTopList(for: self!.level , with: self!)
             self?.tableView.switchRefreshHeader(to: .normal(.success, 0.5))
 
         }
