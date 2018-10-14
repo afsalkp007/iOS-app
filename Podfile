@@ -7,15 +7,16 @@ target 'rft' do
     
     # Pods for rft
     pod 'Alamofire', '~> 4.7'
-    pod 'SwiftyJSON', '~> 4.0'
-    pod 'Firebase/Core'
-    pod 'Firebase/Auth'
-    pod 'GoogleSignIn'
-    pod 'Fabric', '~> 1.7.11'
     pod 'Crashlytics', '~> 3.10.7'
-    pod 'RxSwift',    '~> 4.0'
-    pod 'RxCocoa',    '~> 4.0'
+    pod 'Fabric', '~> 1.7.11'
+    pod 'Firebase/Auth'
+    pod 'Firebase/Core'
+    pod 'GoogleSignIn'
     pod 'PullToRefreshKit'
+    pod 'RxCocoa',    '~> 4.0'
+    pod 'RxSwift',    '~> 4.0'
+    pod 'SwiftyDB'
+    pod 'SwiftyJSON', '~> 4.0'
     
     target 'rftTests' do
         inherit! :search_paths
