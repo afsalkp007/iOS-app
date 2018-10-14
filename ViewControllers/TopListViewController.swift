@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import PullToRefreshKit
 import RxCocoa
 import RxSwift
 
@@ -39,6 +40,11 @@ class TopListViewController: UIViewController {
     
     func setupTableView() {
         tableView.tableFooterView = UIView()
+        tableView.configRefreshHeader(container: self) { [weak self] in
+            RestClient.sharedInstance().getTopList(for: self!.level ?? .beginner, with: self!)
+            self?.tableView.switchRefreshHeader(to: .normal(.success, 0.5))
+
+        }
     }
     
     // MARK: - Level chooser
