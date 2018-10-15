@@ -482,7 +482,7 @@
                                 </connections>
                             </segmentedControl>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ue2-pK-gQd">
-                                <rect key="frame" x="0.0" y="140" width="375" height="478"/>
+                                <rect key="frame" x="0.0" y="128" width="375" height="490"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="TopListCell" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TopListCell" id="Y1p-7X-QU2" customClass="TopListCell" customModule="rft" customModuleProvider="target">
@@ -535,7 +535,7 @@
                             <constraint firstItem="Fbi-rO-T1i" firstAttribute="trailing" secondItem="Zz0-jd-afT" secondAttribute="trailing" constant="16" id="4xF-be-Fdh"/>
                             <constraint firstItem="Zz0-jd-afT" firstAttribute="top" secondItem="Fbi-rO-T1i" secondAttribute="top" constant="32" id="5ER-QH-yNF"/>
                             <constraint firstItem="Fbi-rO-T1i" firstAttribute="trailing" secondItem="Ue2-pK-gQd" secondAttribute="trailing" id="782-LM-b0d"/>
-                            <constraint firstItem="Ue2-pK-gQd" firstAttribute="top" secondItem="Zz0-jd-afT" secondAttribute="bottom" constant="16" id="P6Q-fg-kqH"/>
+                            <constraint firstItem="Ue2-pK-gQd" firstAttribute="top" secondItem="Zz0-jd-afT" secondAttribute="bottom" constant="4" id="P6Q-fg-kqH"/>
                             <constraint firstItem="Zz0-jd-afT" firstAttribute="leading" secondItem="Fbi-rO-T1i" secondAttribute="leading" constant="16" id="hwG-9l-dx4"/>
                             <constraint firstItem="Fbi-rO-T1i" firstAttribute="bottom" secondItem="Ue2-pK-gQd" secondAttribute="bottom" id="ky4-XA-H8x"/>
                             <constraint firstItem="Ue2-pK-gQd" firstAttribute="leading" secondItem="Fbi-rO-T1i" secondAttribute="leading" id="osU-Yd-bnH"/>

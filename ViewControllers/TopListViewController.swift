@@ -24,26 +24,26 @@ class TopListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        RestClient.sharedInstance().getTopList(for: level, with: self)
-        
-        topUsers.asObservable().bind(to: self.tableView.rx.items(cellIdentifier: Constants.Cells.TopListCell)) { [weak self] (index, model, cell: TopListCell) in
-            self?.bind(to: cell, with: model)
-            }.disposed(by: disposeBag)
-        
-        tableView.rx.itemSelected.subscribe(onNext: { [weak self] indexPath in
-            self?.tableView.deselectRow(at: indexPath, animated: true)
-        }).disposed(by: disposeBag)
-
-        
+        setupDatasource()
         setupTableView()
     }
     
+    func setupDatasource() {
+        RestClient.sharedInstance().getTopList(for: level, with: self)
+        topUsers.asObservable().bind(to: self.tableView.rx.items(cellIdentifier: Constants.Cells.TopListCell)) { [weak self] (index, model, cell: TopListCell) in
+            self?.bind(to: cell, with: model)
+            }.disposed(by: disposeBag)
+    }
+    
     func setupTableView() {
+        tableView.rx.itemSelected.subscribe(onNext: { [weak self] indexPath in
+            self?.tableView.deselectRow(at: indexPath, animated: true)
+        }).disposed(by: disposeBag)
         tableView.tableFooterView = UIView()
+        tableView.contentInset = UIEdgeInsets(top: 12, left: 0, bottom: 0, right: 0)
         tableView.configRefreshHeader(container: self) { [weak self] in
             RestClient.sharedInstance().getTopList(for: self!.level , with: self!)
             self?.tableView.switchRefreshHeader(to: .normal(.success, 0.5))
-
         }
     }
     

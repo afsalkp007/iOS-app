@@ -23,7 +23,13 @@ class MainMenuViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        setUpDatasource()
+        setupTableView()
+        setupStartButton()
+        setupNotifications()
+    }
+    
+    func setUpDatasource() {
         difficulties.accept(DifficultyProvider.sharedInstance().getDifficulties())
         
         difficulties.asObservable().bind(to: self.tableView.rx.items(cellIdentifier: Constants.Cells.DifficultyCell)) { [weak self] (index, model, cell: DifficultyCell) in
@@ -32,18 +38,13 @@ class MainMenuViewController: UIViewController {
             cell.wrapperView.layer.shadowColor = UIColor(displayP3Red: 0, green: 0, blue: 0, alpha: 1.0).cgColor
             cell.wrapperView.layer.shadowOpacity = 0.3
             cell.wrapperView.layer.shadowOffset = CGSize(width: 0, height: 2)
-        }.disposed(by: disposeBag)
-        
-        tableView.rx.itemSelected.subscribe(onNext: { indexPath in
-            NSLog("✅ Row \(indexPath.row) selected")
-        }).disposed(by: disposeBag)
-        
-        setupTableView()
-        setupStartButton()
-        setupNotifications()
+            }.disposed(by: disposeBag)
     }
     
     func setupTableView() {
+        tableView.rx.itemSelected.subscribe(onNext: { indexPath in
+            NSLog("✅ Row \(indexPath.row) selected")
+        }).disposed(by: disposeBag)
         tableView.rx.setDelegate(self).disposed(by: disposeBag)
         tableView.selectRow(at: IndexPath(row: 0, section: 0), animated: false, scrollPosition: .none)
         tableView.contentInset = UIEdgeInsets(top: 8, left: 0, bottom: 0, right: 0)

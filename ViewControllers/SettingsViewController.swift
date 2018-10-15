@@ -20,13 +20,19 @@ class SettingsViewController: UIViewController {
     // MARK: - Init
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        setupDatasource()
+        setupTableView()
+    }
+    
+    func setupDatasource() {
         settingsItems.accept(SettingsItemProvider.sharedInstance().getSettingsItems())
         
         settingsItems.asObservable().bind(to: self.tableView.rx.items(cellIdentifier: Constants.Cells.SettingsCell)) { [weak self] (index, model, cell: SettingsCell) in
             self?.bind(to: cell, with: model)
             }.disposed(by: disposeBag)
-        
+    }
+    
+    func setupTableView() {
         tableView.rx.itemSelected.subscribe(onNext: { [weak self] indexPath in
             let row = indexPath.row
             if row == 1 {
@@ -35,11 +41,6 @@ class SettingsViewController: UIViewController {
             self?.tableView.deselectRow(at: indexPath, animated: true)
             
         }).disposed(by: disposeBag)
-        
-        setupTableView()
-    }
-    
-    func setupTableView() {
         tableView.tableFooterView = UIView()
     }
     

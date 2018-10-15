@@ -16,6 +16,15 @@ class GameViewController: UIViewController {
     
     
     @IBAction func dismissGame(_ sender: Any) {
+        self.dismissView()
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        answerTextField.addDoneButtonToKeyboard(myAction:  #selector(self.answerTextField.resignFirstResponder))
+    }
+    
+    func dismissView() {
         let popup = UIAlertController(title: "Stop Game", message: "Are you sure you want to quit?", preferredStyle: .alert)
         popup.addAction(UIAlertAction(title: "Yes", style: .default, handler: { [weak self] (action) in
             self?.dismiss(animated: true, completion: nil)
@@ -26,10 +35,5 @@ class GameViewController: UIViewController {
         }))
         
         self.present(popup, animated: true, completion: nil)
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        answerTextField.addDoneButtonToKeyboard(myAction:  #selector(self.answerTextField.resignFirstResponder))
     }
 }

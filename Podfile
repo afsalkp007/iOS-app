@@ -15,7 +15,6 @@ target 'rft' do
     pod 'PullToRefreshKit'
     pod 'RxCocoa',    '~> 4.0'
     pod 'RxSwift',    '~> 4.0'
-    pod 'SwiftyDB'
     pod 'SwiftyJSON', '~> 4.0'
     
     target 'rftTests' do
