@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import RxCocoa
+import RxSwift
 
 class GameViewController: UIViewController {
 	
@@ -21,10 +23,15 @@ class GameViewController: UIViewController {
         self.dismissView()
     }
 	
+	var difficultyLevel: DifficultyLevel?
+	let exercises: BehaviorRelay<[Exercise]> = BehaviorRelay(value: [])
+	let disposeBag = DisposeBag()
+	
 	// MARK: - Init
     
     override func viewDidLoad() {
         super.viewDidLoad()
+		RestClient.sharedInstance().getExercises(for: difficultyLevel ?? .beginner, with: self)
         answerTextField.addDoneButtonToKeyboard(myAction:  #selector(self.answerTextField.resignFirstResponder))
     }
 	
@@ -47,6 +54,7 @@ class GameViewController: UIViewController {
 extension GameViewController: GameDelegate {
 	func getExercisesDidSuccess(exercises: [Exercise]) {
 		//TODO: update datasource
+		self.exercises.accept(exercises)
 	}
 	
 	func getExercisesDidFail(with error: Error?) {

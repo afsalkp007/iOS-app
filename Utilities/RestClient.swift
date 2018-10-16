@@ -65,10 +65,6 @@ class RestClient: NSObject, Networking {
                 }
                 delegate.getTopListDidSuccess(users: users)
             }
-            
-            if let data = response.data, let utf8Text = String(data: data, encoding: .utf8) {
-                print("Data: \(utf8Text)") // original server data as UTF8 string
-            }
         }
     }
     
@@ -76,7 +72,7 @@ class RestClient: NSObject, Networking {
 	func getExercises(for difficulty: DifficultyLevel, with delegate: GameDelegate) {
         //TODO: Get exercises for appropiate level
 //        let url = "\(Constants.kBaseURL)/exercuises?level=\(difficulty.rawValue)"
-		Alamofire.request("http://www.mocky.io/v2/5bc5c9893300006e000213ad").responseJSON { (response) in
+		Alamofire.request("https://www.mocky.io/v2/5bc5c9893300006e000213ad").responseJSON { (response) in
 			print("Request: \(String(describing: response.request))")   // original url request
 			print("Response: \(String(describing: response.response))") // http url response
 			print("Result: \(response.result)")                         // response serialization result
@@ -97,10 +93,6 @@ class RestClient: NSObject, Networking {
 					exercises.append(myExercise)
 				}
 				delegate.getExercisesDidSuccess(exercises: exercises)
-			}
-			
-			if let data = response.data, let utf8Text = String(data: data, encoding: .utf8) {
-				print("Data: \(utf8Text)") // original server data as UTF8 string
 			}
 		}
     }
