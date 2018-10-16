@@ -12,7 +12,7 @@ import SwiftyJSON
 
 protocol Networking {
     func getTopList(for difficulty: DifficultyLevel,  with delegate: TopListDelegate)
-    func getExercises(for difficulty: DifficultyLevel)
+	func getExercises(for difficulty: DifficultyLevel, with delegate: GameDelegate)
 }
 
 class RestClient: NSObject, Networking {
@@ -73,8 +73,35 @@ class RestClient: NSObject, Networking {
     }
     
     // MARK: - Exercises
-    func getExercises(for difficulty: DifficultyLevel) {
+	func getExercises(for difficulty: DifficultyLevel, with delegate: GameDelegate) {
         //TODO: Get exercises for appropiate level
 //        let url = "\(Constants.kBaseURL)/exercuises?level=\(difficulty.rawValue)"
+		Alamofire.request("http://www.mocky.io/v2/5bc5c9893300006e000213ad").responseJSON { (response) in
+			print("Request: \(String(describing: response.request))")   // original url request
+			print("Response: \(String(describing: response.response))") // http url response
+			print("Result: \(response.result)")                         // response serialization result
+			
+			if let error = response.error {
+				delegate.getExercisesDidFail(with: error)
+			}
+			
+			if let json = response.result.value {
+				print("JSON: \(json)") // serialized json response
+				let jsonData = JSON(json)
+				
+				var exercises: [Exercise] = []
+				for exercise in jsonData["exercises"] {
+					var myExercise = Exercise()
+					myExercise.question = exercise.1["question"].rawString()
+					myExercise.correctAnswer = exercise.1["correct_answer"].doubleValue
+					exercises.append(myExercise)
+				}
+				delegate.getExercisesDidSuccess(exercises: exercises)
+			}
+			
+			if let data = response.data, let utf8Text = String(data: data, encoding: .utf8) {
+				print("Data: \(utf8Text)") // original server data as UTF8 string
+			}
+		}
     }
 }

@@ -15,6 +15,7 @@
 		1B3D7A69217293FF00B13D91 /* UITextField+DoneButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3D7A68217293FF00B13D91 /* UITextField+DoneButton.swift */; };
 		1B3D7A6B217297B100B13D91 /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3D7A6A217297B100B13D91 /* Exercise.swift */; };
 		1B3D7A6E2172A1B300B13D91 /* TopListDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3D7A6D2172A1B300B13D91 /* TopListDelegate.swift */; };
+		1B3E53482175FDAA00E9A316 /* GameDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3E53472175FDAA00E9A316 /* GameDelegate.swift */; };
 		1B787A9F2172727900A04E6E /* TopListCellBinding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B787A9E2172727900A04E6E /* TopListCellBinding.swift */; };
 		1B7E84B8215F74D600574C33 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7E84B7215F74D600574C33 /* AppDelegate.swift */; };
 		1B7E84BF215F74D600574C33 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B7E84BD215F74D600574C33 /* Main.storyboard */; };
@@ -66,6 +67,7 @@
 		1B3D7A68217293FF00B13D91 /* UITextField+DoneButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+DoneButton.swift"; sourceTree = "<group>"; };
 		1B3D7A6A217297B100B13D91 /* Exercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
 		1B3D7A6D2172A1B300B13D91 /* TopListDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopListDelegate.swift; sourceTree = "<group>"; };
+		1B3E53472175FDAA00E9A316 /* GameDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDelegate.swift; sourceTree = "<group>"; };
 		1B787A9E2172727900A04E6E /* TopListCellBinding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopListCellBinding.swift; sourceTree = "<group>"; };
 		1B7E84B4215F74D600574C33 /* rft.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = rft.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B7E84B7215F74D600574C33 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -128,6 +130,7 @@
 			isa = PBXGroup;
 			children = (
 				1B3D7A6D2172A1B300B13D91 /* TopListDelegate.swift */,
+				1B3E53472175FDAA00E9A316 /* GameDelegate.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -545,6 +548,7 @@
 				1BE1E1A421724CD5003AC1DB /* TopListCell.swift in Sources */,
 				1B3D7A6B217297B100B13D91 /* Exercise.swift in Sources */,
 				1BE1E18F21722CFF003AC1DB /* DifficultyProvider.swift in Sources */,
+				1B3E53482175FDAA00E9A316 /* GameDelegate.swift in Sources */,
 				1BF2A66D21600DB900406BA9 /* StartViewController.swift in Sources */,
 				1BE1E1862171E9F0003AC1DB /* Difficulty.swift in Sources */,
 				1BE1E1A021724395003AC1DB /* SettingsItemProvider.swift in Sources */,
