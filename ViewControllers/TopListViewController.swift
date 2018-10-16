@@ -12,10 +12,14 @@ import RxCocoa
 import RxSwift
 
 class TopListViewController: UIViewController {
+	
+	//MARK: - IBOutlets
     
     @IBOutlet var levelChooser: UISegmentedControl!
     @IBOutlet var tableView: UITableView!
-    
+	
+	//MARK: - Variables
+	
     let topUsers: BehaviorRelay<[MyUser]> = BehaviorRelay(value: [])
     let disposeBag = DisposeBag()
     var level: DifficultyLevel = .beginner
