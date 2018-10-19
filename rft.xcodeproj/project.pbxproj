@@ -17,6 +17,8 @@
 		1B3D7A6E2172A1B300B13D91 /* TopListDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3D7A6D2172A1B300B13D91 /* TopListDelegate.swift */; };
 		1B3E53482175FDAA00E9A316 /* GameDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3E53472175FDAA00E9A316 /* GameDelegate.swift */; };
 		1B3E534B217615AB00E9A316 /* BaseGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3E534A217615AB00E9A316 /* BaseGameViewController.swift */; };
+		1B68169A217A5C1500C31BB8 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B681699217A5C1500C31BB8 /* Theme.swift */; };
+		1B68169C217A5D1000C31BB8 /* UIColor+HEX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B68169B217A5D1000C31BB8 /* UIColor+HEX.swift */; };
 		1B787A9F2172727900A04E6E /* TopListCellBinding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B787A9E2172727900A04E6E /* TopListCellBinding.swift */; };
 		1B7E84B8215F74D600574C33 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7E84B7215F74D600574C33 /* AppDelegate.swift */; };
 		1B7E84BF215F74D600574C33 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B7E84BD215F74D600574C33 /* Main.storyboard */; };
@@ -70,6 +72,8 @@
 		1B3D7A6D2172A1B300B13D91 /* TopListDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopListDelegate.swift; sourceTree = "<group>"; };
 		1B3E53472175FDAA00E9A316 /* GameDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDelegate.swift; sourceTree = "<group>"; };
 		1B3E534A217615AB00E9A316 /* BaseGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseGameViewController.swift; sourceTree = "<group>"; };
+		1B681699217A5C1500C31BB8 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		1B68169B217A5D1000C31BB8 /* UIColor+HEX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+HEX.swift"; sourceTree = "<group>"; };
 		1B787A9E2172727900A04E6E /* TopListCellBinding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopListCellBinding.swift; sourceTree = "<group>"; };
 		1B7E84B4215F74D600574C33 /* rft.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = rft.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B7E84B7215F74D600574C33 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -154,6 +158,7 @@
 				1B00851B2160B36C00610507 /* UIView+ShakeAnimation.swift */,
 				1BE1E18C21722377003AC1DB /* UIView+ShadowAnimation.swift */,
 				1B3D7A68217293FF00B13D91 /* UITextField+DoneButton.swift */,
+				1B68169B217A5D1000C31BB8 /* UIColor+HEX.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -254,6 +259,7 @@
 				1B7E84EA215FB23700574C33 /* RestClient.swift */,
 				1BF2A66A21600CBD00406BA9 /* Constants.swift */,
 				1B0407452173655000E879C2 /* Enums.swift */,
+				1B681699217A5C1500C31BB8 /* Theme.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -468,6 +474,7 @@
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/PullToRefreshKit/PullToRefreshKit.framework",
+				"${BUILT_PRODUCTS_DIR}/RevealingSplashView/RevealingSplashView.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
@@ -481,6 +488,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PullToRefreshKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RevealingSplashView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
@@ -555,6 +563,7 @@
 				1BE1E19A21723E81003AC1DB /* SettingsCellBinding.swift in Sources */,
 				1BF2A6692160054900406BA9 /* RegistrationViewController.swift in Sources */,
 				1BE1E19C21723EA9003AC1DB /* SettingsItem.swift in Sources */,
+				1B68169C217A5D1000C31BB8 /* UIColor+HEX.swift in Sources */,
 				1B3D7A69217293FF00B13D91 /* UITextField+DoneButton.swift in Sources */,
 				1BE1E1A421724CD5003AC1DB /* TopListCell.swift in Sources */,
 				1B3D7A6B217297B100B13D91 /* Exercise.swift in Sources */,
@@ -567,6 +576,7 @@
 				1BF2A66F21600DFE00406BA9 /* UserDefaults+KeyExists.swift in Sources */,
 				1B7E84E6215FAB3400574C33 /* TopListViewController.swift in Sources */,
 				1BE1E19221723777003AC1DB /* GameViewController.swift in Sources */,
+				1B68169A217A5C1500C31BB8 /* Theme.swift in Sources */,
 				1BE1E18B217222B5003AC1DB /* ShadowButton.swift in Sources */,
 				1B7E84E4215FA7D600574C33 /* MainMenuViewController.swift in Sources */,
 				1BE1E1A221724BF2003AC1DB /* MyUser.swift in Sources */,
