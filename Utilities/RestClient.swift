@@ -11,8 +11,8 @@ import Alamofire
 import SwiftyJSON
 
 protocol Networking {
-    func getTopList(for difficulty: DifficultyLevel,  with delegate: TopListDelegate)
-	func getExercises(for difficulty: DifficultyLevel, with delegate: GameDelegate)
+    static func getTopList(for difficulty: DifficultyLevel,  with delegate: TopListDelegate)
+	static func getExercises(for difficulty: DifficultyLevel, with delegate: GameDelegate)
 }
 
 class RestClient: NSObject, Networking {
@@ -38,7 +38,7 @@ class RestClient: NSObject, Networking {
      - Parameter difficulty : The difficulty level for loading results
      - Parameter delegate : The delegate which implements the `TopListDelegate` protocol
      */
-    func getTopList(for difficulty: DifficultyLevel, with delegate: TopListDelegate) {
+    static func getTopList(for difficulty: DifficultyLevel, with delegate: TopListDelegate) {
         //TODO: Incorporate difficulty into request.
 //        let url = "\(Constants.kBaseURL)/topList?level=\(difficulty.rawValue)"
         Alamofire.request("https://www.mocky.io/v2/5bc244243100004e001fca81").responseJSON { response in
@@ -69,7 +69,7 @@ class RestClient: NSObject, Networking {
     }
     
     // MARK: - Exercises
-	func getExercises(for difficulty: DifficultyLevel, with delegate: GameDelegate) {
+	static func getExercises(for difficulty: DifficultyLevel, with delegate: GameDelegate) {
         //TODO: Get exercises for appropiate level
 //        let url = "\(Constants.kBaseURL)/exercuises?level=\(difficulty.rawValue)"
 		Alamofire.request("https://www.mocky.io/v2/5bc5c9893300006e000213ad").responseJSON { (response) in

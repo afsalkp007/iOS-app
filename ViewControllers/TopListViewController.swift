@@ -33,7 +33,7 @@ class TopListViewController: UIViewController {
     }
     
     func setupDatasource() {
-        RestClient.sharedInstance().getTopList(for: level, with: self)
+        RestClient.getTopList(for: level, with: self)
         topUsers.asObservable().bind(to: self.tableView.rx.items(cellIdentifier: Constants.Cells.TopListCell)) { [weak self] (index, model, cell: TopListCell) in
             self?.bind(to: cell, with: model)
             }.disposed(by: disposeBag)
@@ -46,7 +46,7 @@ class TopListViewController: UIViewController {
         tableView.tableFooterView = UIView()
         tableView.contentInset = UIEdgeInsets(top: 12, left: 0, bottom: 0, right: 0)
         tableView.configRefreshHeader(container: self) { [weak self] in
-            RestClient.sharedInstance().getTopList(for: self!.level , with: self!)
+            RestClient.getTopList(for: self!.level , with: self!)
             self?.tableView.switchRefreshHeader(to: .normal(.success, 0.5))
         }
     }
@@ -57,7 +57,7 @@ class TopListViewController: UIViewController {
         let index = sender.selectedSegmentIndex
         level = DifficultyLevel(rawValue: index) ?? .beginner
         NSLog("🌍 loading top list for level \(index)")
-        RestClient.sharedInstance().getTopList(for: level, with: self)
+        RestClient.getTopList(for: level, with: self)
     }
 }
 

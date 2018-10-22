@@ -22,7 +22,7 @@ class BaseGameViewController: UIViewController {
 	
 	override func viewDidLoad() {
         super.viewDidLoad()
-		RestClient.sharedInstance().getExercises(for: difficultyLevel ?? .beginner, with: self)
+		RestClient.getExercises(for: difficultyLevel ?? .beginner, with: self)
     }
 	
 	// MARK: - Navigation
