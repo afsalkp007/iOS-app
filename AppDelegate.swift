@@ -43,6 +43,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
 			}
 		}
 		
+		Fabric.with([Crashlytics.self, Answers.self])
+		
 		return true
 	}
 	
