@@ -15,6 +15,7 @@ target 'rft' do
     pod 'PullToRefreshKit'
     pod 'RevealingSplashView'
     pod 'RxCocoa',    '~> 4.0'
+    pod 'RxDataSources', '~> 3.1'
     pod 'RxSwift',    '~> 4.0'
     pod 'SwiftyJSON', '~> 4.0'
     
