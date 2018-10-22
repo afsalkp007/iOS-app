@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct MyUser {
+struct MyUser: BaseModel {
     var position: Int?
     var name: String?
     var topScore: String?

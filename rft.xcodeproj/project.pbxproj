@@ -12,6 +12,8 @@
 		1B00851C2160B36C00610507 /* UIView+ShakeAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B00851B2160B36C00610507 /* UIView+ShakeAnimation.swift */; };
 		1B0407462173655000E879C2 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0407452173655000E879C2 /* Enums.swift */; };
 		1B1766A1215FBEDF002BCC8F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1B1766A0215FBEDF002BCC8F /* GoogleService-Info.plist */; };
+		1B266ED3217E51BA00AC6B4D /* SectionedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B266ED2217E51BA00AC6B4D /* SectionedData.swift */; };
+		1B266ED5217E52D900AC6B4D /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B266ED4217E52D900AC6B4D /* BaseModel.swift */; };
 		1B3D7A69217293FF00B13D91 /* UITextField+DoneButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3D7A68217293FF00B13D91 /* UITextField+DoneButton.swift */; };
 		1B3D7A6B217297B100B13D91 /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3D7A6A217297B100B13D91 /* Exercise.swift */; };
 		1B3D7A6E2172A1B300B13D91 /* TopListDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3D7A6D2172A1B300B13D91 /* TopListDelegate.swift */; };
@@ -67,6 +69,8 @@
 		1B0085242160C4B500610507 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1B0407452173655000E879C2 /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
 		1B1766A0215FBEDF002BCC8F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		1B266ED2217E51BA00AC6B4D /* SectionedData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionedData.swift; sourceTree = "<group>"; };
+		1B266ED4217E52D900AC6B4D /* BaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
 		1B3D7A68217293FF00B13D91 /* UITextField+DoneButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+DoneButton.swift"; sourceTree = "<group>"; };
 		1B3D7A6A217297B100B13D91 /* Exercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
 		1B3D7A6D2172A1B300B13D91 /* TopListDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopListDelegate.swift; sourceTree = "<group>"; };
@@ -247,6 +251,8 @@
 				1BE1E19B21723EA9003AC1DB /* SettingsItem.swift */,
 				1BE1E1A121724BF2003AC1DB /* MyUser.swift */,
 				1B3D7A6A217297B100B13D91 /* Exercise.swift */,
+				1B266ED2217E51BA00AC6B4D /* SectionedData.swift */,
+				1B266ED4217E52D900AC6B4D /* BaseModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -566,6 +572,7 @@
 			files = (
 				1BE1E19A21723E81003AC1DB /* SettingsCellBinding.swift in Sources */,
 				1BF2A6692160054900406BA9 /* RegistrationViewController.swift in Sources */,
+				1B266ED3217E51BA00AC6B4D /* SectionedData.swift in Sources */,
 				1BE1E19C21723EA9003AC1DB /* SettingsItem.swift in Sources */,
 				1B68169C217A5D1000C31BB8 /* UIColor+HEX.swift in Sources */,
 				1B3D7A69217293FF00B13D91 /* UITextField+DoneButton.swift in Sources */,
@@ -581,6 +588,7 @@
 				1B7E84E6215FAB3400574C33 /* TopListViewController.swift in Sources */,
 				1BE1E19221723777003AC1DB /* GameViewController.swift in Sources */,
 				1B68169A217A5C1500C31BB8 /* Theme.swift in Sources */,
+				1B266ED5217E52D900AC6B4D /* BaseModel.swift in Sources */,
 				1BE1E18B217222B5003AC1DB /* ShadowButton.swift in Sources */,
 				1B7E84E4215FA7D600574C33 /* MainMenuViewController.swift in Sources */,
 				1BE1E1A221724BF2003AC1DB /* MyUser.swift in Sources */,

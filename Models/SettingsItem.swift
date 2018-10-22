@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-struct SettingsItem {
+struct SettingsItem: BaseModel {
     var title: String?
     var image: UIImage?
 	var url: String?

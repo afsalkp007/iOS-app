@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Exercise {
+struct Exercise: BaseModel {
     var question: String?
     var correctAnswer: Double?
 }

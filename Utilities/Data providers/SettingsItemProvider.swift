@@ -25,7 +25,7 @@ class SettingsItemProvider: NSObject {
     
     //MARK: - Data provider
     
-    func getSettingsItems() -> [SettingsItem] {
+    func getSettingsItems() -> [SectionOfCustomData] {
         var userInfo = SettingsItem()
         if let name = Constants.kAppDelegate.loggedInUser?.displayName {
             userInfo.title = name
@@ -39,6 +39,8 @@ class SettingsItemProvider: NSObject {
         var logout = SettingsItem()
         logout.title = "Logout"
         logout.image = UIImage(named: "logout")
+		
+		let section1 = SectionOfCustomData(header: "", items: [userInfo, logout])
 		
 		var Adam = SettingsItem()
 		Adam.title = "Ádám Berki"
@@ -54,8 +56,11 @@ class SettingsItemProvider: NSObject {
 		Pisti.title = "@Fyccek"
 		Pisti.image = UIImage(named: "twitter")
 		Pisti.url = "https://twitter.com/Fyccek"
+		
+		let section2 = SectionOfCustomData(header: "Brought to you with ❤️ by:", items: [Adam, Pisti, Levi])
+		
         
-        return [userInfo, logout, Adam, Levi, Pisti]
+        return [section1, section2]
     }
     
 }

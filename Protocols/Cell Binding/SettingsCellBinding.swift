@@ -9,5 +9,5 @@
 import Foundation
 
 protocol SettingsCellBinding {
-    func bind(to cell: SettingsCell, with model: SettingsItem)
+	func bind(to cell: SettingsCell, with model: SettingsItem)
 }
