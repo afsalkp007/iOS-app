@@ -13,4 +13,5 @@ struct Difficulty {
     var level: DifficultyLevel?
     var name: String?
     var image: UIImage?
+	var color: UIColor?
 }

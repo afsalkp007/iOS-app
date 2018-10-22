@@ -18,11 +18,19 @@ class DifficultyCell: UITableViewCell {
     @IBOutlet var wrapperView: UIView!
     @IBOutlet var levelImageView: UIImageView!
     @IBOutlet var titleLabel: UILabel!
-    
+	
     override func draw(_ rect: CGRect) {
         super.draw(rect)
         wrapperView.layer.cornerRadius = 8
     }
+	
+	override func layoutSubviews() {
+		super.layoutSubviews()
+		let image = self.levelImageView.image
+		let whiteImage = image?.withRenderingMode(UIImage.RenderingMode.alwaysTemplate)
+		self.levelImageView.image = whiteImage
+		self.levelImageView.tintColor = UIColor.white
+	}
     
     /**
      Selecting the cell increases it's shadow opacity.

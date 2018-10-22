@@ -27,14 +27,17 @@ class DifficultyProvider: NSObject {
         var beginner = Difficulty()
         beginner.name = "Beginner"
         beginner.image = UIImage(named: "beginner")
+		beginner.color = Theme.lightGreen
         
         var intermediate = Difficulty()
         intermediate.name = "Intermediate"
         intermediate.image = UIImage(named: "intermediate")
+		intermediate.color = Theme.orange
         
         var advanced = Difficulty()
         advanced.name = "Advanced"
         advanced.image = UIImage(named: "advanced")
+		advanced.color = Theme.red
         
         return [beginner, intermediate, advanced]
     }

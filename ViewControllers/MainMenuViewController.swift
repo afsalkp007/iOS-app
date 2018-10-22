@@ -86,6 +86,7 @@ extension MainMenuViewController: DifficultyCellBinding {
     func bind(to cell: DifficultyCell, with model: Difficulty) {
         cell.titleLabel.text = model.name
         cell.levelImageView.image = model.image
+		cell.wrapperView.backgroundColor = model.color
     }
 }
 
