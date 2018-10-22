@@ -13,7 +13,5 @@ class SettingsCell: UITableViewCell {
     
     @IBOutlet var settingsImageView: UIImageView!
     @IBOutlet var titleLabel: UILabel!
-    
-    
-    
+	var url: String?
 }

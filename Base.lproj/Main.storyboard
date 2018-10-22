@@ -394,14 +394,14 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6LP-Xh-CBp">
-                                                    <rect key="frame" x="16" y="5.5" width="32.5" height="32.5"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6LP-Xh-CBp">
+                                                    <rect key="frame" x="16" y="8.5" width="26" height="26.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="6LP-Xh-CBp" secondAttribute="height" multiplier="1:1" id="w3z-ZK-mpX"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oif-bS-Ley">
-                                                    <rect key="frame" x="64.5" y="11.5" width="42" height="21"/>
+                                                    <rect key="frame" x="58" y="11.5" width="42" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -413,7 +413,7 @@
                                                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="oif-bS-Ley" secondAttribute="trailing" constant="16" id="ZNc-PE-tL7"/>
                                                 <constraint firstItem="oif-bS-Ley" firstAttribute="centerY" secondItem="6LP-Xh-CBp" secondAttribute="centerY" id="dqY-Gh-y5i"/>
                                                 <constraint firstItem="6LP-Xh-CBp" firstAttribute="leading" secondItem="awP-AL-O0H" secondAttribute="leading" constant="16" id="qVY-3x-eEt"/>
-                                                <constraint firstItem="6LP-Xh-CBp" firstAttribute="height" secondItem="awP-AL-O0H" secondAttribute="height" multiplier="0.75" id="x98-4Q-DHZ"/>
+                                                <constraint firstItem="6LP-Xh-CBp" firstAttribute="height" secondItem="awP-AL-O0H" secondAttribute="height" multiplier="0.6" id="x98-4Q-DHZ"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>

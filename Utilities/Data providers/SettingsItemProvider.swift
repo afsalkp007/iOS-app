@@ -8,6 +8,8 @@
 
 import Foundation
 import UIKit
+import RxCocoa
+import RxSwift
 
 class SettingsItemProvider: NSObject {
     
@@ -37,9 +39,23 @@ class SettingsItemProvider: NSObject {
         var logout = SettingsItem()
         logout.title = "Logout"
         logout.image = UIImage(named: "logout")
+		
+		var Adam = SettingsItem()
+		Adam.title = "Ádám Berki"
+		Adam.image = UIImage(named: "youtube")
+		Adam.url = "https://www.youtube.com/channel/UC87ViraFQBQEMmO--SsQ1cg"
+		
+		var Levi = SettingsItem()
+		Levi.title = "@levivig"
+		Levi.image = UIImage(named: "twitter")
+		Levi.url = "https://twitter.com/Levivig"
+		
+		var Pisti = SettingsItem()
+		Pisti.title = "@Fyccek"
+		Pisti.image = UIImage(named: "twitter")
+		Pisti.url = "https://twitter.com/Fyccek"
         
-        
-        return [userInfo, logout]
+        return [userInfo, logout, Adam, Levi, Pisti]
     }
     
 }

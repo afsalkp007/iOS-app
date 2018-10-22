@@ -12,4 +12,5 @@ import UIKit
 struct SettingsItem {
     var title: String?
     var image: UIImage?
+	var url: String?
 }

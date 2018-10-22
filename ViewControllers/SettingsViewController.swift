@@ -34,10 +34,17 @@ class SettingsViewController: UIViewController {
     
     func setupTableView() {
         tableView.rx.itemSelected.subscribe(onNext: { [weak self] indexPath in
-            let row = indexPath.row
-            if row == 1 {
+			let cell = self?.tableView.cellForRow(at: indexPath) as! SettingsCell
+            if indexPath.row == 1 {
                 self?.logout()
-            }
+			} else {
+				if let urlString = cell.url {
+					if let url = URL(string: urlString) {
+						UIApplication.shared.open(url, options: [:], completionHandler: nil)
+					}
+				}
+			}
+			
             self?.tableView.deselectRow(at: indexPath, animated: true)
             
         }).disposed(by: disposeBag)
@@ -64,5 +71,6 @@ extension SettingsViewController: SettingsCellBinding {
     func bind(to cell: SettingsCell, with model: SettingsItem) {
         cell.titleLabel.text = model.title
         cell.imageView?.image = model.image
+		cell.url = model.url
     }
 }
