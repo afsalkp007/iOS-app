@@ -22,10 +22,12 @@ class SettingsViewController: UIViewController {
 		, indexPath
 		, model) -> UITableViewCell in
 		let cell = tableView.dequeueReusableCell(withIdentifier: Constants.Cells.SettingsCell) as! SettingsCell
-		let settingsModel = model as! SettingsItem
-		cell.settingsImageView.image = settingsModel.image
-		cell.titleLabel.text = settingsModel.title
-		cell.url = settingsModel.url
+		if let settingsModel = model as? SettingsItem {
+			cell.settingsImageView.image = settingsModel.image
+			cell.titleLabel.text = settingsModel.title
+			cell.url = settingsModel.url
+		}
+		
 		return cell
 	})
     
