@@ -9,6 +9,8 @@
 import UIKit
 
 class StartViewController: UIViewController {
+	
+	// MARK: - View lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -16,10 +18,15 @@ class StartViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        if isKeyPresentInUserDefaults(key: Constants.UserDefaultsKeys.loggedInUser) {
-            performSegue(withIdentifier: Constants.Segues.ShowMainScreen, sender: nil)
-        } else {
-            performSegue(withIdentifier: Constants.Segues.ShowLogin, sender: nil)
-        }
+		start()
     }
+	
+	// MARK: - Navigation
+	private func start() {
+		if isKeyPresentInUserDefaults(key: Constants.UserDefaultsKeys.loggedInUser) {
+			performSegue(withIdentifier: Constants.Segues.ShowMainScreen, sender: nil)
+		} else {
+			performSegue(withIdentifier: Constants.Segues.ShowLogin, sender: nil)
+		}
+	}
 }

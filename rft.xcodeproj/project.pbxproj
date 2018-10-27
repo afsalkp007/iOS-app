@@ -11,6 +11,7 @@
 		078406149EB593CBBF17D89C /* Pods_rftTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2A6C985B0515ABA57AB773C /* Pods_rftTests.framework */; };
 		1B00851C2160B36C00610507 /* UIView+ShakeAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B00851B2160B36C00610507 /* UIView+ShakeAnimation.swift */; };
 		1B0407462173655000E879C2 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0407452173655000E879C2 /* Enums.swift */; };
+		1B0E47DA2184B7BC00A25244 /* UIView+HideKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0E47D92184B7BC00A25244 /* UIView+HideKeyboard.swift */; };
 		1B1766A1215FBEDF002BCC8F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1B1766A0215FBEDF002BCC8F /* GoogleService-Info.plist */; };
 		1B266ED3217E51BA00AC6B4D /* SectionedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B266ED2217E51BA00AC6B4D /* SectionedData.swift */; };
 		1B266ED5217E52D900AC6B4D /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B266ED4217E52D900AC6B4D /* BaseModel.swift */; };
@@ -68,6 +69,7 @@
 		1B0085232160C4B500610507 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1B0085242160C4B500610507 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1B0407452173655000E879C2 /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
+		1B0E47D92184B7BC00A25244 /* UIView+HideKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+HideKeyboard.swift"; sourceTree = "<group>"; };
 		1B1766A0215FBEDF002BCC8F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1B266ED2217E51BA00AC6B4D /* SectionedData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionedData.swift; sourceTree = "<group>"; };
 		1B266ED4217E52D900AC6B4D /* BaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
@@ -163,6 +165,7 @@
 				1BE1E18C21722377003AC1DB /* UIView+ShadowAnimation.swift */,
 				1B3D7A68217293FF00B13D91 /* UITextField+DoneButton.swift */,
 				1B68169B217A5D1000C31BB8 /* UIColor+HEX.swift */,
+				1B0E47D92184B7BC00A25244 /* UIView+HideKeyboard.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -594,6 +597,7 @@
 				1B7E84E4215FA7D600574C33 /* MainMenuViewController.swift in Sources */,
 				1BE1E1A221724BF2003AC1DB /* MyUser.swift in Sources */,
 				1BE1E1882171EF2F003AC1DB /* DifficultyCellBinding.swift in Sources */,
+				1B0E47DA2184B7BC00A25244 /* UIView+HideKeyboard.swift in Sources */,
 				1B7E84E2215FA4C700574C33 /* LoginViewController.swift in Sources */,
 				1BD3FACA2172816E004D335D /* TopListProvider.swift in Sources */,
 				1BF2A66B21600CBD00406BA9 /* Constants.swift in Sources */,

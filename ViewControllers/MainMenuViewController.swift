@@ -13,14 +13,18 @@ import SVProgressHUD
 import UIKit
 
 class MainMenuViewController: UIViewController {
+	
+	// MARK: - IBOutlets
 
     @IBOutlet var tableView: UITableView!
     @IBOutlet var startButton: ShadowButton!
+	
+	// MARK: - Variables
     
     let difficulties: BehaviorRelay<[Difficulty]> = BehaviorRelay(value: [])
     let disposeBag = DisposeBag()
     
-    //MARK: - Init
+    //MARK: - View lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +33,8 @@ class MainMenuViewController: UIViewController {
         setupStartButton()
         setupNotifications()
     }
+	
+	// MARK: - Setup methods
     
     func setUpDatasource() {
         difficulties.accept(DifficultyProvider.sharedInstance().getDifficulties())
@@ -66,6 +72,7 @@ class MainMenuViewController: UIViewController {
     }
     
     //MARK: - Navigation
+	
     @objc private func startButtonTapped() {
         if let selectedLevel = tableView.indexPathForSelectedRow?.row {
             NSLog("💥 Start button tapped for level \(String(describing: selectedLevel))")
@@ -76,12 +83,9 @@ class MainMenuViewController: UIViewController {
             NSLog("😢 No level selected.")
         }
     }
-    
-    
-    //MARK: - RestClient
-    
-    
 }
+
+// MARK: - Cell binding
 
 extension MainMenuViewController: DifficultyCellBinding {
     func bind(to cell: DifficultyCell, with model: Difficulty) {
@@ -90,6 +94,8 @@ extension MainMenuViewController: DifficultyCellBinding {
 		cell.wrapperView.backgroundColor = model.color
     }
 }
+
+// MARK: - TableView delegate
 
 extension MainMenuViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

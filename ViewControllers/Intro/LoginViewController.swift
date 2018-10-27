@@ -6,11 +6,13 @@
 //  Copyright © 2018. Levente Vig. All rights reserved.
 //
 
-import UIKit
 import Firebase
 import GoogleSignIn
+import UIKit
 
 class LoginViewController: UIViewController, GIDSignInUIDelegate {
+	
+	// MARK: - IBOutlets
     
     @IBOutlet var userNameTextField: UITextField!
     @IBOutlet var passwordTextField: UITextField!
@@ -18,26 +20,21 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate {
     @IBOutlet var registerButton: UIButton!
     @IBOutlet var googleLoginButton: GIDSignInButton!
 
+	// MARK: - View lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         GIDSignIn.sharedInstance().uiDelegate = self
-        addGestureRecognizers()
+        self.view.shouldHideKeyboard(onTap: true)
+		self.view.shouldHideKeyboard(onSwipeDown: true)
         passwordTextField.addTarget(self, action: #selector(login), for: UIControl.Event.editingDidEndOnExit)
-    }
-    
-    private func addGestureRecognizers() {
-        let tap = UITapGestureRecognizer(target: self, action: #selector(hideKeybard))
-        let swipeDown = UISwipeGestureRecognizer(target: self, action: #selector(hideKeybard))
-        swipeDown.direction = .down
-        
-        self.view.addGestureRecognizer(tap)
-        self.view.addGestureRecognizer(swipeDown)
     }
     
     override func viewDidLayoutSubviews() {
         loginButton.layer.cornerRadius = 2
     }
+	
+	// IBActions for user input
     
     @IBAction func userNameTextFieldEditingDidBegin(_ sender: Any) {
         loginButton.isEnabled = true
@@ -53,6 +50,8 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate {
     @IBAction func didPressLoginButton(_ sender: Any) {
        login()
     }
+	
+	// MARK: - Functionality
     
     @objc
     private func login() {
@@ -74,11 +73,15 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate {
             return
         }
     }
-    
+
+	// MARK: - Helper methods
+	
     @objc
     private func hideKeybard() {
         self.view.endEditing(true)
     }
+	
+	// MARK: - Future features
     
     @IBAction func didPressGoogleLoginButton(_ sender: Any) {
         GIDSignIn.sharedInstance()?.signIn()

@@ -13,8 +13,13 @@ import RxSwift
 import UIKit
 
 class SettingsViewController: UIViewController {
+	
+	// MARK: - IBOutlets
     
     @IBOutlet var tableView: UITableView!
+	
+	// MARK: - Rx variables
+	
 	let settingsItems: BehaviorRelay<[SectionOfCustomData]> = BehaviorRelay(value: [])
     let disposeBag = DisposeBag()
 	let dataSource = RxTableViewSectionedReloadDataSource<SectionOfCustomData>(configureCell: { (dataSource
@@ -31,13 +36,15 @@ class SettingsViewController: UIViewController {
 		return cell
 	})
     
-    // MARK: - Init
+    // MARK: - View lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
 		self.navigationItem.largeTitleDisplayMode = .never
         setupTableView()
 		setupDatasource()
     }
+	
+	// MARK: - Setup methods
     
     func setupDatasource() {
         settingsItems.accept(SettingsItemProvider.sharedInstance().getSettingsItems())
@@ -74,6 +81,7 @@ class SettingsViewController: UIViewController {
     
     
     // MARK: - Navigation
+	
     @objc private func logout() {
         do {
             try Auth.auth().signOut()
@@ -87,6 +95,8 @@ class SettingsViewController: UIViewController {
     
 }
 
+// MARK: - Cell binding
+
 extension SettingsViewController: SettingsCellBinding {
     func bind(to cell: SettingsCell, with model: SettingsItem) {
         cell.titleLabel.text = model.title
@@ -94,6 +104,8 @@ extension SettingsViewController: SettingsCellBinding {
 		cell.url = model.url
     }
 }
+
+// MARK: - TableView delegate
 
 extension SettingsViewController: UITableViewDelegate {
 	func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {

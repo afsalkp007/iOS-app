@@ -6,10 +6,10 @@
 //  Copyright © 2018. Levente Vig. All rights reserved.
 //
 
-import UIKit
 import PullToRefreshKit
 import RxCocoa
 import RxSwift
+import UIKit
 
 class TopListViewController: UIViewController {
 	
@@ -24,13 +24,15 @@ class TopListViewController: UIViewController {
     let disposeBag = DisposeBag()
     var level: DifficultyLevel = .beginner
     
-    //MARK: - Init
+    //MARK: - View lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupDatasource()
         setupTableView()
     }
+	
+	// MARK: - Setup methods
     
     func setupDatasource() {
         RestClient.getTopList(for: level, with: self)

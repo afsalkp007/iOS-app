@@ -17,21 +17,25 @@ class BaseGameViewController: UIViewController {
 	@IBOutlet var timerLabel: UILabel!
 	@IBOutlet var gameWrapperView: UIView!
 	
+	// MARK: - Variables
+	
 	var difficultyLevel: DifficultyLevel?
 	let exercises: BehaviorRelay<[Exercise]> = BehaviorRelay(value: [])
 	let disposeBag = DisposeBag()
+	
+	// MARK: - View lifecycle
+	
+	override func viewDidLoad() {
+		super.viewDidLoad()
+		RestClient.getExercises(for: difficultyLevel ?? .beginner, with: self)
+		SVProgressHUD.show()
+	}
+	
+	// MARK: - Navigation
 
 	@IBAction func closeGame(_ sender: Any) {
 		dismissView()
 	}
-	
-	override func viewDidLoad() {
-        super.viewDidLoad()
-		RestClient.getExercises(for: difficultyLevel ?? .beginner, with: self)
-		SVProgressHUD.show()
-    }
-	
-	// MARK: - Navigation
 	
 	func dismissView() {
 		let popup = UIAlertController(title: "Stop Game", message: "Are you sure you want to quit?", preferredStyle: .alert)
@@ -46,6 +50,8 @@ class BaseGameViewController: UIViewController {
 		self.present(popup, animated: true, completion: nil)
 	}
 }
+
+// MARK: - RestClient delegate
 
 extension BaseGameViewController: GameDelegate {
 	func getExercisesDidSuccess(exercises: [Exercise]) {

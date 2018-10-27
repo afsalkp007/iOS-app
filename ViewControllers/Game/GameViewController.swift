@@ -6,15 +6,14 @@
 //  Copyright © 2018. Levente Vig. All rights reserved.
 //
 
-import UIKit
 import RxCocoa
 import RxSwift
+import UIKit
 
 class GameViewController: UIViewController {
 	
 	// MARK: - IBOutlets
     
-    @IBOutlet var timerLabel: UILabel!
     @IBOutlet var questionLabel: UILabel!
     @IBOutlet var answerTextField: UITextField!
 	
@@ -22,7 +21,7 @@ class GameViewController: UIViewController {
 	
 	var exercise: BehaviorRelay<Exercise> = BehaviorRelay(value: Exercise())
 	
-	// MARK: - Init
+	// MARK: - View lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
