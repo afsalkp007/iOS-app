@@ -304,7 +304,27 @@
                     <view key="view" contentMode="scaleToFill" id="Wba-jF-aT1">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00,00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Km-Dy-abn">
+                                <rect key="frame" x="152.5" y="96" width="70" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kd6-Je-FWo">
+                                <rect key="frame" x="0.0" y="117" width="375" height="501"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="3Km-Dy-abn" firstAttribute="centerX" secondItem="ZGE-Ho-mkX" secondAttribute="centerX" id="4M4-fe-q6m"/>
+                            <constraint firstItem="Kd6-Je-FWo" firstAttribute="centerX" secondItem="ZGE-Ho-mkX" secondAttribute="centerX" id="4aT-cv-ahW"/>
+                            <constraint firstItem="3Km-Dy-abn" firstAttribute="top" secondItem="ZGE-Ho-mkX" secondAttribute="top" constant="32" id="g0N-Qh-Wp6"/>
+                            <constraint firstItem="ZGE-Ho-mkX" firstAttribute="bottom" secondItem="Kd6-Je-FWo" secondAttribute="bottom" id="luf-DM-maJ"/>
+                            <constraint firstItem="Kd6-Je-FWo" firstAttribute="top" secondItem="3Km-Dy-abn" secondAttribute="bottom" id="rrS-34-rmy"/>
+                            <constraint firstItem="Kd6-Je-FWo" firstAttribute="width" secondItem="Wba-jF-aT1" secondAttribute="width" id="ttf-MC-H2r"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="ZGE-Ho-mkX"/>
                     </view>
                     <navigationItem key="navigationItem" title="Game" id="FZQ-AP-Jw0">
@@ -316,8 +336,9 @@
                     </navigationItem>
                     <connections>
                         <outlet property="answerTextField" destination="tmS-DD-UnD" id="Nf7-EY-xqI"/>
+                        <outlet property="gameWrapperView" destination="Kd6-Je-FWo" id="5zT-ee-7tQ"/>
                         <outlet property="questionLabel" destination="Evt-iP-AuD" id="UnI-sf-P65"/>
-                        <outlet property="timerLabel" destination="2w9-SZ-GRx" id="9WP-wM-786"/>
+                        <outlet property="timerLabel" destination="3Km-Dy-abn" id="iMP-sM-PKx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rjj-m7-NGT" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -332,14 +353,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00,00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2w9-SZ-GRx">
-                                <rect key="frame" x="152.5" y="52" width="70" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2+2-1=" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Evt-iP-AuD">
-                                <rect key="frame" x="135.5" y="89" width="104.5" height="38.5"/>
+                                <rect key="frame" x="135.5" y="251" width="104.5" height="38.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -358,17 +373,14 @@
                         <constraints>
                             <constraint firstItem="Evt-iP-AuD" firstAttribute="centerX" secondItem="kIq-qb-yfe" secondAttribute="centerX" id="255-hv-weM"/>
                             <constraint firstItem="tmS-DD-UnD" firstAttribute="centerY" secondItem="kIq-qb-yfe" secondAttribute="centerY" id="BhA-G8-Jae"/>
-                            <constraint firstItem="Evt-iP-AuD" firstAttribute="top" secondItem="2w9-SZ-GRx" secondAttribute="bottom" constant="16" id="Ch3-CT-Jn9"/>
                             <constraint firstItem="tmS-DD-UnD" firstAttribute="centerX" secondItem="kIq-qb-yfe" secondAttribute="centerX" id="DiS-fx-Vjc"/>
-                            <constraint firstItem="2w9-SZ-GRx" firstAttribute="centerX" secondItem="kIq-qb-yfe" secondAttribute="centerX" id="nBM-xx-0Gr"/>
-                            <constraint firstItem="2w9-SZ-GRx" firstAttribute="top" secondItem="kIq-qb-yfe" secondAttribute="top" constant="32" id="y8O-5e-2cx"/>
+                            <constraint firstItem="tmS-DD-UnD" firstAttribute="top" secondItem="Evt-iP-AuD" secondAttribute="bottom" constant="32" id="wiy-Me-VJ1"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="kIq-qb-yfe"/>
                     </view>
                     <connections>
                         <outlet property="answerTextField" destination="tmS-DD-UnD" id="z4g-Nc-Lgl"/>
                         <outlet property="questionLabel" destination="Evt-iP-AuD" id="1p9-xQ-Lgu"/>
-                        <outlet property="timerLabel" destination="2w9-SZ-GRx" id="hsJ-IH-Ra2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gpc-1i-nti" userLabel="First Responder" sceneMemberID="firstResponder"/>

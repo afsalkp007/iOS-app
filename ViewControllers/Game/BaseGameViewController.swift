@@ -12,6 +12,10 @@ import RxSwift
 
 class BaseGameViewController: UIViewController {
 	
+	// MARK: - IBOutlets
+	@IBOutlet var timerLabel: UILabel!
+	@IBOutlet var gameWrapperView: UIView!
+	
 	var difficultyLevel: DifficultyLevel?
 	let exercises: BehaviorRelay<[Exercise]> = BehaviorRelay(value: [])
 	let disposeBag = DisposeBag()
@@ -45,6 +49,8 @@ extension BaseGameViewController: GameDelegate {
 	func getExercisesDidSuccess(exercises: [Exercise]) {
 		//TODO: update datasource
 		self.exercises.accept(exercises)
+		
+		//TODO: Hide loading, show first question
 	}
 	
 	func getExercisesDidFail(with error: Error?) {
