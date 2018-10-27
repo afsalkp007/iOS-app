@@ -8,7 +8,6 @@
 
 import Foundation
 
-
 enum DifficultyLevel: Int {
     case beginner = 0
     case intermediate = 1

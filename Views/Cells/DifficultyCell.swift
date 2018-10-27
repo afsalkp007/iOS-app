@@ -9,21 +9,20 @@
 import Foundation
 import UIKit
 
-
 /**
  Cell representing a difficulty level.
  */
 class DifficultyCell: UITableViewCell {
-    
+
     @IBOutlet var wrapperView: UIView!
     @IBOutlet var levelImageView: UIImageView!
     @IBOutlet var titleLabel: UILabel!
-	
+
     override func draw(_ rect: CGRect) {
         super.draw(rect)
         wrapperView.layer.cornerRadius = 8
     }
-	
+
 	override func layoutSubviews() {
 		super.layoutSubviews()
 		let image = self.levelImageView.image
@@ -31,7 +30,7 @@ class DifficultyCell: UITableViewCell {
 		self.levelImageView.image = whiteImage
 		self.levelImageView.tintColor = UIColor.white
 	}
-    
+
     /**
      Selecting the cell increases it's shadow opacity.
      */
@@ -42,7 +41,7 @@ class DifficultyCell: UITableViewCell {
         } else {
             self.wrapperView.addShadowOnTouch(from: self.layer.shadowOpacity, to: 0.2, with: 0.1)
         }
-        
+
         super.setSelected(selected, animated: animated)
     }
 }

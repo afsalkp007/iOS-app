@@ -10,12 +10,11 @@ import Foundation
 import UIKit
 
 class TopListProvider: NSObject {
-    
+
     var topUsers: [MyUser]?
-    
-    
-    //MARK: - Singleton
-    
+
+    // MARK: - Singleton
+
     static let shared = TopListProvider()
     class func sharedInstance() -> TopListProvider {
         return self.shared
@@ -23,16 +22,16 @@ class TopListProvider: NSObject {
     private override init() {
         super.init()
     }
-    
-    //MARK: - Data provider
-    
+
+    // MARK: - Data provider
+
     func getTopUsers() -> [MyUser] {
         if let topUsers = self.topUsers {
             return topUsers
         }
         return []
     }
-    
+
     func setTopUsers(users: [MyUser]) {
         self.topUsers = users
     }

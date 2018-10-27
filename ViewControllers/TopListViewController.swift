@@ -12,35 +12,37 @@ import RxSwift
 import UIKit
 
 class TopListViewController: UIViewController {
-	
-	//MARK: - IBOutlets
-    
+
+	// MARK: - IBOutlets
+
     @IBOutlet var levelChooser: UISegmentedControl!
     @IBOutlet var tableView: UITableView!
-	
-	//MARK: - Variables
-	
+
+	// MARK: - Variables
+
     let topUsers: BehaviorRelay<[MyUser]> = BehaviorRelay(value: [])
     let disposeBag = DisposeBag()
     var level: DifficultyLevel = .beginner
-    
-    //MARK: - View lifecycle
-    
+
+    // MARK: - View lifecycle
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setupDatasource()
         setupTableView()
     }
-	
+
 	// MARK: - Setup methods
-    
+
     func setupDatasource() {
         RestClient.getTopList(for: level, with: self)
-        topUsers.asObservable().bind(to: self.tableView.rx.items(cellIdentifier: Constants.Cells.TopListCell)) { [weak self] (index, model, cell: TopListCell) in
+        topUsers.asObservable()
+		.bind(to: self.tableView.rx
+		.items(cellIdentifier: Constants.Cells.TopListCell)) { [weak self] (_, model, cell: TopListCell) in
             self?.bind(to: cell, with: model)
             }.disposed(by: disposeBag)
     }
-    
+
     func setupTableView() {
         tableView.rx.itemSelected.subscribe(onNext: { [weak self] indexPath in
             self?.tableView.deselectRow(at: indexPath, animated: true)
@@ -52,9 +54,9 @@ class TopListViewController: UIViewController {
             self?.tableView.switchRefreshHeader(to: .normal(.success, 0.5))
         }
     }
-    
+
     // MARK: - Level chooser
-    
+
     @IBAction func levelSelected(_ sender: UISegmentedControl) {
         let index = sender.selectedSegmentIndex
         level = DifficultyLevel(rawValue: index) ?? .beginner
@@ -74,11 +76,11 @@ extension TopListViewController: TopListCellBinding {
 }
 
 extension TopListViewController: TopListDelegate {
-    
+
     func getTopListDidSuccess(users: [MyUser]) {
         topUsers.accept(users)
     }
-    
+
     func getTopListDidFail(error: Error?) {
         NSLog("😢 getTopListDidFail: \(String(describing: error))")
     }

@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 extension UIView {
-	
+
 	/**
 	Hides the keyboard if the view is tapped.
 	- Parameter onTap: Easy toggle for hiding the keyboard.
@@ -20,7 +20,7 @@ extension UIView {
 		let tap = UITapGestureRecognizer(target: self, action: #selector(hideKeybard))
 		self.addGestureRecognizer(tap)
 	}
-	
+
 	/**
 	Hides the keyboard if swiped down on the view..
 	- Parameter onSwipeDown: Easy toggle for hiding the keyboard.
@@ -31,7 +31,7 @@ extension UIView {
 		swipeDown.direction = .down
 		self.addGestureRecognizer(swipeDown)
 	}
-	
+
 	@objc
 	fileprivate func hideKeybard() {
 		self.endEditing(true)

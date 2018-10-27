@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol GameDelegate {
+protocol GameDelegate: NSObjectProtocol {
 	func getExercisesDidSuccess(exercises: [Exercise])
 	func getExercisesDidFail(with error: Error?)
 }

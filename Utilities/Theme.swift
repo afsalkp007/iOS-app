@@ -12,11 +12,11 @@ import UIKit
 class Theme: NSObject {
 	// MARK: Singleton
 	static let shared = Theme()
-	
+
 	private override init() {
 		super.init()
 	}
-	
+
 	// MARK: - Colors
 	static let darkBlue = UIColor(0x112F41)
 	static let lightGreen = UIColor(0x4FB99F)

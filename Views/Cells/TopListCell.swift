@@ -10,9 +10,7 @@ import Foundation
 import UIKit
 
 class TopListCell: UITableViewCell {
-    
     @IBOutlet var positionLabel: UILabel!
     @IBOutlet var nameLabel: UILabel!
     @IBOutlet var timeLabel: UILabel!
-    
 }

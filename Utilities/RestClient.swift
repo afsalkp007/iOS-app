@@ -16,23 +16,22 @@ protocol Networking {
 }
 
 class RestClient: NSObject, Networking {
-    
+
     // MARK: Singleton
     static let shared = RestClient()
-    
+
     private override init() {
         super.init()
     }
-    
+
     class func sharedInstance() -> RestClient {
         return self.shared
     }
-    
+
     // MARK: - Login methods
-    
-    
+
     // MARK: - TopList methods
-    
+
     /**
      Fetches the users' data for a selected level from the backend service.
      - Parameter difficulty : The difficulty level for loading results
@@ -45,16 +44,15 @@ class RestClient: NSObject, Networking {
             print("Request: \(String(describing: response.request))")   // original url request
             print("Response: \(String(describing: response.response))") // http url response
             print("Result: \(response.result)")                         // response serialization result
-            
+
             if let error = response.error {
                 delegate.getTopListDidFail(error: error)
             }
-            
-            
+
             if let json = response.result.value {
                 print("JSON: \(json)") // serialized json response
                 let jsonData = JSON(json)
-                
+
                 var users: [MyUser] = []
                 for user in jsonData["users"] {
                     var myUser = MyUser()
@@ -67,7 +65,7 @@ class RestClient: NSObject, Networking {
             }
         }
     }
-    
+
     // MARK: - Exercises
 	static func getExercises(for difficulty: DifficultyLevel, with delegate: GameDelegate) {
         //TODO: Get exercises for appropiate level
@@ -76,15 +74,15 @@ class RestClient: NSObject, Networking {
 			print("Request: \(String(describing: response.request))")   // original url request
 			print("Response: \(String(describing: response.response))") // http url response
 			print("Result: \(response.result)")                         // response serialization result
-			
+
 			if let error = response.error {
 				delegate.getExercisesDidFail(with: error)
 			}
-			
+
 			if let json = response.result.value {
 				print("JSON: \(json)") // serialized json response
 				let jsonData = JSON(json)
-				
+
 				var exercises: [Exercise] = []
 				for exercise in jsonData["exercises"] {
 					var myExercise = Exercise()

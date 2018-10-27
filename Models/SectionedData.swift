@@ -15,7 +15,7 @@ struct SectionOfCustomData {
 }
 extension SectionOfCustomData: SectionModelType {
 	typealias Item = BaseModel
-	
+
 	init(original: SectionOfCustomData, items: [Item]) {
 		self = original
 		self.items = items

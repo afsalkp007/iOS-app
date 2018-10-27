@@ -13,19 +13,19 @@ import SVProgressHUD
 import UIKit
 
 class MainMenuViewController: UIViewController {
-	
+
 	// MARK: - IBOutlets
 
     @IBOutlet var tableView: UITableView!
     @IBOutlet var startButton: ShadowButton!
-	
+
 	// MARK: - Variables
-    
+
     let difficulties: BehaviorRelay<[Difficulty]> = BehaviorRelay(value: [])
     let disposeBag = DisposeBag()
-    
-    //MARK: - View lifecycle
-    
+
+    // MARK: - View lifecycle
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpDatasource()
@@ -33,13 +33,15 @@ class MainMenuViewController: UIViewController {
         setupStartButton()
         setupNotifications()
     }
-	
+
 	// MARK: - Setup methods
-    
+
     func setUpDatasource() {
         difficulties.accept(DifficultyProvider.sharedInstance().getDifficulties())
-        
-        difficulties.asObservable().bind(to: self.tableView.rx.items(cellIdentifier: Constants.Cells.DifficultyCell)) { [weak self] (index, model, cell: DifficultyCell) in
+
+        difficulties.asObservable()
+			.bind(to: self.tableView.rx
+			.items(cellIdentifier: Constants.Cells.DifficultyCell)) { [weak self] (_, model, cell: DifficultyCell) in
             self?.bind(to: cell, with: model)
             cell.wrapperView.clipsToBounds = false
             cell.wrapperView.layer.shadowColor = UIColor(displayP3Red: 0, green: 0, blue: 0, alpha: 1.0).cgColor
@@ -47,7 +49,7 @@ class MainMenuViewController: UIViewController {
             cell.wrapperView.layer.shadowOffset = CGSize(width: 0, height: 2)
             }.disposed(by: disposeBag)
     }
-    
+
     func setupTableView() {
         tableView.rx.itemSelected.subscribe(onNext: { indexPath in
             NSLog("✅ Row \(indexPath.row) selected")
@@ -58,7 +60,7 @@ class MainMenuViewController: UIViewController {
         tableView.separatorStyle = .none
         tableView.tableFooterView = UIView()
     }
-    
+
     func setupStartButton() {
         startButton.clipsToBounds = false
         startButton.layer.cornerRadius = 8
@@ -66,20 +68,20 @@ class MainMenuViewController: UIViewController {
         startButton.layer.shadowOpacity = 0.3
         startButton.layer.shadowOffset = CGSize(width: 0, height: 2)
     }
-    
+
     func setupNotifications() {
-        NotificationCenter.default.addObserver(self, selector: #selector(startButtonTapped), name: Constants.Notifications.StartButtonDidTouchUpInside, object: nil)
+        NotificationCenter.default
+		.addObserver(self, selector: #selector(startButtonTapped), name: Constants.Notifications.StartButtonDidTouchUpInside, object: nil)
     }
-    
-    //MARK: - Navigation
-	
+
+    // MARK: - Navigation
+
     @objc private func startButtonTapped() {
         if let selectedLevel = tableView.indexPathForSelectedRow?.row {
             NSLog("💥 Start button tapped for level \(String(describing: selectedLevel))")
             performSegue(withIdentifier: Constants.Segues.StartGame, sender: nil)
             //TODO: [RestClient loadExercisesForLevel: selectedLevel]
         } else {
-            //TODO: error please select a level
             NSLog("😢 No level selected.")
         }
     }

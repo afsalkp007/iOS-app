@@ -9,18 +9,18 @@
 import UIKit
 
 class StartViewController: UIViewController {
-	
+
 	// MARK: - View lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-    
+
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 		start()
     }
-	
+
 	// MARK: - Navigation
 	private func start() {
 		if isKeyPresentInUserDefaults(key: Constants.UserDefaultsKeys.loggedInUser) {

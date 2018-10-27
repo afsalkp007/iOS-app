@@ -10,20 +10,20 @@ import Foundation
 import UIKit
 
 struct Constants {
-    
+
     static let kAppDelegate = UIApplication.shared.delegate as! AppDelegate
     static let kBaseURL = "https://rft.com/api/v1"
-    
+
     struct Cells {
         static let DifficultyCell = "DifficultyCell"
         static let SettingsCell = "SettingsCell"
         static let TopListCell = "TopListCell"
     }
-    
+
     struct Notifications {
         static let StartButtonDidTouchUpInside = NSNotification.Name(rawValue: "StartButtonDidTouchUpInside")
     }
-    
+
     struct Segues {
         static let LoginToMainScreen = "LoginToMainScreen"
         static let Logout = "Logout"
@@ -32,11 +32,11 @@ struct Constants {
         static let ShowMainScreen = "ShowMainScreen"
         static let StartGame = "StartGame"
     }
-    
+
     struct UserDefaultsKeys {
         static let loggedInUser = "loggedInUser"
     }
-    
+
     struct ViewControllers {
         static let GameNavigationController = "GameNavigationController"
         static let GameViewController = "GameViewController"
