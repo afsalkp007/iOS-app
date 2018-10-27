@@ -6,9 +6,10 @@
 //  Copyright © 2018. Levente Vig. All rights reserved.
 //
 
-import UIKit
 import RxCocoa
 import RxSwift
+import SVProgressHUD
+import UIKit
 
 class BaseGameViewController: UIViewController {
 	
@@ -27,6 +28,7 @@ class BaseGameViewController: UIViewController {
 	override func viewDidLoad() {
         super.viewDidLoad()
 		RestClient.getExercises(for: difficultyLevel ?? .beginner, with: self)
+		SVProgressHUD.show()
     }
 	
 	// MARK: - Navigation
@@ -47,10 +49,8 @@ class BaseGameViewController: UIViewController {
 
 extension BaseGameViewController: GameDelegate {
 	func getExercisesDidSuccess(exercises: [Exercise]) {
-		//TODO: update datasource
 		self.exercises.accept(exercises)
-		
-		//TODO: Hide loading, show first question
+		SVProgressHUD.dismiss()
 	}
 	
 	func getExercisesDidFail(with error: Error?) {

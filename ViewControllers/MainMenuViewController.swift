@@ -6,10 +6,11 @@
 //  Copyright © 2018. Levente Vig. All rights reserved.
 //
 
-import UIKit
 import Firebase
-import RxSwift
 import RxCocoa
+import RxSwift
+import SVProgressHUD
+import UIKit
 
 class MainMenuViewController: UIViewController {
 
