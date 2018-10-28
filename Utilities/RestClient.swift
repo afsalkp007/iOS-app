@@ -6,8 +6,8 @@
 //  Copyright © 2018. Levente Vig. All rights reserved.
 //
 
-import Foundation
 import Alamofire
+import Foundation
 import SwiftyJSON
 
 protocol Networking {
@@ -70,7 +70,7 @@ class RestClient: NSObject, Networking {
 	static func getExercises(for difficulty: DifficultyLevel, with delegate: GameDelegate) {
         //TODO: Get exercises for appropiate level
 //        let url = "\(Constants.kBaseURL)/exercuises?level=\(difficulty.rawValue)"
-		Alamofire.request("https://www.mocky.io/v2/5bc5c9893300006e000213ad").responseJSON { (response) in
+		Alamofire.request("https://www.mocky.io/v2/5bc5c9893300006e000213ad").responseJSON { response in
 			print("Request: \(String(describing: response.request))")   // original url request
 			print("Response: \(String(describing: response.response))") // http url response
 			print("Result: \(response.result)")                         // response serialization result

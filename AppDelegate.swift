@@ -6,9 +6,9 @@
 //  Copyright © 2018. Levente Vig. All rights reserved.
 //
 
-import UIKit
 import Firebase
 import GoogleSignIn
+import UIKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
@@ -17,8 +17,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
 	var loggedInUser: User? {
 		didSet {
 			do {
-				let encodedData = try NSKeyedArchiver.archivedData(withRootObject: loggedInUser!, requiringSecureCoding: true)
-				defaults.set(encodedData, forKey: Constants.UserDefaultsKeys.loggedInUser)
+				if let user = loggedInUser {
+					let encodedData = try NSKeyedArchiver.archivedData(withRootObject: user, requiringSecureCoding: true)
+					defaults.set(encodedData, forKey: Constants.UserDefaultsKeys.loggedInUser)
+				}
 			} catch {
 				NSLog("Failed to set defaults key \(Constants.UserDefaultsKeys.loggedInUser)")
 			}

@@ -6,9 +6,9 @@
 //  Copyright © 2018. Levente Vig. All rights reserved.
 //
 
+import CoreGraphics
 import Foundation
 import UIKit
-import CoreGraphics
 
 public extension UIView {
 
@@ -24,7 +24,7 @@ public extension UIView {
             self.transform = CGAffineTransform(translationX: 0, y: 0)
         }, delayFactor: 0.2)
 
-        propertyAnimator.addCompletion { (_) in
+        propertyAnimator.addCompletion { _ in
             self.layer.borderWidth = 0
         }
 

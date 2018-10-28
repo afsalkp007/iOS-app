@@ -23,7 +23,7 @@ class SettingsViewController: UIViewController {
 	let settingsItems: BehaviorRelay<[SectionOfCustomData]> = BehaviorRelay(value: [])
     let disposeBag = DisposeBag()
 	let dataSource = RxTableViewSectionedReloadDataSource<SectionOfCustomData>(
-			configureCell: { (_, tableView, _, model) -> UITableViewCell in
+			configureCell: { _, tableView, _, model -> UITableViewCell in
 
 				guard let cell = tableView.dequeueReusableCell(withIdentifier: Constants.Cells.SettingsCell) as? SettingsCell else {
 					return UITableViewCell()

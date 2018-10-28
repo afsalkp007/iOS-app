@@ -79,12 +79,27 @@ class MainMenuViewController: UIViewController {
     @objc private func startButtonTapped() {
         if let selectedLevel = tableView.indexPathForSelectedRow?.row {
             NSLog("💥 Start button tapped for level \(String(describing: selectedLevel))")
-            performSegue(withIdentifier: Constants.Segues.StartGame, sender: nil)
-            //TODO: [RestClient loadExercisesForLevel: selectedLevel]
+			performSegue(withIdentifier: Constants.Segues.StartGame, sender: nil)
         } else {
             NSLog("😢 No level selected.")
         }
     }
+
+	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+		if segue.identifier == Constants.Segues.StartGame {
+			if segue.destination is UINavigationController {
+				let navController = segue.destination as? UINavigationController
+				if navController?.viewControllers.first is BaseGameViewController {
+					let gameController = navController?.viewControllers.first as? BaseGameViewController
+					if let selectedLevel = tableView.indexPathForSelectedRow?.row {
+						if let difficulty = DifficultyLevel(rawValue: selectedLevel) {
+							gameController?.difficultyLevel = difficulty
+						}
+					}
+				}
+			}
+		}
+	}
 }
 
 // MARK: - Cell binding

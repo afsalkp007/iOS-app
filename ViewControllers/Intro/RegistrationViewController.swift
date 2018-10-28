@@ -55,7 +55,7 @@ class RegistrationViewController: UIViewController {
 			NSLog("😢 password wrong")
             return
         }
-        Auth.auth().createUser(withEmail: email, password: password) { [weak self] (authResult, error) in
+        Auth.auth().createUser(withEmail: email, password: password) { [weak self] authResult, error in
             // ...
             guard let user = authResult?.user else {
                 NSLog("😢 \(String(describing: error))")

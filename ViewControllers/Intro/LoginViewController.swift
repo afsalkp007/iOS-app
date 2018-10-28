@@ -55,7 +55,7 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate {
     @objc
     private func login() {
         hideKeybard()
-        Auth.auth().signIn(withEmail: userNameTextField.text ?? "", password: passwordTextField.text ?? "") { [weak self] (result, error) in
+        Auth.auth().signIn(withEmail: userNameTextField.text ?? "", password: passwordTextField.text ?? "") { [weak self] result, error in
             if let error = error {
                 NSLog("😢 \(error)")
                 self?.loginButton.isEnabled = false

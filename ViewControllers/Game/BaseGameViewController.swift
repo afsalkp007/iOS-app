@@ -39,10 +39,10 @@ class BaseGameViewController: UIViewController {
 
 	func dismissView() {
 		let popup = UIAlertController(title: "Stop Game", message: "Are you sure you want to quit?", preferredStyle: .alert)
-		let yesAction = UIAlertAction(title: "Yes", style: .default, handler: { [weak self] (_) in
+		let yesAction = UIAlertAction(title: "Yes", style: .default, handler: { [weak self] _ in
 			self?.dismiss(animated: true, completion: nil)
 		})
-		let noAction = UIAlertAction(title: "No", style: .cancel, handler: { (_) in
+		let noAction = UIAlertAction(title: "No", style: .cancel, handler: { _ in
 			popup.removeFromParent()
 		})
 		popup.addAction(yesAction)
