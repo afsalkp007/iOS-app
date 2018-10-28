@@ -7,8 +7,16 @@
 //
 
 import Foundation
+import SwiftyJSON
 
 struct Exercise: BaseModel {
     var question: String?
     var correctAnswer: Double?
+
+	init() {}
+
+	init(json: JSON) {
+		self.question = json[""].rawString()
+		self.correctAnswer = json[""].doubleValue
+	}
 }

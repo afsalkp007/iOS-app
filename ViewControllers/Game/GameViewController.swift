@@ -25,7 +25,7 @@ class GameViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-		//TODO: Bind exercise to view
+		// TODO: Bind exercise to view
         answerTextField.addDoneButtonToKeyboard(myAction:  #selector(self.answerTextField.resignFirstResponder))
     }
 }

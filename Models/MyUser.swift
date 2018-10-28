@@ -7,9 +7,16 @@
 //
 
 import Foundation
+import SwiftyJSON
 
 struct MyUser: BaseModel {
     var position: Int?
     var name: String?
     var topScore: String?
+
+	init(json: JSON) {
+		self.name = json["name"].rawString()
+		self.position = json["position"].intValue
+		self.topScore = json["topScore"].rawString()
+	}
 }
