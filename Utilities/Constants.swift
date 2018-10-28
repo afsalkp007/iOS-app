@@ -11,6 +11,7 @@ import UIKit
 
 struct Constants {
 
+	// swiftlint:disable force_cast
     static let kAppDelegate = UIApplication.shared.delegate as! AppDelegate
     static let kBaseURL = "https://rft.com/api/v1"
 
