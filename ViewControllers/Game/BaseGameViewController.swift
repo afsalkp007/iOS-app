@@ -9,6 +9,7 @@
 import RxCocoa
 import RxSwift
 import SVProgressHUD
+import SwiftyTimer
 import UIKit
 
 class BaseGameViewController: UIViewController {
@@ -22,6 +23,8 @@ class BaseGameViewController: UIViewController {
 	var difficultyLevel: DifficultyLevel?
 	let exercises: BehaviorRelay<[Exercise]> = BehaviorRelay(value: [])
 	let disposeBag = DisposeBag()
+	var timer: Timer?
+	var start: Date?
 
 	// MARK: - View lifecycle
 
@@ -29,6 +32,17 @@ class BaseGameViewController: UIViewController {
 		super.viewDidLoad()
 		RestClient.getExercises(for: difficultyLevel ?? .beginner, with: self)
 		SVProgressHUD.show()
+		timer = Timer.new(every: 1.ms) { [weak self] in
+			let progress = Date().timeIntervalSince(self?.start ?? Date())
+			let timeText = String(format: "%.2 sf", progress)
+			self?.timerLabel.text = timeText
+		}
+	}
+
+	override func viewDidAppear(_ animated: Bool) {
+		super.viewDidAppear(animated)
+		start = Date()
+		timer?.start(modes: RunLoop.Mode.default)
 	}
 
 	// MARK: - Navigation
