@@ -19,6 +19,7 @@ target 'rft' do
     pod 'RxSwift',    '~> 4.0'
     pod 'SVProgressHUD'
     pod 'SwiftyJSON', '~> 4.0'
+    pod 'SwiftyTimer', '~> 2.1.0'
     
     target 'rftTests' do
         inherit! :search_paths

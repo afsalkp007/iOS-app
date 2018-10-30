@@ -90,6 +90,7 @@ PODS:
   - RxSwift (4.3.1)
   - SVProgressHUD (2.2.5)
   - SwiftyJSON (4.1.0)
+  - SwiftyTimer (2.1.0)
 
 DEPENDENCIES:
   - Alamofire (~> 4.7)
@@ -105,6 +106,7 @@ DEPENDENCIES:
   - RxSwift (~> 4.0)
   - SVProgressHUD
   - SwiftyJSON (~> 4.0)
+  - SwiftyTimer (~> 2.1.0)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -132,6 +134,7 @@ SPEC REPOS:
     - RxSwift
     - SVProgressHUD
     - SwiftyJSON
+    - SwiftyTimer
 
 SPEC CHECKSUMS:
   Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
@@ -158,7 +161,8 @@ SPEC CHECKSUMS:
   RxSwift: fe0fd770a43acdb7d0a53da411c9b892e69bb6e4
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   SwiftyJSON: c29297daf073d2aa016295d5809cdd68045c39b3
+  SwiftyTimer: 02dd6cf10cbc71cbf67cec494f6e5eb782102543
 
-PODFILE CHECKSUM: 9d6fa44c07e3b2526a87f3c3636e07c439cf59d1
+PODFILE CHECKSUM: bbac8cba69aabf607716b7e53bb39ea9be45116f
 
 COCOAPODS: 1.5.3
