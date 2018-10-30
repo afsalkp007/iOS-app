@@ -15,18 +15,11 @@ protocol Networking {
 	static func getExercises(for difficulty: DifficultyLevel, with delegate: GameDelegate)
 }
 
-class RestClient: NSObject, Networking {
+class RestClient: Networking {
 
     // MARK: Singleton
     static let shared = RestClient()
-
-    private override init() {
-        super.init()
-    }
-
-    class func sharedInstance() -> RestClient {
-        return self.shared
-    }
+    private init() {}
 
     // MARK: - Login methods
 

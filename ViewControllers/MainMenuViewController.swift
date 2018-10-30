@@ -37,7 +37,7 @@ class MainMenuViewController: UIViewController {
 	// MARK: - Setup methods
 
     func setUpDatasource() {
-        difficulties.accept(DifficultyProvider.sharedInstance().getDifficulties())
+        difficulties.accept(DifficultyProvider.shared.getDifficulties())
 
         difficulties.asObservable()
 			.bind(to: self.tableView.rx

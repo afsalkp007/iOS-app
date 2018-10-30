@@ -48,7 +48,7 @@ class SettingsViewController: UIViewController {
 	// MARK: - Setup methods
 
     func setupDatasource() {
-        settingsItems.accept(SettingsItemProvider.sharedInstance().getSettingsItems())
+        settingsItems.accept(SettingsItemProvider.shared.getSettingsItems())
 
 		dataSource.titleForHeaderInSection = { dataSource, index in
 			return dataSource.sectionModels[index].header

@@ -11,17 +11,12 @@ import RxCocoa
 import RxSwift
 import UIKit
 
-class SettingsItemProvider: NSObject {
+class SettingsItemProvider {
 
     // MARK: - Singleton
 
     static let shared = SettingsItemProvider()
-    class func sharedInstance() -> SettingsItemProvider {
-        return self.shared
-    }
-    private override init() {
-        super.init()
-    }
+    private init() {}
 
     // MARK: - Data provider
 

@@ -9,17 +9,12 @@
 import Foundation
 import UIKit
 
-class DifficultyProvider: NSObject {
+class DifficultyProvider {
 
     // MARK: - Singleton
 
     static let shared = DifficultyProvider()
-    class func sharedInstance() -> DifficultyProvider {
-        return self.shared
-    }
-    private override init() {
-        super.init()
-    }
+    private init() {}
 
     // MARK: - Data provider
 
