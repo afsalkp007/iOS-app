@@ -18,6 +18,7 @@ target 'rft' do
     pod 'RxDataSources', '~> 3.1'
     pod 'RxSwift',    '~> 4.0'
     pod 'SVProgressHUD'
+    pod 'SnapKit', '~> 4.2.0'
     pod 'SwiftyJSON', '~> 4.0'
     pod 'SwiftyTimer', '~> 2.1.0'
     
