@@ -13,6 +13,7 @@ target 'rft' do
     pod 'Firebase/Core'
     pod 'GoogleSignIn'
     pod 'PullToRefreshKit'
+    pod 'RealmSwift'
     pod 'RevealingSplashView'
     pod 'RxCocoa',    '~> 4.0'
     pod 'RxDataSources', '~> 3.1'
