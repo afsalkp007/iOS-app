@@ -25,6 +25,7 @@ class BaseGameViewController: UIViewController {
 	let disposeBag = DisposeBag()
 	var timer: Timer?
 	var start: Date?
+	var end: Date?
 
 	// MARK: - View lifecycle
 
@@ -41,8 +42,17 @@ class BaseGameViewController: UIViewController {
 
 	override func viewDidAppear(_ animated: Bool) {
 		super.viewDidAppear(animated)
+	}
+
+	// MARK: - Time measuring
+	func startTimer() {
 		start = Date()
 		timer?.start(modes: RunLoop.Mode.default)
+	}
+
+	func endTimer() {
+		timer?.invalidate()
+		end = Date()
 	}
 
 	// MARK: - Navigation
@@ -75,5 +85,6 @@ extension BaseGameViewController: GameDelegate {
 
 	func getExercisesDidFail(with error: Error?) {
 		NSLog("😢 get exercises did fail: \(String(describing: error))")
+		SVProgressHUD.dismiss()
 	}
 }
