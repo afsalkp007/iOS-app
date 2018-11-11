@@ -20,6 +20,7 @@ target 'rft' do
     pod 'RxSwift',    '~> 4.0'
     pod 'SVProgressHUD'
     pod 'SnapKit', '~> 4.2.0'
+    pod 'SwifterSwift'
     pod 'SwiftyJSON', '~> 4.0'
     pod 'SwiftyTimer', '~> 2.1.0'
     
