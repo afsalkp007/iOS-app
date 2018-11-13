@@ -74,7 +74,7 @@
 		1B1766A0215FBEDF002BCC8F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1B266ED2217E51BA00AC6B4D /* SectionedData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionedData.swift; sourceTree = "<group>"; };
 		1B266ED4217E52D900AC6B4D /* BaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
-		1B3B85A0219AD1FC00545349 /* UILabel+BlinkAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UILabel+BlinkAnimation.swift"; path = "rft/Utilities/Data providers/UILabel+BlinkAnimation.swift"; sourceTree = SOURCE_ROOT; };
+		1B3B85A0219AD1FC00545349 /* UILabel+BlinkAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UILabel+BlinkAnimation.swift"; path = "rft/Utilities/Extensions/Animations/UILabel+BlinkAnimation.swift"; sourceTree = SOURCE_ROOT; };
 		1B3D7A68217293FF00B13D91 /* UITextField+DoneButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+DoneButton.swift"; sourceTree = "<group>"; };
 		1B3D7A6A217297B100B13D91 /* Exercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
 		1B3D7A6D2172A1B300B13D91 /* TopListDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopListDelegate.swift; sourceTree = "<group>"; };
@@ -140,6 +140,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1B3B85A2219ADAC000545349 /* Animations */ = {
+			isa = PBXGroup;
+			children = (
+				1B00851B2160B36C00610507 /* UIView+ShakeAnimation.swift */,
+				1BE1E18C21722377003AC1DB /* UIView+ShadowAnimation.swift */,
+				1B3B85A0219AD1FC00545349 /* UILabel+BlinkAnimation.swift */,
+			);
+			path = Animations;
+			sourceTree = "<group>";
+		};
 		1B3D7A6F2172A1E600B13D91 /* Network */ = {
 			isa = PBXGroup;
 			children = (
@@ -162,13 +172,11 @@
 		1B3D7A712172A21E00B13D91 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				1B3B85A2219ADAC000545349 /* Animations */,
 				1BF2A66E21600DFE00406BA9 /* UserDefaults+KeyExists.swift */,
-				1B00851B2160B36C00610507 /* UIView+ShakeAnimation.swift */,
-				1BE1E18C21722377003AC1DB /* UIView+ShadowAnimation.swift */,
 				1B3D7A68217293FF00B13D91 /* UITextField+DoneButton.swift */,
 				1B68169B217A5D1000C31BB8 /* UIColor+HEX.swift */,
 				1B0E47D92184B7BC00A25244 /* UIView+HideKeyboard.swift */,
-				1B3B85A0219AD1FC00545349 /* UILabel+BlinkAnimation.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
