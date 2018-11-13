@@ -15,6 +15,7 @@
 		1B1766A1215FBEDF002BCC8F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1B1766A0215FBEDF002BCC8F /* GoogleService-Info.plist */; };
 		1B266ED3217E51BA00AC6B4D /* SectionedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B266ED2217E51BA00AC6B4D /* SectionedData.swift */; };
 		1B266ED5217E52D900AC6B4D /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B266ED4217E52D900AC6B4D /* BaseModel.swift */; };
+		1B3B85A1219AD1FC00545349 /* UILabel+BlinkAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3B85A0219AD1FC00545349 /* UILabel+BlinkAnimation.swift */; };
 		1B3D7A69217293FF00B13D91 /* UITextField+DoneButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3D7A68217293FF00B13D91 /* UITextField+DoneButton.swift */; };
 		1B3D7A6B217297B100B13D91 /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3D7A6A217297B100B13D91 /* Exercise.swift */; };
 		1B3D7A6E2172A1B300B13D91 /* TopListDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3D7A6D2172A1B300B13D91 /* TopListDelegate.swift */; };
@@ -73,6 +74,7 @@
 		1B1766A0215FBEDF002BCC8F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1B266ED2217E51BA00AC6B4D /* SectionedData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionedData.swift; sourceTree = "<group>"; };
 		1B266ED4217E52D900AC6B4D /* BaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
+		1B3B85A0219AD1FC00545349 /* UILabel+BlinkAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UILabel+BlinkAnimation.swift"; path = "rft/Utilities/Data providers/UILabel+BlinkAnimation.swift"; sourceTree = SOURCE_ROOT; };
 		1B3D7A68217293FF00B13D91 /* UITextField+DoneButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+DoneButton.swift"; sourceTree = "<group>"; };
 		1B3D7A6A217297B100B13D91 /* Exercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
 		1B3D7A6D2172A1B300B13D91 /* TopListDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopListDelegate.swift; sourceTree = "<group>"; };
@@ -166,6 +168,7 @@
 				1B3D7A68217293FF00B13D91 /* UITextField+DoneButton.swift */,
 				1B68169B217A5D1000C31BB8 /* UIColor+HEX.swift */,
 				1B0E47D92184B7BC00A25244 /* UIView+HideKeyboard.swift */,
+				1B3B85A0219AD1FC00545349 /* UILabel+BlinkAnimation.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -616,6 +619,7 @@
 				1BE1E1862171E9F0003AC1DB /* Difficulty.swift in Sources */,
 				1BE1E1A021724395003AC1DB /* SettingsItemProvider.swift in Sources */,
 				1B3E534B217615AB00E9A316 /* BaseGameViewController.swift in Sources */,
+				1B3B85A1219AD1FC00545349 /* UILabel+BlinkAnimation.swift in Sources */,
 				1BF2A66F21600DFE00406BA9 /* UserDefaults+KeyExists.swift in Sources */,
 				1B7E84E6215FAB3400574C33 /* TopListViewController.swift in Sources */,
 				1BE1E19221723777003AC1DB /* GameViewController.swift in Sources */,

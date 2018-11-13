@@ -62,6 +62,16 @@ class BaseGameViewController: UIViewController {
 		guard currentExercise < exercises.value.count else {
 			// TODO: Last exercise
 			endTimer()
+
+			timerLabel.blink()
+			DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+				self.timerLabel.layer.removeAllAnimations()
+			}
+
+			gameViewController?.answerTextField.isUserInteractionEnabled = false
+			gameViewController?.answerTextField.alpha = 0
+
+			// TODO: Post results to service
 			return
 		}
 		let exercise = exercises.value[currentExercise]
@@ -74,10 +84,9 @@ class BaseGameViewController: UIViewController {
 	func startGame() {
 		gameViewController = self.storyboard?.instantiateViewController(withIdentifier: Constants.ViewControllers.GameViewController) as? GameViewController
 		gameWrapperView.addSubview(gameViewController?.view ?? UIView())
-		gameViewController?.view.snp.makeConstraints({ [weak self] make in
-			make.edges.equalTo((self?.gameWrapperView)!)
+		gameViewController?.view.snp.makeConstraints({ make in
+			make.edges.equalTo(gameWrapperView)
 		})
-
 		addGameView()
 		startTimer()
 	}

@@ -34,7 +34,7 @@ class GameViewController: UIViewController {
 
         answerTextField.addDoneButtonToKeyboard(myAction:  #selector(self.answerTextField.resignFirstResponder))
     }
-	
+
 	@IBAction func didEnterAnswer(_ sender: Any) {
 		answerTextField.text = ""
 		NotificationCenter.default.post(name: Constants.Notifications.FinishedCurrentExecise, object: nil)

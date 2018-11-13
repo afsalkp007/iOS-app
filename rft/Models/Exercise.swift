@@ -19,4 +19,8 @@ struct Exercise: BaseModel {
 		self.question = json["question"].rawString()
 		self.correctAnswer = json["correct_answer"].doubleValue
 	}
+	
+	init(_ text: String) {
+		self.question = text
+	}
 }
