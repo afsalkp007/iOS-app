@@ -17,7 +17,6 @@ class MainMenuViewController: UIViewController {
 	// MARK: - IBOutlets
 
     @IBOutlet var tableView: UITableView!
-    @IBOutlet var startButton: ShadowButton!
 
 	// MARK: - Variables
 
@@ -30,8 +29,6 @@ class MainMenuViewController: UIViewController {
         super.viewDidLoad()
         setUpDatasource()
         setupTableView()
-        setupStartButton()
-        setupNotifications()
     }
 
 	// MARK: - Setup methods
@@ -51,38 +48,14 @@ class MainMenuViewController: UIViewController {
     }
 
     func setupTableView() {
-        tableView.rx.itemSelected.subscribe(onNext: { indexPath in
+        tableView.rx.itemSelected.subscribe(onNext: { [weak self] indexPath in
             NSLog("✅ Row \(indexPath.row) selected")
+			self?.performSegue(withIdentifier: Constants.Segues.StartGame, sender: nil)
         }).disposed(by: disposeBag)
         tableView.rx.setDelegate(self).disposed(by: disposeBag)
-        tableView.selectRow(at: IndexPath(row: 0, section: 0), animated: false, scrollPosition: .none)
         tableView.contentInset = UIEdgeInsets(top: 8, left: 0, bottom: 0, right: 0)
         tableView.separatorStyle = .none
         tableView.tableFooterView = UIView()
-    }
-
-    func setupStartButton() {
-        startButton.clipsToBounds = false
-        startButton.layer.cornerRadius = 8
-        startButton.layer.shadowColor = UIColor(displayP3Red: 0, green: 0, blue: 0, alpha: 1.0).cgColor
-        startButton.layer.shadowOpacity = 0.3
-        startButton.layer.shadowOffset = CGSize(width: 0, height: 2)
-    }
-
-    func setupNotifications() {
-        NotificationCenter.default
-		.addObserver(self, selector: #selector(startButtonTapped), name: Constants.Notifications.StartButtonDidTouchUpInside, object: nil)
-    }
-
-    // MARK: - Navigation
-
-    @objc private func startButtonTapped() {
-        if let selectedLevel = tableView.indexPathForSelectedRow?.row {
-            NSLog("💥 Start button tapped for level \(String(describing: selectedLevel))")
-			performSegue(withIdentifier: Constants.Segues.StartGame, sender: nil)
-        } else {
-            NSLog("😢 No level selected.")
-        }
     }
 
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

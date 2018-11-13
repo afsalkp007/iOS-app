@@ -203,7 +203,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="88" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="OKa-JP-sjs">
-                                <rect key="frame" x="0.0" y="116" width="375" height="422"/>
+                                <rect key="frame" x="0.0" y="116" width="375" height="502"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="DifficultyCell" rowHeight="88" id="AJm-Ea-xpp" customClass="DifficultyCell" customModule="rft" customModuleProvider="target">
@@ -256,27 +256,13 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vYn-pN-zg3" customClass="ShadowButton" customModule="rft" customModuleProvider="target">
-                                <rect key="frame" x="112.5" y="542" width="150" height="44"/>
-                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="lii-2O-ZKH"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
-                                <state key="normal" title="Start">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="vYn-pN-zg3" firstAttribute="width" secondItem="Bne-f7-Qpz" secondAttribute="width" multiplier="0.4" id="9v4-N3-78v"/>
                             <constraint firstItem="hov-2r-Fgc" firstAttribute="trailing" secondItem="OKa-JP-sjs" secondAttribute="trailing" id="NJU-fY-Snm"/>
-                            <constraint firstItem="vYn-pN-zg3" firstAttribute="top" secondItem="OKa-JP-sjs" secondAttribute="bottom" constant="4" id="chl-tT-f9e"/>
                             <constraint firstItem="OKa-JP-sjs" firstAttribute="top" secondItem="hov-2r-Fgc" secondAttribute="top" id="iku-wA-nCt"/>
+                            <constraint firstItem="hov-2r-Fgc" firstAttribute="bottom" secondItem="OKa-JP-sjs" secondAttribute="bottom" id="n7Q-gq-pOY"/>
                             <constraint firstItem="OKa-JP-sjs" firstAttribute="leading" secondItem="Bne-f7-Qpz" secondAttribute="leading" id="nhm-EJ-6D3"/>
-                            <constraint firstItem="hov-2r-Fgc" firstAttribute="bottom" secondItem="vYn-pN-zg3" secondAttribute="bottom" constant="32" id="o1A-Bb-jPL"/>
-                            <constraint firstItem="vYn-pN-zg3" firstAttribute="centerX" secondItem="hov-2r-Fgc" secondAttribute="centerX" id="odS-Wq-UUO"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="hov-2r-Fgc"/>
                     </view>
@@ -288,7 +274,6 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="startButton" destination="vYn-pN-zg3" id="by4-YI-OwF"/>
                         <outlet property="tableView" destination="OKa-JP-sjs" id="qtv-TA-RM3"/>
                         <segue destination="jyp-M6-6Mh" kind="showDetail" identifier="StartGame" id="jrI-hU-V02"/>
                     </connections>
