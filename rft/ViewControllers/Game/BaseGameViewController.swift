@@ -9,12 +9,14 @@
 import RxCocoa
 import RxSwift
 import SVProgressHUD
+import SnapKit
 import SwiftyTimer
 import UIKit
 
 class BaseGameViewController: UIViewController {
 
 	// MARK: - IBOutlets
+
 	@IBOutlet var timerLabel: UILabel!
 	@IBOutlet var gameWrapperView: UIView!
 
@@ -23,6 +25,8 @@ class BaseGameViewController: UIViewController {
 	var difficultyLevel: DifficultyLevel?
 	let exercises: BehaviorRelay<[Exercise]> = BehaviorRelay(value: [])
 	let disposeBag = DisposeBag()
+	var gameViewController: GameViewController?
+	var currentExercise = 0
 	var timer: Timer?
 	var start: Date?
 	var end: Date?
@@ -32,10 +36,11 @@ class BaseGameViewController: UIViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		RestClient.getExercises(for: difficultyLevel ?? .beginner, with: self)
+		subscribeToNotifications()
 		SVProgressHUD.show()
 		timer = Timer.new(every: 1.ms) { [weak self] in
 			let progress = Date().timeIntervalSince(self?.start ?? Date())
-			let timeText = String(format: "%.2 sf", progress)
+			let timeText = String(format: "%.2f", progress)
 			self?.timerLabel.text = timeText
 		}
 	}
@@ -44,7 +49,41 @@ class BaseGameViewController: UIViewController {
 		super.viewDidAppear(animated)
 	}
 
+	// MARK: - Init
+
+	private func subscribeToNotifications() {
+		NotificationCenter.default.addObserver(self, selector: #selector(addGameView), name: Constants.Notifications.FinishedCurrentExecise, object: nil)
+	}
+
+	// MARK: - Setup game
+
+	@objc private func addGameView() {
+
+		guard currentExercise < exercises.value.count else {
+			// TODO: Last exercise
+			endTimer()
+			return
+		}
+		let exercise = exercises.value[currentExercise]
+		gameViewController?.exercise.accept(exercise)
+		currentExercise += 1
+	}
+
+	// MARK: - Manage game
+
+	func startGame() {
+		gameViewController = self.storyboard?.instantiateViewController(withIdentifier: Constants.ViewControllers.GameViewController) as? GameViewController
+		gameWrapperView.addSubview(gameViewController?.view ?? UIView())
+		gameViewController?.view.snp.makeConstraints({ [weak self] make in
+			make.edges.equalTo((self?.gameWrapperView)!)
+		})
+
+		addGameView()
+		startTimer()
+	}
+
 	// MARK: - Time measuring
+
 	func startTimer() {
 		start = Date()
 		timer?.start(modes: RunLoop.Mode.default)
@@ -80,6 +119,7 @@ class BaseGameViewController: UIViewController {
 extension BaseGameViewController: GameDelegate {
 	func getExercisesDidSuccess(exercises: [Exercise]) {
 		self.exercises.accept(exercises)
+		startGame()
 		SVProgressHUD.dismiss()
 	}
 

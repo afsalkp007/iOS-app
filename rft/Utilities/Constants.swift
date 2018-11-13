@@ -23,6 +23,7 @@ struct Constants {
 
     struct Notifications {
         static let StartButtonDidTouchUpInside = NSNotification.Name(rawValue: "StartButtonDidTouchUpInside")
+		static let FinishedCurrentExecise = NSNotification.Name(rawValue: "FinishedCurrentExecise")
     }
 
     struct Segues {

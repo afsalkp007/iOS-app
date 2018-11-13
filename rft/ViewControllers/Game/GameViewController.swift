@@ -20,12 +20,23 @@ class GameViewController: UIViewController {
 	// MARK: - Variables
 
 	var exercise: BehaviorRelay<Exercise> = BehaviorRelay(value: Exercise())
+	let disposeBag = DisposeBag()
 
 	// MARK: - View lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
-		// TODO: Bind exercise to view
+		exercise
+			.map({ $0.question })
+			.asObservable()
+			.bind(to: questionLabel.rx.text)
+			.disposed(by: disposeBag)
+
         answerTextField.addDoneButtonToKeyboard(myAction:  #selector(self.answerTextField.resignFirstResponder))
     }
+	
+	@IBAction func didEnterAnswer(_ sender: Any) {
+		answerTextField.text = ""
+		NotificationCenter.default.post(name: Constants.Notifications.FinishedCurrentExecise, object: nil)
+	}
 }
