@@ -20,7 +20,8 @@ class BaseGameViewController: UIViewController {
 	@IBOutlet var timerLabel: UILabel!
 	@IBOutlet var gameWrapperView: UIView!
     @IBOutlet var countdownView: SRCountdownTimer!
-
+	@IBOutlet var finishButton: UIButton!
+	
 	// MARK: - Variables
 
 	var difficultyLevel: DifficultyLevel?
@@ -38,6 +39,7 @@ class BaseGameViewController: UIViewController {
 		super.viewDidLoad()
 		RestClient.getExercises(for: difficultyLevel ?? .beginner, with: self)
 		subscribeToNotifications()
+		finishButton.addTarget(self, action: #selector(dismissView), for: .touchUpInside)
 		timer = Timer.new(every: 1.ms) { [weak self] in
 			let progress = Date().timeIntervalSince(self?.start ?? Date())
 			let timeText = String(format: "%.2f", progress)
@@ -70,6 +72,9 @@ class BaseGameViewController: UIViewController {
 
 			gameViewController?.answerTextField.isUserInteractionEnabled = false
 			gameViewController?.answerTextField.alpha = 0
+
+			finishButton.isUserInteractionEnabled = true
+			finishButton.alpha = 1
 
 			// TODO: Post results to service
 			if let time = timer?.timeInterval {
@@ -119,13 +124,9 @@ class BaseGameViewController: UIViewController {
 	// MARK: - Navigation
 
 	@IBAction func closeGame(_ sender: Any) {
-		dismissView()
-	}
-
-	func dismissView() {
 		let popup = UIAlertController(title: "Stop Game", message: "Are you sure you want to quit?", preferredStyle: .alert)
 		let yesAction = UIAlertAction(title: "Yes", style: .default, handler: { [weak self] _ in
-			self?.dismiss(animated: true, completion: nil)
+			self?.dismissView()
 		})
 		let noAction = UIAlertAction(title: "No", style: .cancel, handler: { _ in
 			popup.removeFromParent()
@@ -133,6 +134,10 @@ class BaseGameViewController: UIViewController {
 		popup.addAction(yesAction)
 		popup.addAction(noAction)
 		self.present(popup, animated: true, completion: nil)
+	}
+
+	@objc private func dismissView() {
+		dismiss(animated: true, completion: nil)
 	}
 }
 
