@@ -83,4 +83,11 @@ class RestClient: Networking {
 			}
 		}
     }
+
+	static func post(_ result: GameResult, for difficulty: DifficultyLevel, with delegate: GameDelegate) {
+		// TODO: Post results
+		let url = ""
+//		Alamofire.request(url, method: .post, parameters: [:], encoding: , headers: <#T##HTTPHeaders?#>)
+	}
+
 }

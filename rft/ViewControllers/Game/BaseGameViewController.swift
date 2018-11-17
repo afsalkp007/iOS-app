@@ -72,6 +72,13 @@ class BaseGameViewController: UIViewController {
 			gameViewController?.answerTextField.alpha = 0
 
 			// TODO: Post results to service
+			if let time = timer?.timeInterval {
+				let correctAnswers = UInt(2)
+				let result = GameResult(time: time, correctAnswers: correctAnswers)
+				if let difficulty = self.difficultyLevel {
+					RestClient.post(result, for: difficulty, with: self)
+				}
+			}
 			return
 		}
 		let exercise = exercises.value[currentExercise]
