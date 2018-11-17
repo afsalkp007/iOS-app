@@ -94,6 +94,7 @@ PODS:
     - RxSwift (~> 4.0)
   - RxSwift (4.3.1)
   - SnapKit (4.2.0)
+  - SRCountdownTimer (1.1)
   - SVProgressHUD (2.2.5)
   - SwifterSwift (4.6.0):
     - SwifterSwift/AppKit (= 4.6.0)
@@ -129,6 +130,7 @@ DEPENDENCIES:
   - RxDataSources (~> 3.1)
   - RxSwift (~> 4.0)
   - SnapKit (~> 4.2.0)
+  - SRCountdownTimer
   - SVProgressHUD
   - SwifterSwift
   - SwiftyJSON (~> 4.0)
@@ -161,6 +163,7 @@ SPEC REPOS:
     - RxDataSources
     - RxSwift
     - SnapKit
+    - SRCountdownTimer
     - SVProgressHUD
     - SwifterSwift
     - SwiftyJSON
@@ -192,11 +195,12 @@ SPEC CHECKSUMS:
   RxDataSources: a843bad90c29817f5923ec8163f4af2de084ceb3
   RxSwift: fe0fd770a43acdb7d0a53da411c9b892e69bb6e4
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
+  SRCountdownTimer: 9c92e444b5403c92f01dd6610299b8c634bc8562
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   SwifterSwift: 812ffec6f301922f5430e75be3f2939ea3a80024
   SwiftyJSON: c29297daf073d2aa016295d5809cdd68045c39b3
   SwiftyTimer: 02dd6cf10cbc71cbf67cec494f6e5eb782102543
 
-PODFILE CHECKSUM: 437fa20a30eefda37bda048467d1f1e0147a3fa1
+PODFILE CHECKSUM: 64a8a23d8d6733e21c15070cac5a558dade7aa8a
 
 COCOAPODS: 1.5.3

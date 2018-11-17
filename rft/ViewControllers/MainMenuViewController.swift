@@ -9,7 +9,6 @@
 import Firebase
 import RxCocoa
 import RxSwift
-import SVProgressHUD
 import UIKit
 
 class MainMenuViewController: UIViewController {

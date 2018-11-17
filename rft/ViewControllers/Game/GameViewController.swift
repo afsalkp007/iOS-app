@@ -32,7 +32,7 @@ class GameViewController: UIViewController {
 			.bind(to: questionLabel.rx.text)
 			.disposed(by: disposeBag)
 
-        answerTextField.addDoneButtonToKeyboard(myAction:  #selector(self.answerTextField.resignFirstResponder))
+		answerTextField.addDoneButtonToKeyboard(with: self, myAction: #selector(self.didEnterAnswer(_:)))
     }
 
 	@IBAction func didEnterAnswer(_ sender: Any) {

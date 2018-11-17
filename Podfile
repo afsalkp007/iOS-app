@@ -18,6 +18,7 @@ target 'rft' do
     pod 'RxCocoa',    '~> 4.0'
     pod 'RxDataSources', '~> 3.1'
     pod 'RxSwift',    '~> 4.0'
+    pod 'SRCountdownTimer'
     pod 'SVProgressHUD'
     pod 'SnapKit', '~> 4.2.0'
     pod 'SwifterSwift'

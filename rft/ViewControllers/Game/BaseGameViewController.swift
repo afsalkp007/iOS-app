@@ -9,7 +9,7 @@
 import RxCocoa
 import RxSwift
 import SnapKit
-import SVProgressHUD
+import SRCountdownTimer
 import SwiftyTimer
 import UIKit
 
@@ -19,6 +19,7 @@ class BaseGameViewController: UIViewController {
 
 	@IBOutlet var timerLabel: UILabel!
 	@IBOutlet var gameWrapperView: UIView!
+    @IBOutlet var countdownView: SRCountdownTimer!
 
 	// MARK: - Variables
 
@@ -37,7 +38,6 @@ class BaseGameViewController: UIViewController {
 		super.viewDidLoad()
 		RestClient.getExercises(for: difficultyLevel ?? .beginner, with: self)
 		subscribeToNotifications()
-		SVProgressHUD.show()
 		timer = Timer.new(every: 1.ms) { [weak self] in
 			let progress = Date().timeIntervalSince(self?.start ?? Date())
 			let timeText = String(format: "%.2f", progress)
@@ -80,6 +80,12 @@ class BaseGameViewController: UIViewController {
 	}
 
 	// MARK: - Manage game
+
+	func startCountdown() {
+		countdownView.timerFinishingText = "GO"
+		countdownView.delegate = self
+		countdownView.start(beginingValue: 5)
+	}
 
 	func startGame() {
 		gameViewController = self.storyboard?.instantiateViewController(withIdentifier: Constants.ViewControllers.GameViewController) as? GameViewController
@@ -127,13 +133,29 @@ class BaseGameViewController: UIViewController {
 
 extension BaseGameViewController: GameDelegate {
 	func getExercisesDidSuccess(exercises: [Exercise]) {
+		NSLog("🙌 get exercises did succes)")
 		self.exercises.accept(exercises)
-		startGame()
-		SVProgressHUD.dismiss()
+		startCountdown()
 	}
 
 	func getExercisesDidFail(with error: Error?) {
 		NSLog("😢 get exercises did fail: \(String(describing: error))")
-		SVProgressHUD.dismiss()
+
+		DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+2) {
+			RestClient.getExercises(for: self.difficultyLevel ?? .beginner, with: self)
+		}
+	}
+}
+
+// MARK: - SRCountdownTimer Delegate
+
+extension BaseGameViewController: SRCountdownTimerDelegate {
+	func timerDidEnd() {
+		UIView.animate(withDuration: 0.5, animations: { [weak self] in
+			self?.countdownView.alpha = 0
+			}, completion: { _ in
+			self.startGame()
+			self.countdownView.removeFromSuperview()
+		})
 	}
 }
