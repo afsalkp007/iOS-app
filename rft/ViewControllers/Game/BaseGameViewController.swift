@@ -21,7 +21,7 @@ class BaseGameViewController: UIViewController {
 	@IBOutlet var gameWrapperView: UIView!
     @IBOutlet var countdownView: SRCountdownTimer!
 	@IBOutlet var finishButton: UIButton!
-	
+
 	// MARK: - Variables
 
 	var difficultyLevel: DifficultyLevel?

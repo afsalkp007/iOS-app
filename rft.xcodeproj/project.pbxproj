@@ -21,6 +21,14 @@
 		1B3D7A6E2172A1B300B13D91 /* TopListDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3D7A6D2172A1B300B13D91 /* TopListDelegate.swift */; };
 		1B3E53482175FDAA00E9A316 /* GameDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3E53472175FDAA00E9A316 /* GameDelegate.swift */; };
 		1B3E534B217615AB00E9A316 /* BaseGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3E534A217615AB00E9A316 /* BaseGameViewController.swift */; };
+		1B585B4021A14EFA0029F0DC /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B585B3E21A14EFA0029F0DC /* Interface.storyboard */; };
+		1B585B4221A14EFD0029F0DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B585B4121A14EFD0029F0DC /* Assets.xcassets */; };
+		1B585B4921A14EFD0029F0DC /* testApp Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 1B585B4821A14EFD0029F0DC /* testApp Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		1B585B4E21A14EFD0029F0DC /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B585B4D21A14EFD0029F0DC /* InterfaceController.swift */; };
+		1B585B5021A14EFD0029F0DC /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B585B4F21A14EFD0029F0DC /* ExtensionDelegate.swift */; };
+		1B585B5221A14EFD0029F0DC /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B585B5121A14EFD0029F0DC /* NotificationController.swift */; };
+		1B585B5421A14EFE0029F0DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B585B5321A14EFE0029F0DC /* Assets.xcassets */; };
+		1B585B5921A14EFE0029F0DC /* testApp.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 1B585B3C21A14EFA0029F0DC /* testApp.app */; };
 		1B68169A217A5C1500C31BB8 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B681699217A5C1500C31BB8 /* Theme.swift */; };
 		1B68169C217A5D1000C31BB8 /* UIColor+HEX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B68169B217A5D1000C31BB8 /* UIColor+HEX.swift */; };
 		1B6DE36621A05C2C0068B030 /* GameResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6DE36521A05C2C0068B030 /* GameResult.swift */; };
@@ -56,6 +64,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		1B585B4A21A14EFD0029F0DC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1B7E84AC215F74D600574C33 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1B585B4721A14EFD0029F0DC;
+			remoteInfo = "testApp Extension";
+		};
+		1B585B5721A14EFE0029F0DC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1B7E84AC215F74D600574C33 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1B585B3B21A14EFA0029F0DC;
+			remoteInfo = testApp;
+		};
 		1B7E84CB215F74D900574C33 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 1B7E84AC215F74D600574C33 /* Project object */;
@@ -64,6 +86,31 @@
 			remoteInfo = rft;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		1B585B5F21A14EFE0029F0DC /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				1B585B4921A14EFD0029F0DC /* testApp Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1B585B6121A14EFE0029F0DC /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				1B585B5921A14EFE0029F0DC /* testApp.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		0E5171FDC5B6148C8E050118 /* Pods-rft.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rft.debug.xcconfig"; path = "Pods/Target Support Files/Pods-rft/Pods-rft.debug.xcconfig"; sourceTree = "<group>"; };
@@ -81,6 +128,17 @@
 		1B3D7A6D2172A1B300B13D91 /* TopListDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopListDelegate.swift; sourceTree = "<group>"; };
 		1B3E53472175FDAA00E9A316 /* GameDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDelegate.swift; sourceTree = "<group>"; };
 		1B3E534A217615AB00E9A316 /* BaseGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseGameViewController.swift; sourceTree = "<group>"; };
+		1B585B3C21A14EFA0029F0DC /* testApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = testApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1B585B3F21A14EFA0029F0DC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		1B585B4121A14EFD0029F0DC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1B585B4321A14EFD0029F0DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1B585B4821A14EFD0029F0DC /* testApp Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "testApp Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1B585B4D21A14EFD0029F0DC /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		1B585B4F21A14EFD0029F0DC /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		1B585B5121A14EFD0029F0DC /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		1B585B5321A14EFE0029F0DC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1B585B5521A14EFE0029F0DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1B585B5621A14EFE0029F0DC /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
 		1B681699217A5C1500C31BB8 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		1B68169B217A5D1000C31BB8 /* UIColor+HEX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+HEX.swift"; sourceTree = "<group>"; };
 		1B6DE36521A05C2C0068B030 /* GameResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameResult.swift; sourceTree = "<group>"; };
@@ -123,6 +181,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		1B585B4521A14EFD0029F0DC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		1B7E84B1215F74D600574C33 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -201,11 +266,36 @@
 			path = Game;
 			sourceTree = "<group>";
 		};
+		1B585B3D21A14EFA0029F0DC /* testApp */ = {
+			isa = PBXGroup;
+			children = (
+				1B585B3E21A14EFA0029F0DC /* Interface.storyboard */,
+				1B585B4121A14EFD0029F0DC /* Assets.xcassets */,
+				1B585B4321A14EFD0029F0DC /* Info.plist */,
+			);
+			path = testApp;
+			sourceTree = "<group>";
+		};
+		1B585B4C21A14EFD0029F0DC /* testApp Extension */ = {
+			isa = PBXGroup;
+			children = (
+				1B585B4D21A14EFD0029F0DC /* InterfaceController.swift */,
+				1B585B4F21A14EFD0029F0DC /* ExtensionDelegate.swift */,
+				1B585B5121A14EFD0029F0DC /* NotificationController.swift */,
+				1B585B5321A14EFE0029F0DC /* Assets.xcassets */,
+				1B585B5521A14EFE0029F0DC /* Info.plist */,
+				1B585B5621A14EFE0029F0DC /* PushNotificationPayload.apns */,
+			);
+			path = "testApp Extension";
+			sourceTree = "<group>";
+		};
 		1B7E84AB215F74D600574C33 = {
 			isa = PBXGroup;
 			children = (
 				1B7E84B6215F74D600574C33 /* rft */,
 				1B7E84CD215F74D900574C33 /* rftTests */,
+				1B585B3D21A14EFA0029F0DC /* testApp */,
+				1B585B4C21A14EFD0029F0DC /* testApp Extension */,
 				1B7E84B5215F74D600574C33 /* Products */,
 				CE7ED577EE5937835AD1249B /* Pods */,
 				F9F17E434221584DC743160F /* Frameworks */,
@@ -217,6 +307,8 @@
 			children = (
 				1B7E84B4215F74D600574C33 /* rft.app */,
 				1B7E84CA215F74D900574C33 /* rftTests.xctest */,
+				1B585B3C21A14EFA0029F0DC /* testApp.app */,
+				1B585B4821A14EFD0029F0DC /* testApp Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -366,6 +458,40 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		1B585B3B21A14EFA0029F0DC /* testApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1B585B6021A14EFE0029F0DC /* Build configuration list for PBXNativeTarget "testApp" */;
+			buildPhases = (
+				1B585B3A21A14EFA0029F0DC /* Resources */,
+				1B585B5F21A14EFE0029F0DC /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1B585B4B21A14EFD0029F0DC /* PBXTargetDependency */,
+			);
+			name = testApp;
+			productName = testApp;
+			productReference = 1B585B3C21A14EFA0029F0DC /* testApp.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		1B585B4721A14EFD0029F0DC /* testApp Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1B585B5E21A14EFE0029F0DC /* Build configuration list for PBXNativeTarget "testApp Extension" */;
+			buildPhases = (
+				1B585B4421A14EFD0029F0DC /* Sources */,
+				1B585B4521A14EFD0029F0DC /* Frameworks */,
+				1B585B4621A14EFD0029F0DC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "testApp Extension";
+			productName = "testApp Extension";
+			productReference = 1B585B4821A14EFD0029F0DC /* testApp Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
 		1B7E84B3215F74D600574C33 /* rft */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1B7E84D3215F74D900574C33 /* Build configuration list for PBXNativeTarget "rft" */;
@@ -378,10 +504,12 @@
 				C582C9C12BB7679E08D00A9D /* [CP] Copy Pods Resources */,
 				1B005319217E800C0033F9F0 /* ShellScript */,
 				1B0E47DB2184E41500A25244 /* ShellScript */,
+				1B585B6121A14EFE0029F0DC /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				1B585B5821A14EFE0029F0DC /* PBXTargetDependency */,
 			);
 			name = rft;
 			productName = rft;
@@ -413,10 +541,16 @@
 		1B7E84AC215F74D600574C33 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1000;
+				LastSwiftUpdateCheck = 1010;
 				LastUpgradeCheck = 1000;
 				ORGANIZATIONNAME = "Levente Vig";
 				TargetAttributes = {
+					1B585B3B21A14EFA0029F0DC = {
+						CreatedOnToolsVersion = 10.1;
+					};
+					1B585B4721A14EFD0029F0DC = {
+						CreatedOnToolsVersion = 10.1;
+					};
 					1B7E84B3215F74D600574C33 = {
 						CreatedOnToolsVersion = 10.0;
 					};
@@ -441,11 +575,30 @@
 			targets = (
 				1B7E84B3215F74D600574C33 /* rft */,
 				1B7E84C9215F74D900574C33 /* rftTests */,
+				1B585B3B21A14EFA0029F0DC /* testApp */,
+				1B585B4721A14EFD0029F0DC /* testApp Extension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		1B585B3A21A14EFA0029F0DC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1B585B4221A14EFD0029F0DC /* Assets.xcassets in Resources */,
+				1B585B4021A14EFA0029F0DC /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1B585B4621A14EFD0029F0DC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1B585B5421A14EFE0029F0DC /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		1B7E84B2215F74D600574C33 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -614,6 +767,16 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		1B585B4421A14EFD0029F0DC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1B585B5221A14EFD0029F0DC /* NotificationController.swift in Sources */,
+				1B585B5021A14EFD0029F0DC /* ExtensionDelegate.swift in Sources */,
+				1B585B4E21A14EFD0029F0DC /* InterfaceController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		1B7E84B0215F74D600574C33 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -671,6 +834,16 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		1B585B4B21A14EFD0029F0DC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1B585B4721A14EFD0029F0DC /* testApp Extension */;
+			targetProxy = 1B585B4A21A14EFD0029F0DC /* PBXContainerItemProxy */;
+		};
+		1B585B5821A14EFE0029F0DC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1B585B3B21A14EFA0029F0DC /* testApp */;
+			targetProxy = 1B585B5721A14EFE0029F0DC /* PBXContainerItemProxy */;
+		};
 		1B7E84CC215F74D900574C33 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 1B7E84B3215F74D600574C33 /* rft */;
@@ -679,6 +852,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		1B585B3E21A14EFA0029F0DC /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1B585B3F21A14EFA0029F0DC /* Base */,
+			);
+			name = Interface.storyboard;
+			sourceTree = "<group>";
+		};
 		1B7E84BD215F74D600574C33 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -698,6 +879,88 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		1B585B5A21A14EFE0029F0DC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 48KF4TL849;
+				IBSC_MODULE = testApp_Extension;
+				INFOPLIST_FILE = testApp/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = "eu.codeyard.levi-rft.watchkitapp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 5.1;
+			};
+			name = Debug;
+		};
+		1B585B5B21A14EFE0029F0DC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 48KF4TL849;
+				IBSC_MODULE = testApp_Extension;
+				INFOPLIST_FILE = testApp/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = "eu.codeyard.levi-rft.watchkitapp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 5.1;
+			};
+			name = Release;
+		};
+		1B585B5C21A14EFE0029F0DC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 48KF4TL849;
+				INFOPLIST_FILE = "testApp Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "eu.codeyard.levi-rft.watchkitapp.watchkitextension";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 5.1;
+			};
+			name = Debug;
+		};
+		1B585B5D21A14EFE0029F0DC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 48KF4TL849;
+				INFOPLIST_FILE = "testApp Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "eu.codeyard.levi-rft.watchkitapp.watchkitextension";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 5.1;
+			};
+			name = Release;
+		};
 		1B7E84D1215F74D900574C33 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -824,7 +1087,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = CSD326H7VF;
+				DEVELOPMENT_TEAM = 48KF4TL849;
 				INFOPLIST_FILE = "$(SRCROOT)/rft/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -846,7 +1109,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = CSD326H7VF;
+				DEVELOPMENT_TEAM = 48KF4TL849;
 				INFOPLIST_FILE = "$(SRCROOT)/rft/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -908,6 +1171,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		1B585B5E21A14EFE0029F0DC /* Build configuration list for PBXNativeTarget "testApp Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1B585B5C21A14EFE0029F0DC /* Debug */,
+				1B585B5D21A14EFE0029F0DC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1B585B6021A14EFE0029F0DC /* Build configuration list for PBXNativeTarget "testApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1B585B5A21A14EFE0029F0DC /* Debug */,
+				1B585B5B21A14EFE0029F0DC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		1B7E84AF215F74D600574C33 /* Build configuration list for PBXProject "rft" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
