@@ -60,6 +60,7 @@
 		1BF2A66B21600CBD00406BA9 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BF2A66A21600CBD00406BA9 /* Constants.swift */; };
 		1BF2A66D21600DB900406BA9 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BF2A66C21600DB900406BA9 /* StartViewController.swift */; };
 		1BF2A66F21600DFE00406BA9 /* UserDefaults+KeyExists.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BF2A66E21600DFE00406BA9 /* UserDefaults+KeyExists.swift */; };
+		1BFA73EB21A4A17900A10632 /* ShadowButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFA73EA21A4A17800A10632 /* ShadowButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -171,6 +172,7 @@
 		1BF2A66A21600CBD00406BA9 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		1BF2A66C21600DB900406BA9 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		1BF2A66E21600DFE00406BA9 /* UserDefaults+KeyExists.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+KeyExists.swift"; sourceTree = "<group>"; };
+		1BFA73EA21A4A17800A10632 /* ShadowButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShadowButton.swift; sourceTree = "<group>"; };
 		5540A905528698F397D3E7F4 /* Pods_rft.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_rft.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		833837132B2C7D56AAFABF49 /* Pods-rftTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rftTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-rftTests/Pods-rftTests.debug.xcconfig"; sourceTree = "<group>"; };
 		9DA357C7F463441884998F3F /* Pods-rft.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rft.release.xcconfig"; path = "Pods/Target Support Files/Pods-rft/Pods-rft.release.xcconfig"; sourceTree = "<group>"; };
@@ -389,6 +391,7 @@
 		1BE1E1812171E537003AC1DB /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				1BFA73EC21A4A17D00A10632 /* Buttons */,
 				1BE1E1822171E541003AC1DB /* Cells */,
 			);
 			path = Views;
@@ -422,6 +425,15 @@
 				1BD3FAC92172816E004D335D /* TopListProvider.swift */,
 			);
 			path = "Data providers";
+			sourceTree = "<group>";
+		};
+		1BFA73EC21A4A17D00A10632 /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				1BFA73EA21A4A17800A10632 /* ShadowButton.swift */,
+			);
+			name = Buttons;
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 		CE7ED577EE5937835AD1249B /* Pods */ = {
@@ -798,6 +810,7 @@
 				1B7E84E2215FA4C700574C33 /* LoginViewController.swift in Sources */,
 				1BD3FACA2172816E004D335D /* TopListProvider.swift in Sources */,
 				1BF2A66B21600CBD00406BA9 /* Constants.swift in Sources */,
+				1BFA73EB21A4A17900A10632 /* ShadowButton.swift in Sources */,
 				1B7E84EB215FB23700574C33 /* RestClient.swift in Sources */,
 				1B00851C2160B36C00610507 /* UIView+ShakeAnimation.swift in Sources */,
 				1B0407462173655000E879C2 /* Enums.swift in Sources */,
