@@ -20,8 +20,31 @@ class InterfaceController: WKInterfaceController {
         }
     }
 
+    var increaseValue = 1
+
     @IBAction func didTapIncreaseButton() {
-        counter += 1
+        counter += increaseValue
+    }
+
+    @IBAction func didTapDecreaseButton() {
+        if counter > 0 {
+            counter -= increaseValue
+        }
+        if counter < 0 {
+            counter = 0
+        }
+    }
+
+    @IBAction func didTapResetButton() {
+        counter = 0
+    }
+
+    @IBAction func multiplySwitch(_ value: Bool) {
+        if value {
+            increaseValue = 10
+        } else {
+            increaseValue = 1
+        }
     }
 
     override func awake(withContext context: Any?) {

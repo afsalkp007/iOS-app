@@ -14,11 +14,32 @@
             <objects>
                 <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="testApp" customModuleProvider="target">
                     <items>
+                        <dateLabel alignment="left" id="XFi-aZ-WId">
+                            <dateFormatterStyle key="dateStyle" short="YES"/>
+                            <dateFormatterStyle key="timeStyle" short="YES"/>
+                        </dateLabel>
                         <label width="1" height="42" alignment="left" text="0" textAlignment="center" id="PKL-i9-RbT"/>
+                        <separator alignment="left" id="MoY-Zg-MCS"/>
                         <button width="1" alignment="left" title="+" id="T0I-H6-sGx">
                             <fontDescription key="font" type="boldSystem" pointSize="15"/>
                             <connections>
                                 <action selector="didTapIncreaseButton" destination="AgC-eL-Hgc" id="uOd-2w-KDT"/>
+                            </connections>
+                        </button>
+                        <button width="1" alignment="left" title="-" id="kNz-VZ-raR">
+                            <fontDescription key="font" type="boldSystem" pointSize="15"/>
+                            <connections>
+                                <action selector="didTapDecreaseButton" destination="AgC-eL-Hgc" id="OkQ-ch-dEx"/>
+                            </connections>
+                        </button>
+                        <switch width="1" alignment="left" title="+= 10" id="MXa-da-FKo">
+                            <connections>
+                                <action selector="multiplySwitch:" destination="AgC-eL-Hgc" id="1cW-Lk-VCB"/>
+                            </connections>
+                        </switch>
+                        <button width="1" alignment="left" title="Reset" id="7Wq-s2-pEh">
+                            <connections>
+                                <action selector="didTapResetButton" destination="AgC-eL-Hgc" id="4ap-DM-qWo"/>
                             </connections>
                         </button>
                     </items>
