@@ -29,6 +29,7 @@ class BaseGameViewController: UIViewController {
 	let disposeBag = DisposeBag()
 	var gameViewController: GameViewController?
 	var currentExercise = 0
+	var correctAnswers = 0
 	var timer: Timer?
 	var start: Date?
 	var end: Date?
@@ -54,12 +55,20 @@ class BaseGameViewController: UIViewController {
 	// MARK: - Init
 
 	private func subscribeToNotifications() {
-		NotificationCenter.default.addObserver(self, selector: #selector(addGameView), name: Constants.Notifications.FinishedCurrentExecise, object: nil)
+		NotificationCenter.default.addObserver(self, selector: #selector(addGameView(_:)), name: Constants.Notifications.FinishedCurrentExecise, object: nil)
 	}
 
 	// MARK: - Setup game
 
-	@objc private func addGameView() {
+	@objc private func addGameView(_ sender: Notification = Notification(name: Notification.Name(rawValue: "")) ) {
+
+		if let userInfo = sender.userInfo {
+			if let isCorrect = userInfo["isCorrect"] as? Bool {
+				if isCorrect {
+					correctAnswers += 1
+				}
+			}
+		}
 
 		guard currentExercise < exercises.value.count else {
 			// TODO: Last exercise
@@ -78,7 +87,8 @@ class BaseGameViewController: UIViewController {
 
 			// TODO: Post results to service
 			if let time = timer?.timeInterval {
-				let correctAnswers = UInt(2)
+				let correctAnswers = UInt(self.correctAnswers)
+				print("✅ correct answers: \(correctAnswers)")
 				let result = GameResult(time: time, correctAnswers: correctAnswers)
 				if let difficulty = self.difficultyLevel {
 					RestClient.post(result, for: difficulty, with: self)

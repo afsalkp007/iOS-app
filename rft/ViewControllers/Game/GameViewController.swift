@@ -36,7 +36,17 @@ class GameViewController: UIViewController {
     }
 
 	@IBAction func didEnterAnswer(_ sender: Any) {
-		answerTextField.text = ""
-		NotificationCenter.default.post(name: Constants.Notifications.FinishedCurrentExecise, object: nil)
+		var isCorrect = false
+		if let answerText = answerTextField?.text {
+			if let answer = Double(answerText) {
+				if answer == exercise.value.correctAnswer {
+					isCorrect = true
+				}
+			}
+		}
+
+		let userinfo = ["isCorrect" : isCorrect]
+		NotificationCenter.default.post(name: Constants.Notifications.FinishedCurrentExecise, object: self, userInfo: userinfo)
+		answerTextField?.text = ""
 	}
 }
