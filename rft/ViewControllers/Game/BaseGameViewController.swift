@@ -86,7 +86,6 @@ class BaseGameViewController: UIViewController {
 			finishButton.isUserInteractionEnabled = true
 			finishButton.alpha = 1
 
-			// TODO: Post results to service
 			if let time = timer?.timeInterval {
 				let correctAnswers = UInt(self.correctAnswers)
 				print("✅ correct answers: \(correctAnswers)")

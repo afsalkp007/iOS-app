@@ -13,6 +13,7 @@ struct MyUser: BaseModel {
     var position: Int?
     var name: String?
     var topScore: String?
+	var token: String?
 
 	init(json: JSON) {
 		self.name = json["name"].rawString()
