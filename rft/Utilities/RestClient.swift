@@ -37,7 +37,7 @@ class RestClient: Networking {
 		let params = ["difficulty":difficulty.rawValue]
 		Alamofire.request(url,
 						  method: .get,
-						  parameters: params,
+						  parameters: nil/*params*/,
 						  encoding: JSONEncoding.default,
 						  headers: nil)
 			.responseJSON { response in

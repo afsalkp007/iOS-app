@@ -49,8 +49,10 @@ class MainMenuViewController: UIViewController {
     func setupTableView() {
         tableView.rx.itemSelected.subscribe(onNext: { [weak self] indexPath in
             NSLog("✅ Row \(indexPath.row) selected")
-			self?.performSegue(withIdentifier: Constants.Segues.StartGame, sender: nil)
 			self?.tableView.deselectRow(at: indexPath, animated: true)
+			DispatchQueue.main.async(execute: {
+				self?.performSegue(withIdentifier: Constants.Segues.StartGame, sender: nil)
+			})
         }).disposed(by: disposeBag)
         tableView.rx.setDelegate(self).disposed(by: disposeBag)
         tableView.contentInset = UIEdgeInsets(top: 8, left: 0, bottom: 0, right: 0)
