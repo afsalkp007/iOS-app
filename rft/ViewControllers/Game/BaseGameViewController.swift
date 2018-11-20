@@ -55,7 +55,10 @@ class BaseGameViewController: UIViewController {
 	// MARK: - Init
 
 	private func subscribeToNotifications() {
-		NotificationCenter.default.addObserver(self, selector: #selector(addGameView(_:)), name: Constants.Notifications.FinishedCurrentExecise, object: nil)
+		NotificationCenter.default
+			.addObserver(self,
+						selector: #selector(addGameView(_:)),
+						name: Constants.Notifications.FinishedCurrentExecise, object: nil)
 	}
 
 	// MARK: - Setup game
@@ -71,9 +74,7 @@ class BaseGameViewController: UIViewController {
 		}
 
 		guard currentExercise < exercises.value.count else {
-			// TODO: Last exercise
 			endTimer()
-
 			timerLabel.blink()
 			DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
 				self.timerLabel.layer.removeAllAnimations()
