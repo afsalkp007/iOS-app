@@ -34,7 +34,7 @@ class RestClient: Networking {
         // TODO: Incorporate difficulty into request.
 //        let url = "\(Constants.kBaseURL)/topList?level=\(difficulty.rawValue)"
 		let url = "https://www.mocky.io/v2/5bc244243100004e001fca81"
-		let params = ["difficulty":difficulty.rawValue]
+//		let params = ["difficulty":difficulty.rawValue]
 		Alamofire.request(url,
 						  method: .get,
 						  parameters: nil/*params*/,
@@ -93,9 +93,9 @@ class RestClient: Networking {
 
 	static func post(_ result: GameResult, for difficulty: DifficultyLevel, with delegate: GameDelegate) {
 		// TODO: Post results
-		let url = ""
-		let time = result.time
-		let correctAnswers = result.correctAnswers
+//		let url = ""
+//		let time = result.time
+//		let correctAnswers = result.correctAnswers
 //		Alamofire.request(url, method: .post, parameters: [:], encoding: , headers: <#T##HTTPHeaders?#>)
 	}
 

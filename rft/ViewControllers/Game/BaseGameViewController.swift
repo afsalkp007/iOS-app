@@ -22,7 +22,7 @@ class BaseGameViewController: UIViewController {
     @IBOutlet private var countdownView: SRCountdownTimer!
 	@IBOutlet private var finishButton: UIButton!
     @IBOutlet private var loadingIndicator: UIActivityIndicatorView!
-    
+
 	// MARK: - Variables
 
 	var difficultyLevel: DifficultyLevel?
@@ -153,7 +153,7 @@ class BaseGameViewController: UIViewController {
 	@objc private func dismissView() {
 		dismiss(animated: true, completion: nil)
 	}
-    
+
     // MARK: - Loading indicator
     private func showLoading(_ show: Bool) {
         if show {
