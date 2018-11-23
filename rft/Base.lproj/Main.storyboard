@@ -307,6 +307,9 @@
                                     <constraint firstAttribute="width" secondItem="9Lw-dl-yNh" secondAttribute="height" multiplier="1:1" id="VaS-4c-fqF"/>
                                 </constraints>
                             </view>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="N8p-WL-43z">
+                                <rect key="frame" x="177.5" y="357.5" width="20" height="20"/>
+                            </activityIndicatorView>
                             <button opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LHr-vo-J7f">
                                 <rect key="frame" x="167" y="326" width="41" height="30"/>
                                 <state key="normal" title="Finish"/>
@@ -318,10 +321,12 @@
                             <constraint firstItem="Kd6-Je-FWo" firstAttribute="centerX" secondItem="ZGE-Ho-mkX" secondAttribute="centerX" id="4aT-cv-ahW"/>
                             <constraint firstItem="9Lw-dl-yNh" firstAttribute="centerY" secondItem="Kd6-Je-FWo" secondAttribute="centerY" id="GtH-Mp-NMI"/>
                             <constraint firstItem="LHr-vo-J7f" firstAttribute="centerY" secondItem="ZGE-Ho-mkX" secondAttribute="centerY" id="RhU-0E-Jdn"/>
+                            <constraint firstItem="N8p-WL-43z" firstAttribute="centerX" secondItem="9Lw-dl-yNh" secondAttribute="centerX" id="Z2E-wp-Cet"/>
                             <constraint firstItem="9Lw-dl-yNh" firstAttribute="centerX" secondItem="Kd6-Je-FWo" secondAttribute="centerX" id="cww-Fn-Ik5"/>
                             <constraint firstItem="3Km-Dy-abn" firstAttribute="top" secondItem="ZGE-Ho-mkX" secondAttribute="top" constant="32" id="g0N-Qh-Wp6"/>
                             <constraint firstItem="9Lw-dl-yNh" firstAttribute="width" secondItem="Kd6-Je-FWo" secondAttribute="width" multiplier="0.5" id="laR-XI-rco"/>
                             <constraint firstItem="ZGE-Ho-mkX" firstAttribute="bottom" secondItem="Kd6-Je-FWo" secondAttribute="bottom" id="luf-DM-maJ"/>
+                            <constraint firstItem="N8p-WL-43z" firstAttribute="centerY" secondItem="9Lw-dl-yNh" secondAttribute="centerY" id="no1-Fw-gFe"/>
                             <constraint firstItem="Kd6-Je-FWo" firstAttribute="top" secondItem="3Km-Dy-abn" secondAttribute="bottom" id="rrS-34-rmy"/>
                             <constraint firstItem="LHr-vo-J7f" firstAttribute="centerX" secondItem="ZGE-Ho-mkX" secondAttribute="centerX" id="rzW-Nf-cdc"/>
                             <constraint firstItem="Kd6-Je-FWo" firstAttribute="width" secondItem="Wba-jF-aT1" secondAttribute="width" id="ttf-MC-H2r"/>
@@ -340,6 +345,7 @@
                         <outlet property="countdownView" destination="9Lw-dl-yNh" id="yFw-9i-Zul"/>
                         <outlet property="finishButton" destination="LHr-vo-J7f" id="oia-eV-OSg"/>
                         <outlet property="gameWrapperView" destination="Kd6-Je-FWo" id="5zT-ee-7tQ"/>
+                        <outlet property="loadingIndicator" destination="N8p-WL-43z" id="wZH-ZY-zjc"/>
                         <outlet property="questionLabel" destination="Evt-iP-AuD" id="UnI-sf-P65"/>
                         <outlet property="timerLabel" destination="3Km-Dy-abn" id="iMP-sM-PKx"/>
                     </connections>

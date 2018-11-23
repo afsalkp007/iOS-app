@@ -17,11 +17,12 @@ class BaseGameViewController: UIViewController {
 
 	// MARK: - IBOutlets
 
-	@IBOutlet var timerLabel: UILabel!
-	@IBOutlet var gameWrapperView: UIView!
-    @IBOutlet var countdownView: SRCountdownTimer!
-	@IBOutlet var finishButton: UIButton!
-
+	@IBOutlet private var timerLabel: UILabel!
+	@IBOutlet private var gameWrapperView: UIView!
+    @IBOutlet private var countdownView: SRCountdownTimer!
+	@IBOutlet private var finishButton: UIButton!
+    @IBOutlet private var loadingIndicator: UIActivityIndicatorView!
+    
 	// MARK: - Variables
 
 	var difficultyLevel: DifficultyLevel?
@@ -40,6 +41,7 @@ class BaseGameViewController: UIViewController {
 		super.viewDidLoad()
 		RestClient.getExercises(for: difficultyLevel ?? .beginner, with: self)
 		subscribeToNotifications()
+        showLoading(true)
 		finishButton.addTarget(self, action: #selector(dismissView), for: .touchUpInside)
 		timer = Timer.new(every: 1.ms) { [weak self] in
 			let progress = Date().timeIntervalSince(self?.start ?? Date())
@@ -76,8 +78,9 @@ class BaseGameViewController: UIViewController {
 		guard currentExercise < exercises.value.count else {
 			endTimer()
 			timerLabel.blink()
-			DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-				self.timerLabel.layer.removeAllAnimations()
+			DispatchQueue.main.asyncAfter(deadline: .now() + 2) { [weak self] in
+				self?.timerLabel.layer.removeAllAnimations()
+				self?.timerLabel.text = "Correct: \(self?.correctAnswers ?? 0) out of \(self?.exercises.value.count ?? 0)"
 			}
 
 			gameViewController?.answerTextField.isUserInteractionEnabled = false
@@ -103,37 +106,38 @@ class BaseGameViewController: UIViewController {
 
 	// MARK: - Manage game
 
-	func startCountdown() {
+	private func startCountdown() {
 		countdownView.timerFinishingText = "GO"
 		countdownView.delegate = self
 		countdownView.start(beginingValue: 5)
 	}
 
-	func startGame() {
+	private func startGame() {
 		gameViewController = self.storyboard?.instantiateViewController(withIdentifier: Constants.ViewControllers.GameViewController) as? GameViewController
 		gameWrapperView.addSubview(gameViewController?.view ?? UIView())
 		gameViewController?.view.snp.makeConstraints({ make in
 			make.edges.equalTo(gameWrapperView)
 		})
+		gameViewController?.answerTextField.becomeFirstResponder()
 		addGameView()
 		startTimer()
 	}
 
 	// MARK: - Time measuring
 
-	func startTimer() {
+	private func startTimer() {
 		start = Date()
 		timer?.start(modes: RunLoop.Mode.default)
 	}
 
-	func endTimer() {
+	private func endTimer() {
 		timer?.invalidate()
 		end = Date()
 	}
 
 	// MARK: - Navigation
 
-	@IBAction func closeGame(_ sender: Any) {
+	@IBAction private func closeGame(_ sender: Any) {
 		let popup = UIAlertController(title: "Stop Game", message: "Are you sure you want to quit?", preferredStyle: .alert)
 		let yesAction = UIAlertAction(title: "Yes", style: .default, handler: { [weak self] _ in
 			self?.dismissView()
@@ -149,6 +153,17 @@ class BaseGameViewController: UIViewController {
 	@objc private func dismissView() {
 		dismiss(animated: true, completion: nil)
 	}
+    
+    // MARK: - Loading indicator
+    private func showLoading(_ show: Bool) {
+        if show {
+            loadingIndicator.alpha = 1.0
+            loadingIndicator.startAnimating()
+        } else {
+            loadingIndicator.alpha = 0.0
+            loadingIndicator.stopAnimating()
+        }
+    }
 }
 
 // MARK: - RestClient delegate
@@ -157,12 +172,13 @@ extension BaseGameViewController: GameDelegate {
 	func getExercisesDidSuccess(exercises: [Exercise]) {
 		NSLog("🙌 get exercises did succes)")
 		self.exercises.accept(exercises)
+        showLoading(false)
 		startCountdown()
 	}
 
 	func getExercisesDidFail(with error: Error?) {
 		NSLog("😢 get exercises did fail: \(String(describing: error))")
-
+		showLoading(true)
 		DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+2) {
 			RestClient.getExercises(for: self.difficultyLevel ?? .beginner, with: self)
 		}
