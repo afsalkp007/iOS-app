@@ -66,8 +66,9 @@ class RestClient: Networking {
     // MARK: - Exercises
 	static func getExercises(for difficulty: DifficultyLevel, with delegate: GameDelegate) {
         // TODO: Get exercises for appropiate level
-//        let url = "\(Constants.kBaseURL)/tasks?level=\(difficulty.rawValue)"
-		Alamofire.request("https://www.mocky.io/v2/5bc5c9893300006e000213ad").responseJSON { response in
+        let url = "\(Constants.kBaseURL)/tasks?level=\(difficulty.rawValue)"
+//		let url = "https://www.mocky.io/v2/5bc5c9893300006e000213ad"
+		Alamofire.request(url).responseJSON { response in
 			print("Request: \(String(describing: response.request))")   // original url request
 			print("Response: \(String(describing: response.response))") // http url response
 			print("Result: \(response.result)")                         // response serialization result
@@ -82,7 +83,7 @@ class RestClient: Networking {
 				let jsonData = JSON(json)
 
 				var exercises: [Exercise] = []
-				for exercise in jsonData["exercises"] {
+				for exercise in jsonData {
 					let myExercise = Exercise(json: exercise.1)
 					exercises.append(myExercise)
 				}
