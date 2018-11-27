@@ -35,7 +35,7 @@ class GameViewController: UIViewController {
 		answerTextField.addDoneButtonToKeyboard(with: self, myAction: #selector(self.didEnterAnswer(_:)))
     }
 
-	@IBAction func didEnterAnswer(_ sender: Any) {
+	@objc private func didEnterAnswer(_ sender: Any) {
 		var isCorrect = false
 		if let answerText = answerTextField?.text {
 			if let answer = Double(answerText) {
