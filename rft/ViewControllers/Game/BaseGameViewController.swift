@@ -109,7 +109,7 @@ class BaseGameViewController: UIViewController {
 	private func startCountdown() {
 		countdownView.timerFinishingText = "GO"
 		countdownView.delegate = self
-		countdownView.start(beginingValue: 5)
+		countdownView.start(beginingValue: 3)
 	}
 
 	private func startGame() {

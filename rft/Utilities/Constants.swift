@@ -13,7 +13,7 @@ struct Constants {
 
 	// swiftlint:disable force_cast
     static let kAppDelegate = UIApplication.shared.delegate as! AppDelegate
-    static let kBaseURL = "http://18.220.101.207:8000/api"
+    static let kBaseURL = "http://levivig.design:8000/api"
 
     struct Cells {
         static let DifficultyCell = "DifficultyCell"
