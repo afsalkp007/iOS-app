@@ -30,6 +30,11 @@ class MainMenuViewController: UIViewController {
         setupTableView()
     }
 
+	override func viewWillAppear(_ animated: Bool) {
+		super.viewWillAppear(animated)
+		tableView.deselectRow(at: tableView?.indexPathForSelectedRow ?? IndexPath(row: 0, section: 0), animated: false)
+	}
+
 	// MARK: - Setup methods
 
     func setUpDatasource() {
