@@ -13,6 +13,7 @@ import SwiftyJSON
 protocol Networking {
     static func getTopList(for difficulty: DifficultyLevel,  with delegate: TopListDelegate)
 	static func getExercises(for difficulty: DifficultyLevel, with delegate: GameDelegate)
+	static func login(with username: String, password: String, with delegate: LoginDelegate)
 }
 
 class RestClient: Networking {
@@ -21,7 +22,53 @@ class RestClient: Networking {
     static let shared = RestClient()
     private init() {}
 
+	private let headers = [
+		"Authorization": "Token \(UserDefaults.standard.value(forKey: Constants.UserDefaultsKeys.LoggedInUser.token) ?? "")"
+	]
+
     // MARK: - Login methods
+	static func login(with username: String, password: String, with delegate: LoginDelegate) {
+		let url = "\(Constants.kBaseURL)/login?username=\(username)&password=\(password)"
+		Alamofire.request(url,
+						  method: .post,
+						  parameters: nil/*params*/,
+			encoding: JSONEncoding.default,
+			headers: nil).responseJSON { response in
+				print("Response: \(String(describing: response.response))") // http url response
+				print("Result: \(response.result)")                         // response serialization result
+
+				if let error = response.error {
+					delegate.loginDidFail(with: error)
+					return
+				}
+
+				if let json = response.result.value, response.response?.statusCode == 200 {
+					print("JSON: \(json)") // serialized json response
+					let jsonData = JSON(json)
+					
+					var loggedInUser = MyUser()
+					loggedInUser.name = jsonData["name"].stringValue
+					loggedInUser.email = jsonData["email"].stringValue
+					loggedInUser.token = jsonData["token"].stringValue
+
+					delegate.loginDidSuccess(response: loggedInUser)
+				} else {
+					delegate.loginDidFail(with: nil)
+				}
+		}
+
+	}
+
+	static func register(with username: String, password: String, email: String) {
+		let url = "\(Constants.kBaseURL)/register?username=\(username)&password=\(password)&email=\(email)"
+		Alamofire.request(url,
+						  method: .post,
+						  parameters: nil/*params*/,
+			encoding: JSONEncoding.default,
+			headers: nil).responseJSON { response in
+				
+		}
+	}
 
     // MARK: - TopList methods
 
@@ -65,10 +112,13 @@ class RestClient: Networking {
 
     // MARK: - Exercises
 	static func getExercises(for difficulty: DifficultyLevel, with delegate: GameDelegate) {
-        // TODO: Get exercises for appropiate level
-        let url = "\(Constants.kBaseURL)/tasks?level=\(difficulty.rawValue)"
-//		let url = "https://www.mocky.io/v2/5bc5c9893300006e000213ad"
-		Alamofire.request(url).responseJSON { response in
+        let url = "\(Constants.kBaseURL)/tasks?difficulty=\(difficulty.rawValue)"
+
+		Alamofire.request(url,
+						  method: .get,
+						  parameters: nil,
+						  encoding: JSONEncoding.default,
+						  headers: shared.headers).responseJSON { response in
 			print("Request: \(String(describing: response.request))")   // original url request
 			print("Response: \(String(describing: response.response))") // http url response
 			print("Result: \(response.result)")                         // response serialization result

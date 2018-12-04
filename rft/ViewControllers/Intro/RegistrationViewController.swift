@@ -55,23 +55,9 @@ class RegistrationViewController: UIViewController {
 			NSLog("😢 password wrong")
             return
         }
-        Auth.auth().createUser(withEmail: email, password: password) { [weak self] authResult, error in
-            // ...
-            guard let user = authResult?.user else {
-                NSLog("😢 \(String(describing: error))")
-                self?.signUpButton.isEnabled = false
-                self?.signUpButton.alpha = 0.5
-
-                self?.emailTextField.shake()
-                self?.passwordTextField.shake()
-
-                return
-            }
-
-            NSLog("👌 \(String(describing: user.email)) created")
-            Constants.kAppDelegate.loggedInUser = user
-            self?.performSegue(withIdentifier: Constants.Segues.RegisterToMainScreen, sender: nil)
-        }
+		
+		//TODO: Restclient.register()
+//		self?.performSegue(withIdentifier: Constants.Segues.RegisterToMainScreen, sender: nil)
     }
 
 	// MARK: - Helper methods

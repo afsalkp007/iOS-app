@@ -14,10 +14,6 @@
             <objects>
                 <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="testApp" customModuleProvider="target">
                     <items>
-                        <dateLabel alignment="left" id="XFi-aZ-WId">
-                            <dateFormatterStyle key="dateStyle" short="YES"/>
-                            <dateFormatterStyle key="timeStyle" short="YES"/>
-                        </dateLabel>
                         <label width="1" height="42" alignment="left" text="0" textAlignment="center" id="PKL-i9-RbT"/>
                         <separator alignment="left" id="MoY-Zg-MCS"/>
                         <button width="1" alignment="left" title="+" id="T0I-H6-sGx">

@@ -36,7 +36,11 @@ struct Constants {
     }
 
     struct UserDefaultsKeys {
-        static let loggedInUser = "loggedInUser"
+		struct LoggedInUser {
+			static let name = "name"
+			static let email = "email"
+			static let token = "token"
+		}
     }
 
     struct ViewControllers {

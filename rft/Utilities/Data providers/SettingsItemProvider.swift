@@ -22,7 +22,7 @@ class SettingsItemProvider {
 
     func getSettingsItems() -> [SectionOfCustomData] {
         var userInfo = SettingsItem()
-        if let name = Constants.kAppDelegate.loggedInUser?.displayName {
+        if let name = Constants.kAppDelegate.loggedInUser?.name {
             userInfo.title = name
         } else if let email = Constants.kAppDelegate.loggedInUser?.email {
             userInfo.title = email

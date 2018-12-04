@@ -6,11 +6,9 @@
 //  Copyright © 2018. Levente Vig. All rights reserved.
 //
 
-import Firebase
-import GoogleSignIn
 import UIKit
 
-class LoginViewController: UIViewController, GIDSignInUIDelegate {
+class LoginViewController: UIViewController {
 
 	// MARK: - IBOutlets
 
@@ -18,13 +16,11 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate {
     @IBOutlet var passwordTextField: UITextField!
     @IBOutlet var loginButton: ShadowButton!
     @IBOutlet var registerButton: UIButton!
-    @IBOutlet var googleLoginButton: GIDSignInButton!
 
 	// MARK: - View lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        GIDSignIn.sharedInstance().uiDelegate = self
         self.view.shouldHideKeyboard(onTap: true)
 		self.view.shouldHideKeyboard(onSwipeDown: true)
         passwordTextField.addTarget(self, action: #selector(login), for: UIControl.Event.editingDidEndOnExit)
@@ -55,21 +51,7 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate {
     @objc
     private func login() {
         hideKeybard()
-        Auth.auth().signIn(withEmail: userNameTextField.text ?? "", password: passwordTextField.text ?? "") { [weak self] result, error in
-            if let error = error {
-                NSLog("😢 \(error)")
-                self?.loginButton.isEnabled = false
-                self?.loginButton.alpha = 0.5
-
-                self?.userNameTextField.shake()
-                self?.passwordTextField.shake()
-            } else {
-                NSLog("👌 \(String(describing: result?.user.email)) successfully logged in.")
-                Constants.kAppDelegate.loggedInUser = result?.user
-                self?.performSegue(withIdentifier: Constants.Segues.LoginToMainScreen, sender: self)
-            }
-            return
-        }
+		RestClient.login(with: userNameTextField.text ?? "", password: passwordTextField.text ?? "", with: self)
     }
 
 	// MARK: - Helper methods
@@ -78,10 +60,22 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate {
     private func hideKeybard() {
         self.view.endEditing(true)
     }
+}
 
-	// MARK: - Future features
+// MARK: - RestClient delegate
 
-    @IBAction func didPressGoogleLoginButton(_ sender: Any) {
-        GIDSignIn.sharedInstance()?.signIn()
-    }
+extension LoginViewController: LoginDelegate {
+	func loginDidSuccess(response: MyUser) {
+		Constants.kAppDelegate.loggedInUser = response
+		self.performSegue(withIdentifier: Constants.Segues.LoginToMainScreen, sender: self)
+	}
+
+	func loginDidFail(with error: Error?) {
+		NSLog("😢 \(String(describing: error))")
+		loginButton.isEnabled = false
+		loginButton.alpha = 0.5
+
+		userNameTextField.shake()
+		passwordTextField.shake()
+	}
 }

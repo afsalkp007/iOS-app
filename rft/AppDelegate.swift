@@ -6,23 +6,18 @@
 //  Copyright © 2018. Levente Vig. All rights reserved.
 //
 
-import Firebase
-import GoogleSignIn
 import UIKit
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate {
 
 	var window: UIWindow?
-	var loggedInUser: User? {
+	var loggedInUser: MyUser? {
 		didSet {
-			do {
-				if let user = loggedInUser {
-					let encodedData = try NSKeyedArchiver.archivedData(withRootObject: user, requiringSecureCoding: true)
-					defaults.set(encodedData, forKey: Constants.UserDefaultsKeys.loggedInUser)
-				}
-			} catch {
-				NSLog("Failed to set defaults key \(Constants.UserDefaultsKeys.loggedInUser)")
+			if let user = loggedInUser {
+				defaults.set(user.name, forKey: Constants.UserDefaultsKeys.LoggedInUser.name)
+				defaults.set(user.email, forKey: Constants.UserDefaultsKeys.LoggedInUser.email)
+				defaults.set(user.token, forKey: Constants.UserDefaultsKeys.LoggedInUser.token)
 			}
 		}
 	}
@@ -30,48 +25,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
 	let defaults = UserDefaults.standard
 
 	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-		FirebaseApp.configure()
-		GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
-		GIDSignIn.sharedInstance().delegate = self
-
-		if isKeyPresentInUserDefaults(key: Constants.UserDefaultsKeys.loggedInUser) {
-			if let decoded = defaults.object(forKey: Constants.UserDefaultsKeys.loggedInUser) as? Data {
-				do {
-					try loggedInUser = NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(decoded) as? User
-				} catch {
-					NSLog("Failed to decode user.")
-				}
-			}
-		}
-
-		Fabric.with([Crashlytics.self, Answers.self])
-
+		
 		return true
-	}
-
-	@available(iOS 9.0, *)
-	func application(_ application: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any])
-		-> Bool {
-			return GIDSignIn.sharedInstance().handle(url, sourceApplication:options[UIApplication.OpenURLOptionsKey.sourceApplication] as? String,
-													 annotation: [:])
-	}
-
-	func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error?) {
-		// ...
-		if let error = error {
-			// Login failed
-			NSLog("😢 \(error)")
-			return
-		}
-
-		guard let authentication = user.authentication else { return }
-		let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken,
-													   accessToken: authentication.accessToken)
-		// Login succesful
-		NSLog("👌 \(credential)")
-	}
-
-	func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!, withError error: Error!) {
 	}
 
 	func applicationWillResignActive(_ application: UIApplication) {

@@ -32,6 +32,7 @@
 		1B68169A217A5C1500C31BB8 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B681699217A5C1500C31BB8 /* Theme.swift */; };
 		1B68169C217A5D1000C31BB8 /* UIColor+HEX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B68169B217A5D1000C31BB8 /* UIColor+HEX.swift */; };
 		1B6DE36621A05C2C0068B030 /* GameResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6DE36521A05C2C0068B030 /* GameResult.swift */; };
+		1B6FB66521B66C8C0022E2EF /* LoginDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6FB66421B66C8C0022E2EF /* LoginDelegate.swift */; };
 		1B787A9F2172727900A04E6E /* TopListCellBinding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B787A9E2172727900A04E6E /* TopListCellBinding.swift */; };
 		1B7E84B8215F74D600574C33 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7E84B7215F74D600574C33 /* AppDelegate.swift */; };
 		1B7E84BF215F74D600574C33 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B7E84BD215F74D600574C33 /* Main.storyboard */; };
@@ -142,6 +143,7 @@
 		1B681699217A5C1500C31BB8 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		1B68169B217A5D1000C31BB8 /* UIColor+HEX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+HEX.swift"; sourceTree = "<group>"; };
 		1B6DE36521A05C2C0068B030 /* GameResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameResult.swift; sourceTree = "<group>"; };
+		1B6FB66421B66C8C0022E2EF /* LoginDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginDelegate.swift; sourceTree = "<group>"; };
 		1B787A9E2172727900A04E6E /* TopListCellBinding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopListCellBinding.swift; sourceTree = "<group>"; };
 		1B7E84B4215F74D600574C33 /* rft.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = rft.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B7E84B7215F74D600574C33 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -222,6 +224,7 @@
 			children = (
 				1B3D7A6D2172A1B300B13D91 /* TopListDelegate.swift */,
 				1B3E53472175FDAA00E9A316 /* GameDelegate.swift */,
+				1B6FB66421B66C8C0022E2EF /* LoginDelegate.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -808,6 +811,7 @@
 				1BE1E1882171EF2F003AC1DB /* DifficultyCellBinding.swift in Sources */,
 				1B0E47DA2184B7BC00A25244 /* UIView+HideKeyboard.swift in Sources */,
 				1B7E84E2215FA4C700574C33 /* LoginViewController.swift in Sources */,
+				1B6FB66521B66C8C0022E2EF /* LoginDelegate.swift in Sources */,
 				1BD3FACA2172816E004D335D /* TopListProvider.swift in Sources */,
 				1BF2A66B21600CBD00406BA9 /* Constants.swift in Sources */,
 				1BFA73EB21A4A17900A10632 /* ShadowButton.swift in Sources */,

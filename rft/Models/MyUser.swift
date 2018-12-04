@@ -12,8 +12,11 @@ import SwiftyJSON
 struct MyUser: BaseModel {
     var position: Int?
     var name: String?
+	var email: String?
     var topScore: String?
 	var token: String?
+	
+	init() {}
 
 	init(json: JSON) {
 		self.name = json["name"].rawString()

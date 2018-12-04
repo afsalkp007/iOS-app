@@ -56,9 +56,6 @@
                                 <constraints>
                                     <constraint firstAttribute="height" id="KYd-sg-86A"/>
                                 </constraints>
-                                <connections>
-                                    <action selector="didPressGoogleLoginButton:" destination="TkE-lv-74d" eventType="touchUpInside" id="B0n-UN-5VN"/>
-                                </connections>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="or" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="41t-CG-QgQ">
                                 <rect key="frame" x="181" y="433.5" width="13.5" height="17"/>
@@ -97,7 +94,6 @@
                     </view>
                     <navigationItem key="navigationItem" title="Login" largeTitleDisplayMode="always" id="7cj-bW-IOv"/>
                     <connections>
-                        <outlet property="googleLoginButton" destination="UXp-Dj-6ex" id="mfV-ZD-eAG"/>
                         <outlet property="loginButton" destination="Yom-4V-ZgY" id="vea-CP-4fF"/>
                         <outlet property="passwordTextField" destination="QdU-97-TVJ" id="6WY-kO-1F4"/>
                         <outlet property="registerButton" destination="3dv-YC-f9a" id="x27-Wf-q0v"/>
@@ -653,6 +649,6 @@
         <image name="second" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="NQu-4U-KQ6"/>
+        <segue reference="n9a-0j-pzs"/>
     </inferredMetricsTieBreakers>
 </document>
