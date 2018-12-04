@@ -23,7 +23,7 @@ class RestClient: Networking {
     private init() {}
 
 	private let headers = [
-		"Authorization": "Token \(UserDefaults.standard.value(forKey: Constants.UserDefaultsKeys.LoggedInUser.token) ?? "")"
+		"Authorization": "Token \(UserDefaults.standard.value(forKey: Constants.UserDefaultsKeys.token) ?? "")"
 	]
 
     // MARK: - Login methods
@@ -93,15 +93,14 @@ class RestClient: Networking {
      - Parameter delegate : The delegate which implements the `TopListDelegate` protocol
      */
     static func getTopList(for difficulty: DifficultyLevel, with delegate: TopListDelegate) {
-        // TODO: Incorporate difficulty into request.
 //        let url = "\(Constants.kBaseURL)/topList?level=\(difficulty.rawValue)"
 		let url = "https://www.mocky.io/v2/5bc244243100004e001fca81"
-//		let params = ["difficulty":difficulty.rawValue]
 		Alamofire.request(url,
 						  method: .get,
 						  parameters: nil/*params*/,
 						  encoding: JSONEncoding.default,
-						  headers: nil)
+						  headers: shared.headers)
+			.validate(statusCode: 200..<300)
 			.responseJSON { response in
             print("Request: \(String(describing: response.request))")   // original url request
             print("Response: \(String(describing: response.response))") // http url response
@@ -158,11 +157,29 @@ class RestClient: Networking {
     }
 
 	static func post(_ result: GameResult, for difficulty: DifficultyLevel, with delegate: GameDelegate) {
-		// TODO: Post results
-//		let url = ""
-//		let time = result.time
-//		let correctAnswers = result.correctAnswers
-//		Alamofire.request(url, method: .post, parameters: [:], encoding: , headers: <#T##HTTPHeaders?#>)
-	}
+		let url = "\(Constants.kBaseURL)/results?difficulty=\(difficulty.rawValue)"
+		let time = result.time
+		let correctAnswers = result.correctAnswers
+		let params = ["time": time, "correct_answers": correctAnswers] as [String : Any]
+		Alamofire.request(url,
+						  method: .post,
+						  parameters: params,
+						  encoding: JSONEncoding.default,
+						  headers: shared.headers)
+			.validate(statusCode: 200..<300)
+			.responseJSON { response in
+			print("Request: \(String(describing: response.request))")   // original url request
+			print("Response: \(String(describing: response.response))") // http url response
+			print("Result: \(response.result)")                         // response serialization result
 
+			if let error = response.error {
+				print(error)
+				return
+			}
+
+			if let json = response.result.value {
+				print("JSON: \(json)") // serialized json response
+			}
+		}
+	}
 }

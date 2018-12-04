@@ -15,9 +15,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 	var loggedInUser: MyUser? {
 		didSet {
 			if let user = loggedInUser {
-				defaults.set(user.name, forKey: Constants.UserDefaultsKeys.LoggedInUser.name)
-				defaults.set(user.email, forKey: Constants.UserDefaultsKeys.LoggedInUser.email)
-				defaults.set(user.token, forKey: Constants.UserDefaultsKeys.LoggedInUser.token)
+				defaults.set(user.name, forKey: Constants.UserDefaultsKeys.name)
+				defaults.set(user.email, forKey: Constants.UserDefaultsKeys.email)
+				defaults.set(user.token, forKey: Constants.UserDefaultsKeys.token)
 			}
 		}
 	}

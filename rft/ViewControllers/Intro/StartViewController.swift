@@ -23,7 +23,7 @@ class StartViewController: UIViewController {
 
 	// MARK: - Navigation
 	private func start() {
-		if isKeyPresentInUserDefaults(key: Constants.UserDefaultsKeys.LoggedInUser.name) {
+		if isKeyPresentInUserDefaults(key: Constants.UserDefaultsKeys.name) {
 			performSegue(withIdentifier: Constants.Segues.ShowMainScreen, sender: nil)
 		} else {
 			performSegue(withIdentifier: Constants.Segues.ShowLogin, sender: nil)
