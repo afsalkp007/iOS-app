@@ -10,17 +10,17 @@ import Foundation
 import SwiftyJSON
 
 struct MyUser: BaseModel {
-    var position: Int?
     var name: String?
 	var email: String?
-    var topScore: String?
 	var token: String?
+    var topScore: String?
+	var time: Float?
 
 	init() {}
 
 	init(json: JSON) {
 		self.name = json["name"].rawString()
-		self.position = json["position"].intValue
-		self.topScore = json["topScore"].rawString()
+		self.time = json["time"].floatValue
+		self.topScore = json["score"].rawString()
 	}
 }

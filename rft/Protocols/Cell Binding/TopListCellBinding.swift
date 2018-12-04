@@ -9,5 +9,5 @@
 import Foundation
 
 protocol TopListCellBinding {
-    func bind(to cell: TopListCell, with model: MyUser)
+	func bind(to cell: TopListCell, with model: MyUser, index: Int)
 }

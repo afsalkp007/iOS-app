@@ -93,8 +93,7 @@ class RestClient: Networking {
      - Parameter delegate : The delegate which implements the `TopListDelegate` protocol
      */
     static func getTopList(for difficulty: DifficultyLevel, with delegate: TopListDelegate) {
-//        let url = "\(Constants.kBaseURL)/topList?level=\(difficulty.rawValue)"
-		let url = "https://www.mocky.io/v2/5bc244243100004e001fca81"
+        let url = "\(Constants.kBaseURL)/toplist?difficulty=\(difficulty.rawValue)"
 		Alamofire.request(url,
 						  method: .get,
 						  parameters: nil/*params*/,
@@ -115,7 +114,7 @@ class RestClient: Networking {
                 let jsonData = JSON(json)
 
                 var users: [MyUser] = []
-                for user in jsonData["users"] {
+                for user in jsonData {
 					let myUser = MyUser(json: user.1)
                     users.append(myUser)
                 }

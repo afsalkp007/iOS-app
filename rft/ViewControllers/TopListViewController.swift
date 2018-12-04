@@ -38,8 +38,8 @@ class TopListViewController: UIViewController {
         RestClient.getTopList(for: level, with: self)
         topUsers.asObservable()
 		.bind(to: self.tableView.rx
-		.items(cellIdentifier: Constants.Cells.TopListCell)) { [weak self] (_, model, cell: TopListCell) in
-            self?.bind(to: cell, with: model)
+		.items(cellIdentifier: Constants.Cells.TopListCell)) { [weak self] (indexPath, model, cell: TopListCell) in
+			self?.bind(to: cell, with: model, index: indexPath)
             }.disposed(by: disposeBag)
     }
 
@@ -68,9 +68,9 @@ class TopListViewController: UIViewController {
 // MARK: - Protocol implementations
 
 extension TopListViewController: TopListCellBinding {
-    func bind(to cell: TopListCell, with model: MyUser) {
+	func bind(to cell: TopListCell, with model: MyUser, index: Int) {
         cell.nameLabel.text = model.name
-        cell.positionLabel.text = "\(model.position ?? 0)."
+        cell.positionLabel.text = "\(index+1)."
         cell.timeLabel.text = model.topScore
     }
 }
