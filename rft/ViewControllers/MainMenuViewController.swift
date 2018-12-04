@@ -49,7 +49,6 @@ class MainMenuViewController: UIViewController {
     func setupTableView() {
         tableView.rx.itemSelected.subscribe(onNext: { [weak self] indexPath in
             NSLog("✅ Row \(indexPath.row) selected")
-			self?.tableView.deselectRow(at: indexPath, animated: true)
 			DispatchQueue.main.async(execute: {
 				self?.performSegue(withIdentifier: Constants.Segues.StartGame, sender: nil)
 			})
@@ -66,10 +65,9 @@ class MainMenuViewController: UIViewController {
 				let navController = segue.destination as? UINavigationController
 				if navController?.viewControllers.first is BaseGameViewController {
 					let gameController = navController?.viewControllers.first as? BaseGameViewController
-					if let selectedLevel = tableView.indexPathForSelectedRow?.row {
-						if let difficulty = DifficultyLevel(rawValue: selectedLevel) {
-							gameController?.difficultyLevel = difficulty
-						}
+					let selectedLevel = tableView.indexPathForSelectedRow?.row
+					if let difficulty = DifficultyLevel(rawValue: selectedLevel ?? 0) {
+						gameController?.difficultyLevel = difficulty
 					}
 				}
 			}

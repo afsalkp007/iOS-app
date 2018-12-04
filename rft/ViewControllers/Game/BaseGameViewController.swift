@@ -89,13 +89,12 @@ class BaseGameViewController: UIViewController {
 			finishButton.isUserInteractionEnabled = true
 			finishButton.alpha = 1
 
-			if let time = timer?.timeInterval {
-				let correctAnswers = UInt(self.correctAnswers)
-				print("✅ correct answers: \(correctAnswers)")
-				let result = GameResult(time: time, correctAnswers: correctAnswers)
-				if let difficulty = self.difficultyLevel {
-					RestClient.post(result, for: difficulty, with: self)
-				}
+			let time = Date().timeIntervalSince(self.start ?? Date())
+			let correctAnswers = UInt(self.correctAnswers)
+			print("✅ correct answers: \(correctAnswers)")
+			let result = GameResult(time: time, correctAnswers: correctAnswers)
+			if let difficulty = self.difficultyLevel {
+				RestClient.post(result, for: difficulty, with: self)
 			}
 			return
 		}
