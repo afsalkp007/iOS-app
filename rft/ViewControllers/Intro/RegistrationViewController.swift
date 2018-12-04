@@ -13,7 +13,8 @@ class RegistrationViewController: UIViewController {
 
 	// MARK: - IBOutlets
 
-    @IBOutlet var emailTextField: UITextField!
+	@IBOutlet var usernameTextField: UITextField!
+	@IBOutlet var emailTextField: UITextField!
     @IBOutlet var passwordTextField: UITextField!
     @IBOutlet var signUpButton: ShadowButton!
 
@@ -47,17 +48,20 @@ class RegistrationViewController: UIViewController {
     @objc
     private func register() {
         hideKeybard()
+		guard let name = usernameTextField.text else {
+			NSLog("😢 username missing")
+			return
+		}
         guard let email = emailTextField.text else {
-			NSLog("😢 email wrong")
+			NSLog("😢 email missing")
             return
         }
         guard let password = passwordTextField.text else {
-			NSLog("😢 password wrong")
+			NSLog("😢 password missing")
             return
         }
-		
-		//TODO: Restclient.register()
-//		self?.performSegue(withIdentifier: Constants.Segues.RegisterToMainScreen, sender: nil)
+
+		RestClient.register(with: name, password: password, email: email, with: self)
     }
 
 	// MARK: - Helper methods
@@ -66,4 +70,21 @@ class RegistrationViewController: UIViewController {
     private func hideKeybard() {
         self.view.endEditing(true)
     }
+}
+
+extension RegistrationViewController: LoginDelegate {
+	func loginDidSuccess(response: MyUser) {
+		Constants.kAppDelegate.loggedInUser = response
+		self.performSegue(withIdentifier: Constants.Segues.RegisterToMainScreen, sender: nil)
+	}
+
+	func loginDidFail(with error: Error?) {
+		NSLog("😢 \(String(describing: error))")
+		signUpButton.isEnabled = false
+		signUpButton.alpha = 0.5
+
+		usernameTextField.shake()
+		emailTextField.shake()
+		passwordTextField.shake()
+	}
 }

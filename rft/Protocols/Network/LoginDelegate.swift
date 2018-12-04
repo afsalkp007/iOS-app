@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol LoginDelegate {
+protocol LoginDelegate: class {
 	func loginDidSuccess(response: MyUser)
 	func loginDidFail(with error: Error?)
 }

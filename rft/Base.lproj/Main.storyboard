@@ -146,9 +146,17 @@
                                     <action selector="didPressSignUpButton:" destination="OgE-PY-gZA" eventType="touchUpInside" id="127-h3-f57"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RFH-i3-evW">
+                                <rect key="frame" x="37.5" y="231.5" width="300" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="RFH-i3-evW" firstAttribute="width" secondItem="5iS-Xx-kmb" secondAttribute="width" id="2Lk-72-iwt"/>
+                            <constraint firstItem="5iS-Xx-kmb" firstAttribute="top" secondItem="RFH-i3-evW" secondAttribute="bottom" constant="16" id="FH7-7r-m3T"/>
                             <constraint firstItem="cpe-6m-LYM" firstAttribute="centerY" secondItem="2cz-fC-2Ji" secondAttribute="centerY" id="O7J-vY-Cds"/>
                             <constraint firstItem="5iS-Xx-kmb" firstAttribute="width" secondItem="2cz-fC-2Ji" secondAttribute="width" multiplier="0.8" id="VEh-qx-tS6"/>
                             <constraint firstItem="cpe-6m-LYM" firstAttribute="width" secondItem="2cz-fC-2Ji" secondAttribute="width" multiplier="0.5" id="ZeC-Yc-UnZ"/>
@@ -157,6 +165,7 @@
                             <constraint firstItem="tsp-GH-Tmx" firstAttribute="centerX" secondItem="5iS-Xx-kmb" secondAttribute="centerX" id="s0h-t3-cwZ"/>
                             <constraint firstItem="cpe-6m-LYM" firstAttribute="top" secondItem="tsp-GH-Tmx" secondAttribute="bottom" constant="16" id="w7l-Mc-SJs"/>
                             <constraint firstItem="tsp-GH-Tmx" firstAttribute="width" secondItem="5iS-Xx-kmb" secondAttribute="width" id="wnh-Rr-dko"/>
+                            <constraint firstItem="RFH-i3-evW" firstAttribute="centerX" secondItem="5iS-Xx-kmb" secondAttribute="centerX" id="wuO-Fn-NoT"/>
                             <constraint firstItem="5iS-Xx-kmb" firstAttribute="centerX" secondItem="2cz-fC-2Ji" secondAttribute="centerX" id="xux-FI-M63"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="2cz-fC-2Ji"/>
@@ -165,6 +174,7 @@
                         <outlet property="emailTextField" destination="5iS-Xx-kmb" id="20X-3b-hTa"/>
                         <outlet property="passwordTextField" destination="tsp-GH-Tmx" id="5HN-Gf-Zji"/>
                         <outlet property="signUpButton" destination="cpe-6m-LYM" id="iKr-dw-Azm"/>
+                        <outlet property="usernameTextField" destination="RFH-i3-evW" id="Z6y-3w-o3J"/>
                         <segue destination="h7B-e9-sTa" kind="showDetail" identifier="RegisterToMainScreen" id="K9a-2z-fkC"/>
                     </connections>
                 </viewController>
@@ -649,6 +659,6 @@
         <image name="second" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="n9a-0j-pzs"/>
+        <segue reference="K9a-2z-fkC"/>
     </inferredMetricsTieBreakers>
 </document>
