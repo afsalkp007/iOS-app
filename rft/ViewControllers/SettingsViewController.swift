@@ -86,6 +86,9 @@ class SettingsViewController: UIViewController {
     @objc private func logout() {
         do {
             performSegue(withIdentifier: Constants.Segues.Logout, sender: self)
+			UserDefaults.standard.removeObject(forKey: Constants.UserDefaultsKeys.LoggedInUser.name)
+			UserDefaults.standard.removeObject(forKey: Constants.UserDefaultsKeys.LoggedInUser.token)
+			UserDefaults.standard.removeObject(forKey: Constants.UserDefaultsKeys.LoggedInUser.email)
             NSLog("✅ logout complete")
         } catch {
             NSLog("😢 logout failed")

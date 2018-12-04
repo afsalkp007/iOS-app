@@ -32,31 +32,28 @@ class RestClient: Networking {
 		Alamofire.request(url,
 						  method: .post,
 						  parameters: nil/*params*/,
-			encoding: JSONEncoding.default,
-			headers: nil).responseJSON { response in
+						  encoding: JSONEncoding.default,
+						  headers: nil)
+			.validate(statusCode: 200..<300)
+			.responseJSON { response in
 				print("Response: \(String(describing: response.response))") // http url response
 				print("Result: \(response.result)")                         // response serialization result
 
-				if let error = response.error {
-					delegate.loginDidFail(with: error)
-					return
-				}
-
-				if let json = response.result.value, response.response?.statusCode == 200 {
+				switch response.result {
+				case .success(let json):
 					print("JSON: \(json)") // serialized json response
 					let jsonData = JSON(json)
-					
+
 					var loggedInUser = MyUser()
 					loggedInUser.name = jsonData["name"].stringValue
 					loggedInUser.email = jsonData["email"].stringValue
 					loggedInUser.token = jsonData["token"].stringValue
 
 					delegate.loginDidSuccess(response: loggedInUser)
-				} else {
-					delegate.loginDidFail(with: nil)
+				case .failure(let error):
+					delegate.loginDidFail(with: error)
 				}
 		}
-
 	}
 
 	static func register(with username: String, password: String, email: String) {
