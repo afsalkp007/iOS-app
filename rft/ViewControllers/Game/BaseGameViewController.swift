@@ -45,7 +45,7 @@ class BaseGameViewController: UIViewController {
 		finishButton.addTarget(self, action: #selector(dismissView), for: .touchUpInside)
 		timer = Timer.new(every: 1.ms) { [weak self] in
 			let progress = Date().timeIntervalSince(self?.start ?? Date())
-			let timeText = String(format: "%.2f", progress)
+			let timeText = String(format: "%.2f s", progress)
 			self?.timerLabel.text = timeText
 		}
 	}

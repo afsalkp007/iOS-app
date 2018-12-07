@@ -164,7 +164,7 @@ class RestClient: Networking {
 
 	static func post(_ result: GameResult, for difficulty: DifficultyLevel, with delegate: GameDelegate) {
 		var headers = shared.headers
-		headers["Content-Type"] = "application/x-www-form-urlencoded"
+		headers["Content-Type"] = "application/json"
 		let url = "\(Constants.kBaseURL)/results?difficulty=\(difficulty.rawValue)"
 		let time = result.time
 		let correctAnswers = result.correctAnswers
@@ -172,7 +172,7 @@ class RestClient: Networking {
 		Alamofire.request(url,
 						  method: .post,
 						  parameters: params,
-						  encoding: URLEncoding.httpBody,
+						  encoding: JSONEncoding.default,
 						  headers: shared.headers)
 			.validate(statusCode: 200..<300)
 			.responseJSON { response in
