@@ -84,9 +84,7 @@ class SettingsViewController: UIViewController {
     // MARK: - Navigation
 
     @objc private func logout() {
-		UserDefaults.standard.removeObject(forKey: Constants.UserDefaultsKeys.name)
-		UserDefaults.standard.removeObject(forKey: Constants.UserDefaultsKeys.token)
-		UserDefaults.standard.removeObject(forKey: Constants.UserDefaultsKeys.email)
+		Constants.kAppDelegate.loggedInUser = nil
 		performSegue(withIdentifier: Constants.Segues.Logout, sender: self)
 		NSLog("✅ logout complete")
     }

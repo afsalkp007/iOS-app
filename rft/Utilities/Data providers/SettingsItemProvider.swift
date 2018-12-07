@@ -38,9 +38,9 @@ class SettingsItemProvider {
 		let section1 = SectionOfCustomData(header: "", items: [userInfo, logout])
 
 		var adam = SettingsItem()
-		adam.title = "Ádám Berki"
-		adam.image = UIImage(named: "youtube")
-		adam.url = "https://www.youtube.com/channel/UC87ViraFQBQEMmO--SsQ1cg"
+		adam.title = "@aberki97"
+		adam.image = UIImage(named: "instagram")
+		adam.url = "https://www.instagram.com/aberki97/"
 
 		var levi = SettingsItem()
 		levi.title = "@levivig"

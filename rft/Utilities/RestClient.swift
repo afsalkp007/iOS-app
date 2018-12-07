@@ -22,9 +22,14 @@ class RestClient: Networking {
     static let shared = RestClient()
     private init() {}
 
-	private let headers = [
+	private var headers = [
 		"Authorization": "Token \(UserDefaults.standard.value(forKey: Constants.UserDefaultsKeys.token) ?? "")"
 	]
+
+	// MARK: - Manage
+	static func updateToken(to newToken: String) {
+		self.shared.headers["Authorization"] = "Token \(newToken)"
+	}
 
     // MARK: - Login methods
 	static func login(with username: String, password: String, with delegate: LoginDelegate) {

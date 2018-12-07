@@ -178,9 +178,7 @@ extension BaseGameViewController: GameDelegate {
 	func getExercisesDidFail(with error: Error?) {
 		NSLog("😢 get exercises did fail: \(String(describing: error))")
 		showLoading(true)
-		DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+2) {
-			RestClient.getExercises(for: self.difficultyLevel ?? .beginner, with: self)
-		}
+		RestClient.getExercises(for: self.difficultyLevel ?? .beginner, with: self)
 	}
 }
 
