@@ -119,7 +119,7 @@ class RestClient: Networking {
                 let jsonData = JSON(json)
 
                 var users: [MyUser] = []
-                for user in jsonData {
+                for user in jsonData["users"] {
 					let myUser = MyUser(json: user.1)
                     users.append(myUser)
                 }
