@@ -42,6 +42,7 @@ struct Constants {
     }
 
     struct ViewControllers {
+		static let BaseGameViewController = "BaseGameViewController"
         static let GameNavigationController = "GameNavigationController"
         static let GameViewController = "GameViewController"
         static let LoginNavigationController = "LoginNavigationController"

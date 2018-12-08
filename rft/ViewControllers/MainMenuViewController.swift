@@ -64,6 +64,8 @@ class MainMenuViewController: UIViewController {
         tableView.tableFooterView = UIView()
     }
 
+	// MARK: - Navigation
+
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 		if segue.identifier == Constants.Segues.StartGame {
 			if segue.destination is UINavigationController {
