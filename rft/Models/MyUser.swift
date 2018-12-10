@@ -23,4 +23,10 @@ struct MyUser: BaseModel {
 		self.time = json["time"].floatValue
 		self.topScore = json["score"].rawString()
 	}
+
+	init(with data: JSON) {
+		self.name = data["name"].stringValue
+		self.email = data["email"].stringValue
+		self.token = data["token"].stringValue
+	}
 }
