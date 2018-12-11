@@ -6,6 +6,7 @@
 //  Copyright © 2018. Levente Vig. All rights reserved.
 //
 
+import AudioToolbox
 import UIKit
 
 class LoginViewController: UIViewController {
@@ -74,6 +75,8 @@ extension LoginViewController: LoginDelegate {
 		NSLog("😢 \(String(describing: error))")
 		loginButton.isEnabled = false
 		loginButton.alpha = 0.5
+
+		AudioServicesPlaySystemSound(1521)
 
 		userNameTextField.shake()
 		passwordTextField.shake()

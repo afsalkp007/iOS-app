@@ -6,7 +6,7 @@
 //  Copyright © 2018. Levente Vig. All rights reserved.
 //
 
-import Firebase
+import AudioToolbox
 import UIKit
 
 class RegistrationViewController: UIViewController {
@@ -82,6 +82,8 @@ extension RegistrationViewController: LoginDelegate {
 		NSLog("😢 \(String(describing: error))")
 		signUpButton.isEnabled = false
 		signUpButton.alpha = 0.5
+		
+		AudioServicesPlaySystemSound(1521)
 
 		usernameTextField.shake()
 		emailTextField.shake()
