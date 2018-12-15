@@ -71,7 +71,7 @@ extension TopListViewController: TopListCellBinding {
 	func bind(to cell: TopListCell, with model: MyUser, index: Int) {
         cell.nameLabel.text = model.name
         cell.positionLabel.text = "\(index+1)."
-        cell.timeLabel.text = String(format: "%.2f s", model.time ?? -1)
+        cell.timeLabel.text = "\(model.topScore ?? -1)"
     }
 }
 

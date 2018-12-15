@@ -13,7 +13,7 @@ struct MyUser: BaseModel {
     var name: String?
 	var email: String?
 	var token: String?
-    var topScore: String?
+    var topScore: NSNumber?
 	var time: Float?
 
 	init() {}
@@ -21,7 +21,7 @@ struct MyUser: BaseModel {
 	init(json: JSON) {
 		self.name = json["name"].rawString()
 		self.time = json["time"].floatValue
-		self.topScore = json["score"].rawString()
+		self.topScore = json["score"].numberValue
 	}
 
 	init(with data: JSON) {
