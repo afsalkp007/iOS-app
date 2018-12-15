@@ -94,7 +94,12 @@ class BaseGameViewController: UIViewController {
 			print("✅ correct answers: \(correctAnswers)")
 			let result = GameResult(time: time, correctAnswers: correctAnswers)
 			if let difficulty = self.difficultyLevel {
-				RestClient.post(result, for: difficulty, with: self)
+				RestClient.post(result, for: difficulty, success: { response in
+					let result = String(format: "%.f", response["score"].floatValue)
+					self.gameViewController?.questionLabel.text = "Score: \(result)"
+				},fail: { error in
+					NSLog(error.localizedDescription)
+				})
 			}
 			return
 		}

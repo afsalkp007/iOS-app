@@ -82,7 +82,7 @@ extension RegistrationViewController: LoginDelegate {
 		NSLog("😢 \(String(describing: error))")
 		signUpButton.isEnabled = false
 		signUpButton.alpha = 0.5
-		
+
 		AudioServicesPlaySystemSound(1521)
 
 		usernameTextField.shake()

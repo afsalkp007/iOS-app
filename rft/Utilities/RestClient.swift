@@ -96,14 +96,18 @@ class RestClient: Networking {
 		})
     }
 
-	static func post(_ result: GameResult, for difficulty: DifficultyLevel, with delegate: GameDelegate) {
+	static func post(_ result: GameResult, for difficulty: DifficultyLevel, success: @escaping ((JSON) -> Void), fail: @escaping ((Error) -> Void)) {
 
 		let url = "\(Constants.kBaseURL)/results?difficulty=\(difficulty.rawValue)"
 		let time = result.time
 		let correctAnswers = result.correctAnswers
 		let params = ["time": time, "correct_answer": correctAnswers] as [String : Any]
 
-		shared.post(url: url, with: params, useToken: true, success: nil, fail: nil)
+		shared.post(url: url, with: params, useToken: true, success: { response in
+			success(response)
+		},fail: { error in
+			fail(error)
+		})
 	}
 
 	// MARK: - Template
