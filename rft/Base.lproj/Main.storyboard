@@ -369,6 +369,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wrong" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vyh-Ci-kZ6">
+                                <rect key="frame" x="157" y="179" width="61" height="24"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                <color key="textColor" red="1" green="0.0187217119" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2+2-1=" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Evt-iP-AuD">
                                 <rect key="frame" x="135.5" y="219" width="104.5" height="38.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="32"/>
@@ -390,12 +396,15 @@
                             <constraint firstItem="Evt-iP-AuD" firstAttribute="centerX" secondItem="kIq-qb-yfe" secondAttribute="centerX" id="255-hv-weM"/>
                             <constraint firstItem="tmS-DD-UnD" firstAttribute="centerY" secondItem="kIq-qb-yfe" secondAttribute="centerY" constant="-32" id="BhA-G8-Jae"/>
                             <constraint firstItem="tmS-DD-UnD" firstAttribute="centerX" secondItem="kIq-qb-yfe" secondAttribute="centerX" id="DiS-fx-Vjc"/>
+                            <constraint firstItem="Vyh-Ci-kZ6" firstAttribute="centerX" secondItem="kIq-qb-yfe" secondAttribute="centerX" id="G3A-7f-efs"/>
+                            <constraint firstItem="Evt-iP-AuD" firstAttribute="top" secondItem="Vyh-Ci-kZ6" secondAttribute="bottom" constant="16" id="REl-6s-HVX"/>
                             <constraint firstItem="tmS-DD-UnD" firstAttribute="top" secondItem="Evt-iP-AuD" secondAttribute="bottom" constant="32" id="wiy-Me-VJ1"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="kIq-qb-yfe"/>
                     </view>
                     <connections>
                         <outlet property="answerTextField" destination="tmS-DD-UnD" id="z4g-Nc-Lgl"/>
+                        <outlet property="correctLabel" destination="Vyh-Ci-kZ6" id="l46-m0-zHN"/>
                         <outlet property="questionLabel" destination="Evt-iP-AuD" id="1p9-xQ-Lgu"/>
                     </connections>
                 </viewController>

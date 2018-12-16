@@ -95,7 +95,7 @@ class BaseGameViewController: UIViewController {
 			let result = GameResult(time: time, correctAnswers: correctAnswers)
 			if let difficulty = self.difficultyLevel {
 				RestClient.post(result, for: difficulty, success: { response in
-					let result = String(format: "%.f", response["score"].floatValue)
+					let result = String(format: "%.f", response["score"].floatValue.rounded(FloatingPointRoundingRule.toNearestOrEven))
 					self.gameViewController?.questionLabel.text = "Score: \(result)"
 				},fail: { error in
 					NSLog(error.localizedDescription)
